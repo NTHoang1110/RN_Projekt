@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class MIbayAgent {
     private static final int CLIPORT = 12345;
     private static final String BROADCAST_ADDRESS = "255.255.255.255";
-    private static final int BROADCAST_PORT = 5000;
+    private static final int BROADCAST_PORT = 6000;
     private static int balance;
     static final Map<String, Auction> auctions = new ConcurrentHashMap<>();
     static final Map<String, Bid> bids = new ConcurrentHashMap<>();
