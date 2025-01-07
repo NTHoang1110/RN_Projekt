@@ -3,6 +3,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketTimeoutException;
+import java.time.LocalTime;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -79,6 +80,9 @@ public class MIbayAgent {
                                             + " Seller: " + auction.seller + " File: " + auction.fileName + "\n");
                         }
                         String response = auctionsList.toString();
+                        if (auctionsList.length() == 0) {
+                            response = "No auctions available";
+                        }
                         DatagramPacket responsePacket = new DatagramPacket(response.getBytes(), response.length(),
                                 packet.getAddress(), packet.getPort());
                         requestSocket.send(responsePacket);
@@ -91,15 +95,7 @@ public class MIbayAgent {
                             bids.remove(requestParts[1]);
                         }
                     case "bieten":
-                        String[] bidParts = requestParts[1].split(";");
-                        if (bids.containsKey(bidParts[2])) {
-                            if (bids.get(bidParts[2]).bid < Double.parseDouble(bidParts[1])) {
-                                bids.get(bidParts[2]).bid = Double.parseDouble(bidParts[1]);
-                                bids.get(bidParts[2]).seller = bidParts[0];
-                            }
-                        }
-                        break;
-                    case "liste":
+
                         break;
                     case "info":
                         break;
@@ -112,9 +108,6 @@ public class MIbayAgent {
     });
 
     public static void anbieten(int startPrice, int time, String filename) {
-        Auction auction = new Auction(filename, startPrice, time, System.getenv("USER"), pathToFile);
-        auctions.put(filename, auction);
-
         try (DatagramSocket socket = new DatagramSocket()) {
             socket.setSoTimeout(time * 1000);
             socket.setBroadcast(true);
@@ -128,10 +121,13 @@ public class MIbayAgent {
             socket.send(packet);
 
         } catch (SocketTimeoutException e) {
-            System.out.println("Auction hat geendet");
+            System.out.println("Message not sent: Timeout");
         } catch (IOException e) {
             e.printStackTrace();
         }
+        Auction auction = new Auction(filename, startPrice, LocalTime.now().plusSeconds(time), System.getenv("USER"),
+                pathToFile);
+        auctions.put(filename, auction);
     }
 
     public static void abbrechen(String filename) {
@@ -182,7 +178,7 @@ public class MIbayAgent {
                 }
             }
         } catch (SocketTimeoutException e) {
-            System.out.println("Auction hat geendet");
+            System.out.println("Message not sent or receive: Timeout");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -209,7 +205,7 @@ public class MIbayAgent {
                 DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), userAddress, BROADCAST_PORT);
                 socket.send(packet);
             } catch (SocketTimeoutException e) {
-                System.out.println("Auction hat geendet");
+                System.out.println("Message not sent: Timeout");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -224,7 +220,7 @@ public class MIbayAgent {
                         BROADCAST_PORT);
                 socket.send(packet);
             } catch (SocketTimeoutException e) {
-                System.out.println("Auction hat geendet");
+                System.out.println("Message not sent: Timeout");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -253,6 +249,8 @@ public class MIbayAgent {
                     break;
                 }
             }
+        } catch (SocketTimeoutException e) {
+            System.out.println("Message not sent: Timeout");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -262,13 +260,14 @@ public class MIbayAgent {
     static class Auction {
         String fileName;
         double minPrice;
-        long expiryTime;
+        LocalTime expiryTime;
         String seller;
         String filePath;
         String highestBidder;
         double highestBid;
+        boolean ongoing = false;
 
-        public Auction(String fileName, double minPrice, long expiryTime, String seller, String filePath) {
+        public Auction(String fileName, double minPrice, LocalTime expiryTime, String seller, String filePath) {
             this.fileName = fileName;
             this.minPrice = minPrice;
             this.expiryTime = expiryTime;
@@ -276,6 +275,7 @@ public class MIbayAgent {
             this.filePath = pathToFile + fileName;
             this.highestBid = 0.0;
             this.highestBidder = null;
+            this.ongoing = true;
         }
     }
 
