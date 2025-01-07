@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class MIbayAgent {
     private static final int CLIPORT = 12345;
-    private static final String BROADCAST_ADDRESS = "255.255.255.255";
+    private static final String BROADCAST_ADDRESS = "192.168.0.255";
     private static final int BROADCAST_PORT = 6000;
     private static int balance;
     static final Map<String, Auction> auctions = new ConcurrentHashMap<>();
@@ -96,8 +96,9 @@ public class MIbayAgent {
                         }
                     case "bieten":
                         String[] bidParts = requestParts[1].split(";");
-                        if(auctions.containsKey(bidParts[2])) {
-                            if(auctions.get(bidParts[2]).ongoing && (Integer.parseInt(bidParts[1]) > auctions.get(bidParts[2]).highestBid)) {
+                        if (auctions.containsKey(bidParts[2])) {
+                            if (auctions.get(bidParts[2]).ongoing
+                                    && (Integer.parseInt(bidParts[1]) > auctions.get(bidParts[2]).highestBid)) {
                                 auctions.get(bidParts[2]).highestBid = Integer.parseInt(bidParts[1]);
                                 auctions.get(bidParts[2]).highestBidder = bidParts[0];
                             }
@@ -131,17 +132,18 @@ public class MIbayAgent {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
         Auction auction = new Auction(filename, startPrice, LocalTime.now().plusSeconds(time), System.getenv("USER"),
                 pathToFile);
         auctions.put(filename, auction);
 
-        new Thread(()-> {
-            while(true){
-                if(auction.expiryTime.isBefore(LocalTime.now())){
+        new Thread(() -> {
+            while (true) {
+                if (auction.expiryTime.isBefore(LocalTime.now())) {
                     auction.ongoing = false;
-                    if(auction.highestBidder != null){
-                        System.out.println("Auction for " + auction.fileName + " has ended. Winner is " + auction.highestBidder + " with " + auction.highestBid);
+                    if (auction.highestBidder != null) {
+                        System.out.println("Auction for " + auction.fileName + " has ended. Winner is "
+                                + auction.highestBidder + " with " + auction.highestBid);
                     } else {
                         System.out.println("Auction for " + auction.fileName + " has ended. No winner.");
                     }
@@ -237,7 +239,7 @@ public class MIbayAgent {
                 InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
 
                 String bid = "nachricht:" + System.getenv("USER") + " bietet " + price + " für " + filename + ".";
-                
+
                 DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), broadcastAddress,
                         BROADCAST_PORT);
                 socket.send(packet);
