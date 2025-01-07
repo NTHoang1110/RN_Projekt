@@ -14,7 +14,7 @@ public class MIbayAgent {
     static final Map<String, Auction> auctions = new ConcurrentHashMap<>();
     static final Map<String, Bid> bids = new ConcurrentHashMap<>();
     static String command;
-    static String pathToFile = "C:/Users/tinho/OneDrive/Desktop/Hochschule RheinMain/3.Semester/Rechnernetze und Security/Praktikum/Auctioning/Auction/dateien/wilhelmus.txt";
+    static String pathToFile = "/dateien/";
 
     static Thread CLIListener = new Thread(() -> {
         try (DatagramSocket CLISocket = new DatagramSocket(CLIPORT)) {
@@ -267,7 +267,7 @@ public class MIbayAgent {
             this.minPrice = minPrice;
             this.expiryTime = expiryTime;
             this.seller = seller;
-            this.filePath = filePath;
+            this.filePath = pathToFile + fileName;
             this.highestBid = 0.0;
             this.highestBidder = null;
         }

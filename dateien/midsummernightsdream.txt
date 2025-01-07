@@ -1,0 +1,3760 @@
+     1	
+     2	Project Gutenberg Etext of A Midsummer Night's Dream by Shakespeare
+     3	PG has multiple editions of William Shakespeare's Complete Works
+     4	
+     5	
+     6	Copyright laws are changing all over the world, be sure to check
+     7	the copyright laws for your country before posting these files!!
+     8	
+     9	Please take a look at the important information in this header.
+    10	We encourage you to keep this file on your own disk, keeping an
+    11	electronic path open for the next readers.  Do not remove this.
+    12	
+    13	
+    14	**Welcome To The World of Free Plain Vanilla Electronic Texts**
+    15	
+    16	**Etexts Readable By Both Humans and By Computers, Since 1971**
+    17	
+    18	*These Etexts Prepared By Hundreds of Volunteers and Donations*
+    19	
+    20	Information on contacting Project Gutenberg to get Etexts, and
+    21	further information is included below.  We need your donations.
+    22	
+    23	
+    24	A Midsummer Night's Dream
+    25	
+    26	by William Shakespeare [Collins edition]
+    27	
+    28	November, 1998 [Etext #1514]
+    29	[Most recently updated: July 2, 2003]
+    30	
+    31	
+    32	Project Gutenberg Etext of A Midsummer Night's Dream by Shakespeare
+    33	******This file should be named 2ws1710.txt or 2ws1710.zip******
+    34	
+    35	Corrected EDITIONS of our etexts get a new NUMBER, 2ws1711.txt
+    36	VERSIONS based on separate sources get new LETTER, 2ws1710a.txt
+    37	
+    38	
+    39	This etext was prepared by the PG Shakespeare Team,
+    40	a team of about twenty Project Gutenberg volunteers.
+    41	
+    42	
+    43	Project Gutenberg Etexts are usually created from multiple editions,
+    44	all of which are in the Public Domain in the United States, unless a
+    45	copyright notice is included.  Therefore, we usually do NOT! keep
+    46	these books in compliance with any particular paper edition.
+    47	
+    48	
+    49	We are now trying to release all our books one month in advance
+    50	of the official release dates, leaving time for better editing.
+    51	
+    52	Please note:  neither this list nor its contents are final till
+    53	midnight of the last day of the month of any such announcement.
+    54	The official release date of all Project Gutenberg Etexts is at
+    55	Midnight, Central Time, of the last day of the stated month.  A
+    56	preliminary version may often be posted for suggestion, comment
+    57	and editing by those who wish to do so.  To be sure you have an
+    58	up to date first edition [xxxxx10x.xxx] please check file sizes
+    59	in the first week of the next month.  Since our ftp program has
+    60	a bug in it that scrambles the date [tried to fix and failed] a
+    61	look at the file size will have to do, but we will try to see a
+    62	new copy has at least one byte more or less.
+    63	
+    64	
+    65	Information about Project Gutenberg (one page)
+    66	
+    67	We produce about two million dollars for each hour we work.  The
+    68	time it takes us, a rather conservative estimate, is fifty hours
+    69	to get any etext selected, entered, proofread, edited, copyright
+    70	searched and analyzed, the copyright letters written, etc.  This
+    71	projected audience is one hundred million readers.  If our value
+    72	per text is nominally estimated at one dollar then we produce $2
+    73	million dollars per hour this year as we release thirty-six text
+    74	files per month, or 432 more Etexts in 1999 for a total of 2000+
+    75	If these reach just 10% of the computerized population, then the
+    76	total should reach over 200 billion Etexts given away this year.
+    77	
+    78	The Goal of Project Gutenberg is to Give Away One Trillion Etext
+    79	Files by December 31, 2001.  [10,000 x 100,000,000 = 1 Trillion]
+    80	This is ten thousand titles each to one hundred million readers,
+    81	which is only ~5% of the present number of computer users.
+    82	
+    83	At our revised rates of production, we will reach only one-third
+    84	of that goal by the end of 2001, or about 3,333 Etexts unless we
+    85	manage to get some real funding; currently our funding is mostly
+    86	from Michael Hart's salary at Carnegie-Mellon University, and an
+    87	assortment of sporadic gifts; this salary is only good for a few
+    88	more years, so we are looking for something to replace it, as we
+    89	don't want Project Gutenberg to be so dependent on one person.
+    90	
+    91	We need your donations more than ever!
+    92	
+    93	
+    94	All donations should be made to "Project Gutenberg/CMU": and are
+    95	tax deductible to the extent allowable by law.  (CMU = Carnegie-
+    96	Mellon University).
+    97	
+    98	For these and other matters, please mail to:
+    99	
+   100	Project Gutenberg
+   101	P. O. Box  2782
+   102	Champaign, IL 61825
+   103	
+   104	When all other email fails. . .try our Executive Director:
+   105	Michael S. Hart <hart@pobox.com>
+   106	hart@pobox.com forwards to hart@prairienet.org and archive.org
+   107	if your mail bounces from archive.org, I will still see it, if
+   108	it bounces from prairienet.org, better resend later on. . . .
+   109	
+   110	We would prefer to send you this information by email.
+   111	
+   112	******
+   113	
+   114	To access Project Gutenberg etexts, use any Web browser
+   115	to view http://promo.net/pg.  This site lists Etexts by
+   116	author and by title, and includes information about how
+   117	to get involved with Project Gutenberg.  You could also
+   118	download our past Newsletters, or subscribe here.  This
+   119	is one of our major sites, please email hart@pobox.com,
+   120	for a more complete list of our various sites.
+   121	
+   122	To go directly to the etext collections, use FTP or any
+   123	Web browser to visit a Project Gutenberg mirror (mirror
+   124	sites are available on 7 continents; mirrors are listed
+   125	at http://promo.net/pg).
+   126	
+   127	Mac users, do NOT point and click, typing works better.
+   128	
+   129	Example FTP session:
+   130	
+   131	ftp sunsite.unc.edu
+   132	login: anonymous
+   133	password: your@login
+   134	cd pub/docs/books/gutenberg
+   135	cd etext90 through etext99
+   136	dir [to see files]
+   137	get or mget [to get files. . .set bin for zip files]
+   138	GET GUTINDEX.??  [to get a year's listing of books, e.g., GUTINDEX.99]
+   139	GET GUTINDEX.ALL [to get a listing of ALL books]
+   140	
+   141	***
+   142	
+   143	**Information prepared by the Project Gutenberg legal advisor**
+   144	
+   145	(Three Pages)
+   146	
+   147	
+   148	***START**THE SMALL PRINT!**FOR PUBLIC DOMAIN ETEXTS**START***
+   149	Why is this "Small Print!" statement here?  You know: lawyers.
+   150	They tell us you might sue us if there is something wrong with
+   151	your copy of this etext, even if you got it for free from
+   152	someone other than us, and even if what's wrong is not our
+   153	fault.  So, among other things, this "Small Print!" statement
+   154	disclaims most of our liability to you.  It also tells you how
+   155	you can distribute copies of this etext if you want to.
+   156	
+   157	*BEFORE!* YOU USE OR READ THIS ETEXT
+   158	By using or reading any part of this PROJECT GUTENBERG-tm
+   159	etext, you indicate that you understand, agree to and accept
+   160	this "Small Print!" statement.  If you do not, you can receive
+   161	a refund of the money (if any) you paid for this etext by
+   162	sending a request within 30 days of receiving it to the person
+   163	you got it from.  If you received this etext on a physical
+   164	medium (such as a disk), you must return it with your request.
+   165	
+   166	ABOUT PROJECT GUTENBERG-TM ETEXTS
+   167	This PROJECT GUTENBERG-tm etext, like most PROJECT GUTENBERG-
+   168	tm etexts, is a "public domain" work distributed by Professor
+   169	Michael S. Hart through the Project Gutenberg Association at
+   170	Carnegie-Mellon University (the "Project").  Among other
+   171	things, this means that no one owns a United States copyright
+   172	on or for this work, so the Project (and you!) can copy and
+   173	distribute it in the United States without permission and
+   174	without paying copyright royalties.  Special rules, set forth
+   175	below, apply if you wish to copy and distribute this etext
+   176	under the Project's "PROJECT GUTENBERG" trademark.
+   177	
+   178	To create these etexts, the Project expends considerable
+   179	efforts to identify, transcribe and proofread public domain
+   180	works.  Despite these efforts, the Project's etexts and any
+   181	medium they may be on may contain "Defects".  Among other
+   182	things, Defects may take the form of incomplete, inaccurate or
+   183	corrupt data, transcription errors, a copyright or other
+   184	intellectual property infringement, a defective or damaged
+   185	disk or other etext medium, a computer virus, or computer
+   186	codes that damage or cannot be read by your equipment.
+   187	
+   188	LIMITED WARRANTY; DISCLAIMER OF DAMAGES
+   189	But for the "Right of Replacement or Refund" described below,
+   190	[1] the Project (and any other party you may receive this
+   191	etext from as a PROJECT GUTENBERG-tm etext) disclaims all
+   192	liability to you for damages, costs and expenses, including
+   193	legal fees, and [2] YOU HAVE NO REMEDIES FOR NEGLIGENCE OR
+   194	UNDER STRICT LIABILITY, OR FOR BREACH OF WARRANTY OR CONTRACT,
+   195	INCLUDING BUT NOT LIMITED TO INDIRECT, CONSEQUENTIAL, PUNITIVE
+   196	OR INCIDENTAL DAMAGES, EVEN IF YOU GIVE NOTICE OF THE
+   197	POSSIBILITY OF SUCH DAMAGES.
+   198	
+   199	If you discover a Defect in this etext within 90 days of
+   200	receiving it, you can receive a refund of the money (if any)
+   201	you paid for it by sending an explanatory note within that
+   202	time to the person you received it from.  If you received it
+   203	on a physical medium, you must return it with your note, and
+   204	such person may choose to alternatively give you a replacement
+   205	copy.  If you received it electronically, such person may
+   206	choose to alternatively give you a second opportunity to
+   207	receive it electronically.
+   208	
+   209	THIS ETEXT IS OTHERWISE PROVIDED TO YOU "AS-IS".  NO OTHER
+   210	WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, ARE MADE TO YOU AS
+   211	TO THE ETEXT OR ANY MEDIUM IT MAY BE ON, INCLUDING BUT NOT
+   212	LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A
+   213	PARTICULAR PURPOSE.
+   214	
+   215	Some states do not allow disclaimers of implied warranties or
+   216	the exclusion or limitation of consequential damages, so the
+   217	above disclaimers and exclusions may not apply to you, and you
+   218	may have other legal rights.
+   219	
+   220	INDEMNITY
+   221	You will indemnify and hold the Project, its directors,
+   222	officers, members and agents harmless from all liability, cost
+   223	and expense, including legal fees, that arise directly or
+   224	indirectly from any of the following that you do or cause:
+   225	[1] distribution of this etext, [2] alteration, modification,
+   226	or addition to the etext, or [3] any Defect.
+   227	
+   228	DISTRIBUTION UNDER "PROJECT GUTENBERG-tm"
+   229	You may distribute copies of this etext electronically, or by
+   230	disk, book or any other medium if you either delete this
+   231	"Small Print!" and all other references to Project Gutenberg,
+   232	or:
+   233	
+   234	[1]  Only give exact copies of it.  Among other things, this
+   235	     requires that you do not remove, alter or modify the
+   236	     etext or this "small print!" statement.  You may however,
+   237	     if you wish, distribute this etext in machine readable
+   238	     binary, compressed, mark-up, or proprietary form,
+   239	     including any form resulting from conversion by word pro-
+   240	     cessing or hypertext software, but only so long as
+   241	     *EITHER*:
+   242	
+   243	     [*]  The etext, when displayed, is clearly readable, and
+   244	          does *not* contain characters other than those
+   245	          intended by the author of the work, although tilde
+   246	          (~), asterisk (*) and underline (_) characters may
+   247	          be used to convey punctuation intended by the
+   248	          author, and additional characters may be used to
+   249	          indicate hypertext links; OR
+   250	
+   251	     [*]  The etext may be readily converted by the reader at
+   252	          no expense into plain ASCII, EBCDIC or equivalent
+   253	          form by the program that displays the etext (as is
+   254	          the case, for instance, with most word processors);
+   255	          OR
+   256	
+   257	     [*]  You provide, or agree to also provide on request at
+   258	          no additional cost, fee or expense, a copy of the
+   259	          etext in its original plain ASCII form (or in EBCDIC
+   260	          or other equivalent proprietary form).
+   261	
+   262	[2]  Honor the etext refund and replacement provisions of this
+   263	     "Small Print!" statement.
+   264	
+   265	[3]  Pay a trademark license fee to the Project of 20% of the
+   266	     net profits you derive calculated using the method you
+   267	     already use to calculate your applicable taxes.  If you
+   268	     don't derive profits, no royalty is due.  Royalties are
+   269	     payable to "Project Gutenberg Association/Carnegie-Mellon
+   270	     University" within the 60 days following each
+   271	     date you prepare (or were legally required to prepare)
+   272	     your annual (or equivalent periodic) tax return.
+   273	
+   274	WHAT IF YOU *WANT* TO SEND MONEY EVEN IF YOU DON'T HAVE TO?
+   275	The Project gratefully accepts contributions in money, time,
+   276	scanning machines, OCR software, public domain etexts, royalty
+   277	free copyright licenses, and every other sort of contribution
+   278	you can think of.  Money should be paid to "Project Gutenberg
+   279	Association / Carnegie-Mellon University".
+   280	
+   281	*END*THE SMALL PRINT! FOR PUBLIC DOMAIN ETEXTS*Ver.04.29.93*END*
+   282	
+   283	
+   284	
+   285	
+   286	
+   287	This etext was prepared by the PG Shakespeare Team,
+   288	a team of about twenty Project Gutenberg volunteers.
+   289	
+   290	
+   291	
+   292	
+   293	
+   294	A MIDSUMMER NIGHT'S DREAM
+   295	
+   296	by William Shakespeare
+   297	
+   298	
+   299	
+   300	
+   301	Persons Represented.
+   302	
+   303	THESEUS, Duke of Athens.
+   304	EGEUS, Father to Hermia.
+   305	LYSANDER, in love with Hermia.
+   306	DEMETRIUS, in love with Hermia.
+   307	PHILOSTRATE, Master of the Revels to Theseus.
+   308	QUINCE, the Carpenter.
+   309	SNUG, the Joiner.
+   310	BOTTOM, the Weaver.
+   311	FLUTE, the Bellows-mender.
+   312	SNOUT, the Tinker.
+   313	STARVELING, the Tailor.
+   314	
+   315	HIPPOLYTA, Queen of the Amazons, bethrothed to Theseus.
+   316	HERMIA, daughter to Egeus, in love with Lysander.
+   317	HELENA, in love with Demetrius.
+   318	
+   319	OBERON, King of the Fairies.
+   320	TITANIA, Queen of the Fairies.
+   321	PUCK, or ROBIN GOODFELLOW, a Fairy.
+   322	PEASBLOSSOM, Fairy.
+   323	COBWEB, Fairy.
+   324	MOTH, Fairy.
+   325	MUSTARDSEED, Fairy.
+   326	
+   327	PYRAMUS, THISBE, WALL, MOONSHINE, LION } Characters in the
+   328	Interlude performed by the Clowns.
+   329	
+   330	Other Fairies attending their King and Queen.
+   331	Attendants on Theseus and Hippolyta.
+   332	
+   333	
+   334	
+   335	SCENE: Athens, and a wood not far from it.
+   336	
+   337	ACT I.
+   338	
+   339	SCENE I. Athens. A room in the Palace of THESEUS.
+   340	
+   341	[Enter THESEUS, HIPPOLYTA, PHILOSTRATE, and Attendants.]
+   342	
+   343	THESEUS
+   344	Now, fair Hippolyta, our nuptial hour
+   345	Draws on apace; four happy days bring in
+   346	Another moon; but, oh, methinks, how slow
+   347	This old moon wanes! she lingers my desires,
+   348	Like to a step-dame or a dowager,
+   349	Long withering out a young man's revenue.
+   350	
+   351	HIPPOLYTA
+   352	Four days will quickly steep themselves in nights;
+   353	Four nights will quickly dream away the time;
+   354	And then the moon, like to a silver bow
+   355	New bent in heaven, shall behold the night
+   356	Of our solemnities.
+   357	
+   358	THESEUS
+   359	                    Go, Philostrate,
+   360	Stir up the Athenian youth to merriments;
+   361	Awake the pert and nimble spirit of mirth;
+   362	Turn melancholy forth to funerals--
+   363	The pale companion is not for our pomp. --
+   364	
+   365	[Exit PHILOSTRATE.]
+   366	
+   367	Hippolyta, I woo'd thee with my sword,
+   368	And won thy love doing thee injuries;
+   369	But I will wed thee in another key,
+   370	With pomp, with triumph, and with revelling.
+   371	
+   372	[Enter EGEUS, HERMIA, LYSANDER, and DEMETRIUS.]
+   373	
+   374	EGEUS
+   375	Happy be Theseus, our renowned duke!
+   376	
+   377	THESEUS
+   378	Thanks, good Egeus: what's the news with thee?
+   379	
+   380	EGEUS
+   381	Full of vexation come I, with complaint
+   382	Against my child, my daughter Hermia.--
+   383	Stand forth, Demetrius.--My noble lord,
+   384	This man hath my consent to marry her:--
+   385	Stand forth, Lysander;--and, my gracious duke,
+   386	This man hath bewitch'd the bosom of my child.
+   387	Thou, thou, Lysander, thou hast given her rhymes,
+   388	And interchang'd love-tokens with my child:
+   389	Thou hast by moonlight at her window sung,
+   390	With feigning voice, verses of feigning love;
+   391	And stol'n the impression of her fantasy
+   392	With bracelets of thy hair, rings, gawds, conceits,
+   393	Knacks, trifles, nosegays, sweetmeats,--messengers
+   394	Of strong prevailment in unharden'd youth;--
+   395	With cunning hast thou filch'd my daughter's heart;
+   396	Turned her obedience, which is due to me,
+   397	To stubborn harshness.--And, my gracious duke,
+   398	Be it so she will not here before your grace
+   399	Consent to marry with Demetrius,
+   400	I beg the ancient privilege of Athens,--
+   401	As she is mine I may dispose of her:
+   402	Which shall be either to this gentleman
+   403	Or to her death; according to our law
+   404	Immediately provided in that case.
+   405	
+   406	THESEUS
+   407	What say you, Hermia? be advis'd, fair maid:
+   408	To you your father should be as a god;
+   409	One that compos'd your beauties: yea, and one
+   410	To whom you are but as a form in wax,
+   411	By him imprinted, and within his power
+   412	To leave the figure, or disfigure it.
+   413	Demetrius is a worthy gentleman.
+   414	
+   415	HERMIA
+   416	So is Lysander.
+   417	
+   418	THESEUS
+   419	                In himself he is:
+   420	But, in this kind, wanting your father's voice,
+   421	The other must be held the worthier.
+   422	
+   423	HERMIA
+   424	I would my father look'd but with my eyes.
+   425	
+   426	THESEUS
+   427	Rather your eyes must with his judgment look.
+   428	
+   429	HERMIA
+   430	I do entreat your grace to pardon me.
+   431	I know not by what power I am made bold,
+   432	Nor how it may concern my modesty
+   433	In such a presence here to plead my thoughts:
+   434	But I beseech your grace that I may know
+   435	The worst that may befall me in this case
+   436	If I refuse to wed Demetrius.
+   437	
+   438	THESEUS
+   439	Either to die the death, or to abjure
+   440	For ever the society of men.
+   441	Therefore, fair Hermia, question your desires,
+   442	Know of your youth, examine well your blood,
+   443	Whether, if you yield not to your father's choice,
+   444	You can endure the livery of a nun;
+   445	For aye to be shady cloister mew'd,
+   446	To live a barren sister all your life,
+   447	Chanting faint hymns to the cold, fruitless moon.
+   448	Thrice-blessed they that master so their blood
+   449	To undergo such maiden pilgrimage:
+   450	But earthlier happy is the rose distill'd
+   451	Than that which, withering on the virgin thorn,
+   452	Grows, lives, and dies, in single blessedness.
+   453	
+   454	HERMIA
+   455	So will I grow, so live, so die, my lord,
+   456	Ere I will yield my virgin patent up
+   457	Unto his lordship, whose unwished yoke
+   458	My soul consents not to give sovereignty.
+   459	
+   460	THESEUS
+   461	Take time to pause; and by the next new moon,--
+   462	The sealing-day betwixt my love and me
+   463	For everlasting bond of fellowship,--
+   464	Upon that day either prepare to die
+   465	For disobedience to your father's will;
+   466	Or else to wed Demetrius, as he would;
+   467	Or on Diana's altar to protest
+   468	For aye austerity and single life.
+   469	
+   470	DEMETRIUS
+   471	Relent, sweet Hermia;--and, Lysander, yield
+   472	Thy crazed title to my certain right.
+   473	
+   474	LYSANDER
+   475	You have her father's love, Demetrius;
+   476	Let me have Hermia's: do you marry him.
+   477	
+   478	EGEUS
+   479	Scornful Lysander! true, he hath my love;
+   480	And what is mine my love shall render him;
+   481	And she is mine; and all my right of her
+   482	I do estate unto Demetrius.
+   483	
+   484	LYSANDER
+   485	I am, my lord, as well deriv'd as he,
+   486	As well possess'd; my love is more than his;
+   487	My fortunes every way as fairly rank'd,
+   488	If not with vantage, as Demetrius's;
+   489	And, which is more than all these boasts can be,
+   490	I am belov'd of beauteous Hermia:
+   491	Why should not I then prosecute my right?
+   492	Demetrius, I'll avouch it to his head,
+   493	Made love to Nedar's daughter, Helena,
+   494	And won her soul; and she, sweet lady, dotes,
+   495	Devoutly dotes, dotes in idolatry,
+   496	Upon this spotted and inconstant man.
+   497	
+   498	THESEUS
+   499	I must confess that I have heard so much,
+   500	And with Demetrius thought to have spoke thereof;
+   501	But, being over-full of self-affairs,
+   502	My mind did lose it.--But, Demetrius, come;
+   503	And come, Egeus; you shall go with me;
+   504	I have some private schooling for you both.--
+   505	For you, fair Hermia, look you arm yourself
+   506	To fit your fancies to your father's will,
+   507	Or else the law of Athens yields you up,--
+   508	Which by no means we may extenuate,--
+   509	To death, or to a vow of single life.--
+   510	Come, my Hippolyta: what cheer, my love?
+   511	Demetrius, and Egeus, go along;
+   512	I must employ you in some business
+   513	Against our nuptial, and confer with you
+   514	Of something nearly that concerns yourselves.
+   515	
+   516	EGEUS
+   517	With duty and desire we follow you.
+   518	
+   519	[Exeunt THESEUS, HIPPOLYTA, EGEUS, DEMETRIUS, and Train.]
+   520	
+   521	LYSANDER
+   522	How now, my love! why is your cheek so pale?
+   523	How chance the roses there do fade so fast?
+   524	
+   525	HERMIA
+   526	Belike for want of rain, which I could well
+   527	Beteem them from the tempest of my eyes.
+   528	
+   529	LYSANDER
+   530	Ah me! for aught that I could ever read,
+   531	Could ever hear by tale or history,
+   532	The course of true love never did run smooth:
+   533	But either it was different in blood,--
+   534	
+   535	HERMIA
+   536	O cross! Too high to be enthrall'd to low!
+   537	
+   538	LYSANDER
+   539	Or else misgraffed in respect of years;--
+   540	
+   541	HERMIA
+   542	O spite! Too old to be engag'd to young!
+   543	
+   544	LYSANDER
+   545	Or else it stood upon the choice of friends:
+   546	
+   547	HERMIA
+   548	O hell! to choose love by another's eye!
+   549	
+   550	LYSANDER
+   551	Or, if there were a sympathy in choice,
+   552	War, death, or sickness, did lay siege to it,
+   553	Making it momentary as a sound,
+   554	Swift as a shadow, short as any dream;
+   555	Brief as the lightning in the collied night
+   556	That, in a spleen, unfolds both heaven and earth,
+   557	And ere a man hath power to say, Behold!
+   558	The jaws of darkness do devour it up:
+   559	So quick bright things come to confusion.
+   560	
+   561	HERMIA
+   562	If then true lovers have ever cross'd,
+   563	It stands as an edict in destiny:
+   564	Then let us teach our trial patience,
+   565	Because it is a customary cross;
+   566	As due to love as thoughts, and dreams, and sighs,
+   567	Wishes and tears, poor fancy's followers.
+   568	
+   569	LYSANDER
+   570	A good persuasion; therefore, hear me, Hermia.
+   571	I have a widow aunt, a dowager
+   572	Of great revenue, and she hath no child:
+   573	From Athens is her house remote seven leagues;
+   574	And she respects me as her only son.
+   575	There, gentle Hermia, may I marry thee;
+   576	And to that place the sharp Athenian law
+   577	Cannot pursue us. If thou lovest me then,
+   578	Steal forth thy father's house tomorrow night;
+   579	And in the wood, a league without the town,
+   580	Where I did meet thee once with Helena,
+   581	To do observance to a morn of May,
+   582	There will I stay for thee.
+   583	
+   584	HERMIA
+   585	                            My good Lysander!
+   586	I swear to thee by Cupid's strongest bow,
+   587	By his best arrow, with the golden head,
+   588	By the simplicity of Venus' doves,
+   589	By that which knitteth souls and prospers loves,
+   590	And by that fire which burn'd the Carthage queen,
+   591	When the false Trojan under sail was seen,--
+   592	By all the vows that ever men have broke,
+   593	In number more than ever women spoke,--
+   594	In that same place thou hast appointed me,
+   595	Tomorrow truly will I meet with thee.
+   596	
+   597	LYSANDER
+   598	Keep promise, love. Look, here comes Helena.
+   599	
+   600	[Enter HELENA.]
+   601	
+   602	HERMIA
+   603	God speed fair Helena! Whither away?
+   604	
+   605	HELENA
+   606	Call you me fair? that fair again unsay.
+   607	Demetrius loves your fair. O happy fair!
+   608	Your eyes are lode-stars; and your tongue's sweet air
+   609	More tuneable than lark to shepherd's ear,
+   610	When wheat is green, when hawthorn buds appear.
+   611	Sickness is catching: O, were favour so,
+   612	Yours would I catch, fair Hermia, ere I go;
+   613	My ear should catch your voice, my eye your eye,
+   614	My tongue should catch your tongue's sweet melody.
+   615	Were the world mine, Demetrius being bated,
+   616	The rest I'd give to be to you translated.
+   617	O, teach me how you look; and with what art
+   618	You sway the motion of Demetrius' heart!
+   619	
+   620	HERMIA
+   621	I frown upon him, yet he loves me still.
+   622	
+   623	HELENA
+   624	O that your frowns would teach my smiles such skill!
+   625	
+   626	HERMIA
+   627	I give him curses, yet he gives me love.
+   628	
+   629	HELENA
+   630	O that my prayers could such affection move!
+   631	
+   632	HERMIA
+   633	The more I hate, the more he follows me.
+   634	
+   635	HELENA
+   636	The more I love, the more he hateth me.
+   637	
+   638	HERMIA
+   639	His folly, Helena, is no fault of mine.
+   640	
+   641	HELENA
+   642	None, but your beauty: would that fault were mine!
+   643	
+   644	HERMIA
+   645	Take comfort; he no more shall see my face;
+   646	Lysander and myself will fly this place.--
+   647	Before the time I did Lysander see,
+   648	Seem'd Athens as a paradise to me:
+   649	O, then, what graces in my love do dwell,
+   650	That he hath turn'd a heaven unto hell!
+   651	
+   652	LYSANDER
+   653	Helen, to you our minds we will unfold:
+   654	To-morrow night, when Phoebe doth behold
+   655	Her silver visage in the watery glass,
+   656	Decking with liquid pearl the bladed grass,--
+   657	A time that lovers' flights doth still conceal,--
+   658	Through Athens' gates have we devis'd to steal.
+   659	
+   660	HERMIA
+   661	And in the wood where often you and I
+   662	Upon faint primrose beds were wont to lie,
+   663	Emptying our bosoms of their counsel sweet,
+   664	There my Lysander and myself shall meet:
+   665	And thence from Athens turn away our eyes,
+   666	To seek new friends and stranger companies.
+   667	Farewell, sweet playfellow: pray thou for us,
+   668	And good luck grant thee thy Demetrius!--
+   669	Keep word, Lysander: we must starve our sight
+   670	From lovers' food, till morrow deep midnight.
+   671	
+   672	LYSANDER
+   673	I will, my Hermia.
+   674	
+   675	[Exit HERMIA.]
+   676	
+   677	LYSANDER
+   678	                   Helena, adieu:
+   679	As you on him, Demetrius dote on you!
+   680	
+   681	[Exit LYSANDER.]
+   682	
+   683	HELENA
+   684	How happy some o'er other some can be!
+   685	Through Athens I am thought as fair as she.
+   686	But what of that? Demetrius thinks not so;
+   687	He will not know what all but he do know.
+   688	And as he errs, doting on Hermia's eyes,
+   689	So I, admiring of his qualities.
+   690	Things base and vile, holding no quantity,
+   691	Love can transpose to form and dignity.
+   692	Love looks not with the eyes, but with the mind;
+   693	And therefore is wing'd Cupid painted blind.
+   694	Nor hath love's mind of any judgment taste;
+   695	Wings and no eyes figure unheedy haste:
+   696	And therefore is love said to be a child,
+   697	Because in choice he is so oft beguil'd.
+   698	As waggish boys in game themselves forswear,
+   699	So the boy Love is perjur'd everywhere:
+   700	For ere Demetrius look'd on Hermia's eyne,
+   701	He hail'd down oaths that he was only mine;
+   702	And when this hail some heat from Hermia felt,
+   703	So he dissolv'd, and showers of oaths did melt.
+   704	I will go tell him of fair Hermia's flight;
+   705	Then to the wood will he to-morrow night
+   706	Pursue her; and for this intelligence
+   707	If I have thanks, it is a dear expense:
+   708	But herein mean I to enrich my pain,
+   709	To have his sight thither and back again.
+   710	
+   711	[Exit HELENA.]
+   712	
+   713	
+   714	
+   715	SCENE II. The Same. A Room in a Cottage.
+   716	
+   717	[Enter SNUG, BOTTOM, FLUTE, SNOUT, QUINCE, and STARVELING.]
+   718	
+   719	QUINCE
+   720	Is all our company here?
+   721	
+   722	BOTTOM
+   723	You were best to call them generally, man by man,
+   724	according to the scrip.
+   725	
+   726	QUINCE
+   727	Here is the scroll of every man's name, which is thought
+   728	fit, through all Athens, to play in our interlude before the
+   729	duke and duchess on his wedding-day at night.
+   730	
+   731	BOTTOM
+   732	First, good Peter Quince, say what the play treats on;
+   733	then read the names of the actors; and so grow to a point.
+   734	
+   735	QUINCE
+   736	Marry, our play is--The most lamentable comedy and most
+   737	cruel death of Pyramus and Thisby.
+   738	
+   739	BOTTOM
+   740	A very good piece of work, I assure you, and a merry.--
+   741	Now, good Peter Quince, call forth your actors by the scroll.--
+   742	Masters, spread yourselves.
+   743	
+   744	QUINCE
+   745	Answer, as I call you.--Nick Bottom, the weaver.
+   746	
+   747	BOTTOM
+   748	Ready. Name what part I am for, and proceed.
+   749	
+   750	QUINCE
+   751	You, Nick Bottom, are set down for Pyramus.
+   752	
+   753	BOTTOM
+   754	What is Pyramus? a lover, or a tyrant?
+   755	
+   756	QUINCE
+   757	A lover, that kills himself most gallantly for love.
+   758	
+   759	BOTTOM
+   760	That will ask some tears in the true performing of it.
+   761	If I do it, let the audience look to their eyes; I will move
+   762	storms; I will condole in some measure. To the rest:--yet my
+   763	chief humour is for a tyrant: I could play Ercles rarely, or a
+   764	part to tear a cat in, to make all split.
+   765	
+   766	The raging rocks
+   767	And shivering shocks
+   768	Shall break the locks
+   769	    Of prison gates:
+   770	
+   771	And Phibbus' car
+   772	Shall shine from far,
+   773	And make and mar
+   774	    The foolish Fates.
+   775	
+   776	This was lofty.--Now name the rest of the players.--This is
+   777	Ercles' vein, a tyrant's vein;--a lover is more condoling.
+   778	
+   779	QUINCE
+   780	Francis Flute, the bellows-mender.
+   781	
+   782	FLUTE
+   783	Here, Peter Quince.
+   784	
+   785	QUINCE
+   786	Flute, you must take Thisby on you.
+   787	
+   788	FLUTE
+   789	What is Thisby? a wandering knight?
+   790	
+   791	QUINCE
+   792	It is the lady that Pyramus must love.
+   793	
+   794	FLUTE
+   795	Nay, faith, let not me play a woman; I have a beard coming.
+   796	
+   797	QUINCE
+   798	That's all one; you shall play it in a mask, and you may speak as
+   799	small as you will.
+   800	
+   801	BOTTOM
+   802	An I may hide my face, let me play Thisby too:
+   803	I'll speak in a monstrous little voice;--'Thisne, Thisne!'--
+   804	'Ah, Pyramus, my lover dear; thy Thisby dear! and lady dear!'
+   805	
+   806	QUINCE
+   807	No, no, you must play Pyramus; and, Flute, you Thisby.
+   808	
+   809	BOTTOM
+   810	Well, proceed.
+   811	
+   812	QUINCE
+   813	Robin Starveling, the tailor.
+   814	
+   815	STARVELING
+   816	Here, Peter Quince.
+   817	
+   818	QUINCE
+   819	Robin Starveling, you must play Thisby's mother.--
+   820	Tom Snout, the tinker.
+   821	
+   822	SNOUT
+   823	Here, Peter Quince.
+   824	
+   825	QUINCE
+   826	You, Pyramus' father; myself, Thisby's father;--Snug,
+   827	the joiner, you, the lion's part:--and, I hope, here is a play
+   828	fitted.
+   829	
+   830	SNUG
+   831	Have you the lion's part written? pray you, if it be, give it
+   832	me, for I am slow of study.
+   833	
+   834	QUINCE
+   835	You may do it extempore, for it is nothing but roaring.
+   836	
+   837	BOTTOM
+   838	Let me play the lion too: I will roar that I will do
+   839	any man's heart good to hear me; I will roar that I will make the
+   840	duke say 'Let him roar again, let him roar again.'
+   841	
+   842	QUINCE
+   843	An you should do it too terribly, you would fright the
+   844	duchess and the ladies, that they would shriek; and that were
+   845	enough to hang us all.
+   846	
+   847	ALL
+   848	That would hang us every mother's son.
+   849	
+   850	BOTTOM
+   851	I grant you, friends, if you should fright the ladies
+   852	out of their wits, they would have no more discretion but to hang
+   853	us: but I will aggravate my voice so, that I will roar you as
+   854	gently as any sucking dove; I will roar you an 'twere any
+   855	nightingale.
+   856	
+   857	QUINCE
+   858	You can play no part but Pyramus; for Pyramus is a
+   859	sweet-faced man; a proper man, as one shall see in a summer's
+   860	day; a most lovely gentleman-like man; therefore you must
+   861	needs play Pyramus.
+   862	
+   863	BOTTOM
+   864	Well, I will undertake it. What beard were I best to play it in?
+   865	
+   866	QUINCE
+   867	Why, what you will.
+   868	
+   869	BOTTOM
+   870	I will discharge it in either your straw-colour beard,
+   871	your orange-tawny beard, your purple-in-grain beard, or your
+   872	French-crown-colour beard, your perfect yellow.
+   873	
+   874	QUINCE
+   875	Some of your French crowns have no hair at all, and
+   876	then you will play bare-faced.-- But, masters, here are your
+   877	parts: and I am to entreat you, request you, and desire you, to
+   878	con them by to-morrow night; and meet me in the palace wood, a
+   879	mile without the town, by moonlight; there will we rehearse: for
+   880	if we meet in the city, we shall be dogg'd with company, and our
+   881	devices known. In the meantime I will draw a bill of properties,
+   882	such as our play wants. I pray you, fail me not.
+   883	
+   884	BOTTOM
+   885	We will meet; and there we may rehearse most obscenely
+   886	and courageously. Take pains; be perfect; adieu.
+   887	
+   888	QUINCE
+   889	At the duke's oak we meet.
+   890	
+   891	BOTTOM
+   892	Enough; hold, or cut bow-strings.
+   893	
+   894	[Exeunt.]
+   895	
+   896	
+   897	ACT II.
+   898	
+   899	
+   900	SCENE I. A wood near Athens.
+   901	
+   902	[Enter a FAIRY at One door, and PUCK at another.]
+   903	
+   904	PUCK
+   905	How now, spirit! whither wander you?
+   906	
+   907	FAIRY
+   908	    Over hill, over dale,
+   909	      Thorough bush, thorough brier,
+   910	    Over park, over pale,
+   911	      Thorough flood, thorough fire,
+   912	    I do wander everywhere,
+   913	    Swifter than the moon's sphere;
+   914	    And I serve the fairy queen,
+   915	    To dew her orbs upon the green.
+   916	    The cowslips tall her pensioners be:
+   917	    In their gold coats spots you see;
+   918	    Those be rubies, fairy favours,
+   919	    In those freckles live their savours;
+   920	I must go seek some dew-drops here,
+   921	And hang a pearl in every cowslip's ear.
+   922	Farewell, thou lob of spirits; I'll be gone:
+   923	Our queen and all her elves come here anon.
+   924	
+   925	PUCK
+   926	The king doth keep his revels here to-night;
+   927	Take heed the Queen come not within his sight.
+   928	For Oberon is passing fell and wrath,
+   929	Because that she, as her attendant, hath
+   930	A lovely boy, stol'n from an Indian king;
+   931	She never had so sweet a changeling:
+   932	And jealous Oberon would have the child
+   933	Knight of his train, to trace the forests wild:
+   934	But she perforce withholds the loved boy,
+   935	Crowns him with flowers, and makes him all her joy:
+   936	And now they never meet in grove or green,
+   937	By fountain clear, or spangled starlight sheen,
+   938	But they do square; that all their elves for fear
+   939	Creep into acorn cups, and hide them there.
+   940	
+   941	FAIRY
+   942	Either I mistake your shape and making quite,
+   943	Or else you are that shrewd and knavish sprite
+   944	Call'd Robin Goodfellow: are not you he
+   945	That frights the maidens of the villagery;
+   946	Skim milk, and sometimes labour in the quern,
+   947	And bootless make the breathless housewife churn;
+   948	And sometime make the drink to bear no barm;
+   949	Mislead night-wanderers, laughing at their harm?
+   950	Those that Hobgoblin call you, and sweet Puck,
+   951	You do their work, and they shall have good luck:
+   952	Are not you he?
+   953	
+   954	PUCK
+   955	                Thou speak'st aright;
+   956	I am that merry wanderer of the night.
+   957	I jest to Oberon, and make him smile,
+   958	When I a fat and bean-fed horse beguile,
+   959	Neighing in likeness of a filly foal;
+   960	And sometime lurk I in a gossip's bowl,
+   961	In very likeness of a roasted crab;
+   962	And, when she drinks, against her lips I bob,
+   963	And on her withered dewlap pour the ale.
+   964	The wisest aunt, telling the saddest tale,
+   965	Sometime for three-foot stool mistaketh me;
+   966	Then slip I from her bum, down topples she,
+   967	And 'tailor' cries, and falls into a cough;
+   968	And then the whole quire hold their hips and loffe,
+   969	And waxen in their mirth, and neeze, and swear
+   970	A merrier hour was never wasted there.--
+   971	But room, fairy, here comes Oberon.
+   972	
+   973	FAIRY
+   974	And here my mistress.--Would that he were gone!
+   975	
+   976	[Enter OBERON at one door, with his Train, and TITANIA,
+   977	at another, with hers.]
+   978	
+   979	OBERON
+   980	Ill met by moonlight, proud Titania.
+   981	
+   982	TITANIA
+   983	What, jealous Oberon! Fairies, skip hence;
+   984	I have forsworn his bed and company.
+   985	
+   986	OBERON
+   987	Tarry, rash wanton: am not I thy lord?
+   988	
+   989	TITANIA
+   990	Then I must be thy lady; but I know
+   991	When thou hast stol'n away from fairy-land,
+   992	And in the shape of Corin sat all day,
+   993	Playing on pipes of corn, and versing love
+   994	To amorous Phillida. Why art thou here,
+   995	Come from the farthest steep of India,
+   996	But that, forsooth, the bouncing Amazon,
+   997	Your buskin'd mistress and your warrior love,
+   998	To Theseus must be wedded; and you come
+   999	To give their bed joy and prosperity.
+  1000	
+  1001	OBERON
+  1002	How canst thou thus, for shame, Titania,
+  1003	Glance at my credit with Hippolyta,
+  1004	Knowing I know thy love to Theseus?
+  1005	Didst not thou lead him through the glimmering night
+  1006	From Perigenia, whom he ravish'd?
+  1007	And make him with fair Aegle break his faith,
+  1008	With Ariadne and Antiopa?
+  1009	
+  1010	TITANIA
+  1011	These are the forgeries of jealousy:
+  1012	And never, since the middle summer's spring,
+  1013	Met we on hill, in dale, forest, or mead,
+  1014	By paved fountain, or by rushy brook,
+  1015	Or on the beached margent of the sea,
+  1016	To dance our ringlets to the whistling wind,
+  1017	But with thy brawls thou hast disturb'd our sport.
+  1018	Therefore the winds, piping to us in vain,
+  1019	As in revenge, have suck'd up from the sea
+  1020	Contagious fogs; which, falling in the land,
+  1021	Hath every pelting river made so proud
+  1022	That they have overborne their continents:
+  1023	The ox hath therefore stretch'd his yoke in vain,
+  1024	The ploughman lost his sweat; and the green corn
+  1025	Hath rotted ere his youth attain'd a beard:
+  1026	The fold stands empty in the drowned field,
+  1027	And crows are fatted with the murrion flock;
+  1028	The nine men's morris is fill'd up with mud;
+  1029	And the quaint mazes in the wanton green,
+  1030	For lack of tread, are undistinguishable:
+  1031	The human mortals want their winter here;
+  1032	No night is now with hymn or carol blest:--
+  1033	Therefore the moon, the governess of floods,
+  1034	Pale in her anger, washes all the air,
+  1035	That rheumatic diseases do abound:
+  1036	And thorough this distemperature we see
+  1037	The seasons alter: hoary-headed frosts
+  1038	Fall in the fresh lap of the crimson rose;
+  1039	And on old Hyem's thin and icy crown
+  1040	An odorous chaplet of sweet summer buds
+  1041	Is, as in mockery, set: the spring, the summer,
+  1042	The childing autumn, angry winter, change
+  1043	Their wonted liveries; and the maz'd world,
+  1044	By their increase, now knows not which is which:
+  1045	And this same progeny of evils comes
+  1046	From our debate, from our dissension:
+  1047	We are their parents and original.
+  1048	
+  1049	OBERON
+  1050	Do you amend it, then: it lies in you:
+  1051	Why should Titania cross her Oberon?
+  1052	I do but beg a little changeling boy
+  1053	To be my henchman.
+  1054	
+  1055	TITANIA
+  1056	                   Set your heart at rest;
+  1057	The fairy-land buys not the child of me.
+  1058	His mother was a vot'ress of my order:
+  1059	And, in the spiced Indian air, by night,
+  1060	Full often hath she gossip'd by my side;
+  1061	And sat with me on Neptune's yellow sands,
+  1062	Marking the embarked traders on the flood;
+  1063	When we have laugh'd to see the sails conceive,
+  1064	And grow big-bellied with the wanton wind;
+  1065	Which she, with pretty and with swimming gait
+  1066	Following,--her womb then rich with my young squire,--
+  1067	Would imitate; and sail upon the land,
+  1068	To fetch me trifles, and return again,
+  1069	As from a voyage, rich with merchandise.
+  1070	But she, being mortal, of that boy did die;
+  1071	And for her sake do I rear up her boy:
+  1072	And for her sake I will not part with him.
+  1073	
+  1074	OBERON
+  1075	How long within this wood intend you stay?
+  1076	
+  1077	TITANIA
+  1078	Perchance till after Theseus' wedding-day.
+  1079	If you will patiently dance in our round,
+  1080	And see our moonlight revels, go with us;
+  1081	If not, shun me, and I will spare your haunts.
+  1082	
+  1083	OBERON
+  1084	Give me that boy and I will go with thee.
+  1085	
+  1086	TITANIA
+  1087	Not for thy fairy kingdom. Fairies, away:
+  1088	We shall chide downright if I longer stay.
+  1089	
+  1090	[Exit TITANIA with her Train.]
+  1091	
+  1092	OBERON
+  1093	Well, go thy way: thou shalt not from this grove
+  1094	Till I torment thee for this injury.--
+  1095	My gentle Puck, come hither: thou remember'st
+  1096	Since once I sat upon a promontory,
+  1097	And heard a mermaid, on a dolphin's back,
+  1098	Uttering such dulcet and harmonious breath,
+  1099	That the rude sea grew civil at her song,
+  1100	And certain stars shot madly from their spheres
+  1101	To hear the sea-maid's music.
+  1102	
+  1103	PUCK
+  1104	                              I remember.
+  1105	
+  1106	OBERON
+  1107	That very time I saw,--but thou couldst not,--
+  1108	Flying between the cold moon and the earth,
+  1109	Cupid, all arm'd: a certain aim he took
+  1110	At a fair vestal, throned by the west;
+  1111	And loos'd his love-shaft smartly from his bow,
+  1112	As it should pierce a hundred thousand hearts;
+  1113	But I might see young Cupid's fiery shaft
+  1114	Quench'd in the chaste beams of the watery moon;
+  1115	And the imperial votaress passed on,
+  1116	In maiden meditation, fancy-free.
+  1117	Yet mark'd I where the bolt of Cupid fell:
+  1118	It fell upon a little western flower,--
+  1119	Before milk-white, now purple with love's wound,--
+  1120	And maidens call it love-in-idleness.
+  1121	Fetch me that flower, the herb I showed thee once:
+  1122	The juice of it on sleeping eyelids laid
+  1123	Will make or man or woman madly dote
+  1124	Upon the next live creature that it sees.
+  1125	Fetch me this herb: and be thou here again
+  1126	Ere the leviathan can swim a league.
+  1127	
+  1128	PUCK
+  1129	I'll put a girdle round about the earth
+  1130	In forty minutes.
+  1131	
+  1132	[Exit PUCK.]
+  1133	
+  1134	OBERON
+  1135	                  Having once this juice,
+  1136	I'll watch Titania when she is asleep,
+  1137	And drop the liquor of it in her eyes:
+  1138	The next thing then she waking looks upon,--
+  1139	Be it on lion, bear, or wolf, or bull,
+  1140	On meddling monkey, or on busy ape,--
+  1141	She shall pursue it with the soul of love.
+  1142	And ere I take this charm from off her sight,--
+  1143	As I can take it with another herb,
+  1144	I'll make her render up her page to me.
+  1145	But who comes here? I am invisible;
+  1146	And I will overhear their conference.
+  1147	
+  1148	[Enter DEMETRIUS, HELENA following him.]
+  1149	
+  1150	DEMETRIUS
+  1151	I love thee not, therefore pursue me not.
+  1152	Where is Lysander and fair Hermia?
+  1153	The one I'll slay, the other slayeth me.
+  1154	Thou told'st me they were stol'n into this wood,
+  1155	And here am I, and wode within this wood,
+  1156	Because I cannot meet with Hermia.
+  1157	Hence, get thee gone, and follow me no more.
+  1158	
+  1159	HELENA
+  1160	You draw me, you hard-hearted adamant;
+  1161	But yet you draw not iron, for my heart
+  1162	Is true as steel. Leave you your power to draw,
+  1163	And I shall have no power to follow you.
+  1164	
+  1165	DEMETRIUS
+  1166	Do I entice you? Do I speak you fair?
+  1167	Or, rather, do I not in plainest truth
+  1168	Tell you I do not, nor I cannot love you?
+  1169	
+  1170	HELENA
+  1171	And even for that do I love you the more.
+  1172	I am your spaniel; and, Demetrius,
+  1173	The more you beat me, I will fawn on you:
+  1174	Use me but as your spaniel, spurn me, strike me,
+  1175	Neglect me, lose me; only give me leave,
+  1176	Unworthy as I am, to follow you.
+  1177	What worser place can I beg in your love,
+  1178	And yet a place of high respect with me,--
+  1179	Than to be used as you use your dog?
+  1180	
+  1181	DEMETRIUS
+  1182	Tempt not too much the hatred of my spirit;
+  1183	For I am sick when I do look on thee.
+  1184	
+  1185	HELENA
+  1186	And I am sick when I look not on you.
+  1187	
+  1188	DEMETRIUS
+  1189	You do impeach your modesty too much,
+  1190	To leave the city, and commit yourself
+  1191	Into the hands of one that loves you not;
+  1192	To trust the opportunity of night,
+  1193	And the ill counsel of a desert place,
+  1194	With the rich worth of your virginity.
+  1195	
+  1196	HELENA
+  1197	Your virtue is my privilege for that.
+  1198	It is not night when I do see your face,
+  1199	Therefore I think I am not in the night;
+  1200	Nor doth this wood lack worlds of company;
+  1201	For you, in my respect, are all the world:
+  1202	Then how can it be said I am alone
+  1203	When all the world is here to look on me?
+  1204	
+  1205	DEMETRIUS
+  1206	I'll run from thee, and hide me in the brakes,
+  1207	And leave thee to the mercy of wild beasts.
+  1208	
+  1209	HELENA
+  1210	The wildest hath not such a heart as you.
+  1211	Run when you will, the story shall be chang'd;
+  1212	Apollo flies, and Daphne holds the chase;
+  1213	The dove pursues the griffin; the mild hind
+  1214	Makes speed to catch the tiger,--bootless speed,
+  1215	When cowardice pursues and valour flies.
+  1216	
+  1217	DEMETRIUS
+  1218	I will not stay thy questions; let me go:
+  1219	Or, if thou follow me, do not believe
+  1220	But I shall do thee mischief in the wood.
+  1221	
+  1222	HELENA
+  1223	Ay, in the temple, in the town, the field,
+  1224	You do me mischief. Fie, Demetrius!
+  1225	Your wrongs do set a scandal on my sex:
+  1226	We cannot fight for love as men may do:
+  1227	We should be woo'd, and were not made to woo.
+  1228	I'll follow thee, and make a heaven of hell,
+  1229	To die upon the hand I love so well.
+  1230	
+  1231	[Exeunt DEMETRIUS and HELENA.]
+  1232	
+  1233	OBERON
+  1234	Fare thee well, nymph: ere he do leave this grove,
+  1235	Thou shalt fly him, and he shall seek thy love.--
+  1236	
+  1237	[Re-enter PUCK.]
+  1238	
+  1239	Hast thou the flower there? Welcome, wanderer.
+  1240	
+  1241	PUCK
+  1242	Ay, there it is.
+  1243	
+  1244	OBERON
+  1245	                 I pray thee give it me.
+  1246	I know a bank whereon the wild thyme blows,
+  1247	Where ox-lips and the nodding violet grows;
+  1248	Quite over-canopied with luscious woodbine,
+  1249	With sweet musk-roses, and with eglantine:
+  1250	There sleeps Titania sometime of the night,
+  1251	Lulled in these flowers with dances and delight;
+  1252	And there the snake throws her enamell'd skin,
+  1253	Weed wide enough to wrap a fairy in:
+  1254	And with the juice of this I'll streak her eyes,
+  1255	And make her full of hateful fantasies.
+  1256	Take thou some of it, and seek through this grove:
+  1257	A sweet Athenian lady is in love
+  1258	With a disdainful youth: anoint his eyes;
+  1259	But do it when the next thing he espies
+  1260	May be the lady: thou shalt know the man
+  1261	By the Athenian garments he hath on.
+  1262	Effect it with some care, that he may prove
+  1263	More fond on her than she upon her love:
+  1264	And look thou meet me ere the first cock crow.
+  1265	
+  1266	PUCK
+  1267	Fear not, my lord; your servant shall do so.
+  1268	
+  1269	[Exeunt.]
+  1270	
+  1271	
+  1272	
+  1273	SCENE II. Another part of the wood.
+  1274	
+  1275	[Enter TITANIA, with her Train.]
+  1276	
+  1277	TITANIA
+  1278	Come, now a roundel and a fairy song;
+  1279	Then, for the third part of a minute, hence;
+  1280	Some to kill cankers in the musk-rose buds;
+  1281	Some war with rere-mice for their leathern wings,
+  1282	To make my small elves coats; and some keep back
+  1283	The clamorous owl, that nightly hoots and wonders
+  1284	At our quaint spirits. Sing me now asleep;
+  1285	Then to your offices, and let me rest.
+  1286	
+  1287	      SONG.
+  1288	        I.
+  1289	FIRST FAIRY
+  1290	   You spotted snakes, with double tongue,
+  1291	     Thorny hedgehogs, be not seen;
+  1292	   Newts and blind-worms do no wrong;
+  1293	     Come not near our fairy queen:
+  1294	
+  1295	     CHORUS.
+  1296	   Philomel, with melody,
+  1297	   Sing in our sweet lullaby:
+  1298	Lulla, lulla, lullaby; lulla, lulla, lullaby:
+  1299	   Never harm, nor spell, nor charm,
+  1300	   Come our lovely lady nigh;
+  1301	   So good-night, with lullaby.
+  1302	
+  1303	        II.
+  1304	SECOND FAIRY
+  1305	   Weaving spiders, come not here;
+  1306	     Hence, you long-legg'd spinners, hence;
+  1307	   Beetles black, approach not near;
+  1308	     Worm nor snail do no offence.
+  1309	
+  1310	    CHORUS
+  1311	Philomel with melody, &c.
+  1312	
+  1313	
+  1314	FIRST FAIRY
+  1315	Hence away; now all is well.
+  1316	One, aloof, stand sentinel.
+  1317	
+  1318	[Exeunt Fairies. TITANIA sleeps.]
+  1319	
+  1320	[Enter OBERON.]
+  1321	
+  1322	OBERON
+  1323	What thou seest when thou dost wake,
+  1324	[Squeezes the flower on TITANIA'S eyelids.]
+  1325	Do it for thy true-love take;
+  1326	Love and languish for his sake;
+  1327	Be it ounce, or cat, or bear,
+  1328	Pard, or boar with bristled hair,
+  1329	In thy eye that shall appear
+  1330	When thou wak'st, it is thy dear;
+  1331	Wake when some vile thing is near.
+  1332	
+  1333	[Exit.]
+  1334	
+  1335	[Enter LYSANDER and HERMIA.]
+  1336	
+  1337	LYSANDER
+  1338	Fair love, you faint with wandering in the wood;
+  1339	  And, to speak troth, I have forgot our way;
+  1340	We'll rest us, Hermia, if you think it good,
+  1341	  And tarry for the comfort of the day.
+  1342	
+  1343	HERMIA
+  1344	Be it so, Lysander: find you out a bed,
+  1345	For I upon this bank will rest my head.
+  1346	
+  1347	LYSANDER
+  1348	One turf shall serve as pillow for us both;
+  1349	One heart, one bed, two bosoms, and one troth.
+  1350	
+  1351	HERMIA
+  1352	Nay, good Lysander; for my sake, my dear,
+  1353	Lie farther off yet, do not lie so near.
+  1354	
+  1355	LYSANDER
+  1356	O, take the sense, sweet, of my innocence;
+  1357	Love takes the meaning in love's conference.
+  1358	I mean that my heart unto yours is knit;
+  1359	So that but one heart we can make of it:
+  1360	Two bosoms interchained with an oath;
+  1361	So then two bosoms and a single troth.
+  1362	Then by your side no bed-room me deny;
+  1363	For lying so, Hermia, I do not lie.
+  1364	
+  1365	HERMIA
+  1366	Lysander riddles very prettily:--
+  1367	Now much beshrew my manners and my pride
+  1368	If Hermia meant to say Lysander lied!
+  1369	But, gentle friend, for love and courtesy
+  1370	Lie further off; in human modesty,
+  1371	Such separation as may well be said
+  1372	Becomes a virtuous bachelor and a maid:
+  1373	So far be distant; and good night, sweet friend:
+  1374	Thy love ne'er alter till thy sweet life end!
+  1375	
+  1376	LYSANDER
+  1377	Amen, amen, to that fair prayer say I;
+  1378	And then end life when I end loyalty!
+  1379	Here is my bed: Sleep give thee all his rest!
+  1380	
+  1381	HERMIA
+  1382	With half that wish the wisher's eyes be pressed!
+  1383	
+  1384	[They sleep.]
+  1385	
+  1386	[Enter PUCK.]
+  1387	
+  1388	PUCK
+  1389	  Through the forest have I gone,
+  1390	  But Athenian found I none,
+  1391	  On whose eyes I might approve
+  1392	  This flower's force in stirring love.
+  1393	  Night and silence! Who is here?
+  1394	  Weeds of Athens he doth wear:
+  1395	  This is he, my master said,
+  1396	  Despised the Athenian maid;
+  1397	  And here the maiden, sleeping sound,
+  1398	  On the dank and dirty ground.
+  1399	  Pretty soul! she durst not lie
+  1400	  Near this lack-love, this kill-courtesy.
+  1401	  Churl, upon thy eyes I throw
+  1402	  All the power this charm doth owe;
+  1403	  When thou wak'st let love forbid
+  1404	  Sleep his seat on thy eyelid:
+  1405	  So awake when I am gone;
+  1406	  For I must now to Oberon.
+  1407	
+  1408	[Exit.]
+  1409	
+  1410	[Enter DEMETRIUS and HELENA, running.]
+  1411	
+  1412	HELENA
+  1413	Stay, though thou kill me, sweet Demetrius.
+  1414	
+  1415	DEMETRIUS
+  1416	I charge thee, hence, and do not haunt me thus.
+  1417	
+  1418	HELENA
+  1419	O, wilt thou darkling leave me? do not so.
+  1420	
+  1421	DEMETRIUS.
+  1422	Stay on thy peril; I alone will go.
+  1423	
+  1424	[Exit DEMETRIUS.]
+  1425	
+  1426	HELENA
+  1427	O, I am out of breath in this fond chase!
+  1428	The more my prayer, the lesser is my grace.
+  1429	Happy is Hermia, wheresoe'er she lies,
+  1430	For she hath blessed and attractive eyes.
+  1431	How came her eyes so bright? Not with salt tears:
+  1432	If so, my eyes are oftener wash'd than hers.
+  1433	No, no, I am as ugly as a bear;
+  1434	For beasts that meet me run away for fear:
+  1435	Therefore no marvel though Demetrius
+  1436	Do, as a monster, fly my presence thus.
+  1437	What wicked and dissembling glass of mine
+  1438	Made me compare with Hermia's sphery eyne?--
+  1439	But who is here?--Lysander! on the ground!
+  1440	Dead? or asleep? I see no blood, no wound.
+  1441	Lysander, if you live, good sir, awake.
+  1442	
+  1443	LYSANDER
+  1444	[Waking.]
+  1445	And run through fire I will for thy sweet sake.
+  1446	Transparent Helena! Nature shows art,
+  1447	That through thy bosom makes me see thy heart.
+  1448	Where is Demetrius? O, how fit a word
+  1449	Is that vile name to perish on my sword!
+  1450	
+  1451	HELENA
+  1452	Do not say so, Lysander; say not so:
+  1453	What though he love your Hermia? Lord, what though?
+  1454	Yet Hermia still loves you: then be content.
+  1455	
+  1456	LYSANDER.
+  1457	Content with Hermia? No: I do repent
+  1458	The tedious minutes I with her have spent.
+  1459	Not Hermia but Helena I love:
+  1460	Who will not change a raven for a dove?
+  1461	The will of man is by his reason sway'd;
+  1462	And reason says you are the worthier maid.
+  1463	Things growing are not ripe until their season;
+  1464	So I, being young, till now ripe not to reason;
+  1465	And touching now the point of human skill,
+  1466	Reason becomes the marshal to my will,
+  1467	And leads me to your eyes, where I o'erlook
+  1468	Love's stories, written in love's richest book.
+  1469	
+  1470	HELENA
+  1471	Wherefore was I to this keen mockery born?
+  1472	When at your hands did I deserve this scorn?
+  1473	Is't not enough, is't not enough, young man,
+  1474	That I did never, no, nor never can
+  1475	Deserve a sweet look from Demetrius' eye,
+  1476	But you must flout my insufficiency?
+  1477	Good troth, you do me wrong,--good sooth, you do--
+  1478	In such disdainful manner me to woo.
+  1479	But fare you well: perforce I must confess,
+  1480	I thought you lord of more true gentleness.
+  1481	O, that a lady of one man refus'd
+  1482	Should of another therefore be abus'd!
+  1483	
+  1484	[Exit.]
+  1485	
+  1486	LYSANDER
+  1487	She sees not Hermia:--Hermia, sleep thou there;
+  1488	And never mayst thou come Lysander near!
+  1489	For, as a surfeit of the sweetest things
+  1490	The deepest loathing to the stomach brings;
+  1491	Or, as the heresies that men do leave
+  1492	Are hated most of those they did deceive;
+  1493	So thou, my surfeit and my heresy,
+  1494	Of all be hated, but the most of me!
+  1495	And, all my powers, address your love and might
+  1496	To honour Helen, and to be her knight!
+  1497	
+  1498	[Exit.]
+  1499	
+  1500	HERMIA
+  1501	[Starting.]
+  1502	Help me, Lysander, help me! do thy best
+  1503	To pluck this crawling serpent from my breast!
+  1504	Ay me, for pity!--What a dream was here!
+  1505	Lysander, look how I do quake with fear!
+  1506	Methought a serpent eat my heart away,
+  1507	And you sat smiling at his cruel prey.--
+  1508	Lysander! what, removed? Lysander! lord!
+  1509	What, out of hearing? gone? no sound, no word?
+  1510	Alack, where are you? speak, an if you hear;
+  1511	Speak, of all loves! I swoon almost with fear.
+  1512	No?--then I well perceive you are not nigh:
+  1513	Either death or you I'll find immediately.
+  1514	
+  1515	[Exit.]
+  1516	
+  1517	
+  1518	ACT III.
+  1519	
+  1520	SCENE I. The Wood. The Queen of Fairies lying asleep.
+  1521	
+  1522	[Enter QUINCE, SNUG, BOTTOM, FLUTE, SNOUT, and STARVELING.]
+  1523	
+  1524	BOTTOM
+  1525	Are we all met?
+  1526	
+  1527	QUINCE
+  1528	Pat, pat; and here's a marvellous convenient place for our
+  1529	rehearsal. This green plot shall be our stage, this hawthorn
+  1530	brake our tiring-house; and we will do it in action, as we will
+  1531	do it before the duke.
+  1532	
+  1533	BOTTOM
+  1534	Peter Quince,--
+  1535	
+  1536	QUINCE
+  1537	What sayest thou, bully Bottom?
+  1538	
+  1539	BOTTOM
+  1540	There are things in this comedy of 'Pyramus and Thisby' that
+  1541	will never please. First, Pyramus must draw a sword to kill
+  1542	himself; which the ladies cannot abide. How answer you that?
+  1543	
+  1544	SNOUT
+  1545	By'r lakin, a parlous fear.
+  1546	
+  1547	STARVELING
+  1548	I believe we must leave the killing out, when all is done.
+  1549	
+  1550	BOTTOM
+  1551	Not a whit: I have a device to make all well. Write me a
+  1552	prologue; and let the prologue seem to say we will do no harm
+  1553	with our swords, and that Pyramus is not killed indeed; and for
+  1554	the more better assurance, tell them that I Pyramus am not
+  1555	Pyramus but Bottom the weaver: this will put them out of fear.
+  1556	
+  1557	QUINCE
+  1558	Well, we will have such a prologue; and it shall be
+  1559	written in eight and six.
+  1560	
+  1561	BOTTOM
+  1562	No, make it two more; let it be written in eight and eight.
+  1563	
+  1564	SNOUT
+  1565	Will not the ladies be afeard of the lion?
+  1566	
+  1567	STARVELING
+  1568	I fear it, I promise you.
+  1569	
+  1570	BOTTOM
+  1571	Masters, you ought to consider with yourselves: to bring in,
+  1572	God shield us! a lion among ladies is a most dreadful thing:
+  1573	for there is not a more fearful wild-fowl than your lion living;
+  1574	and we ought to look to it.
+  1575	
+  1576	SNOUT
+  1577	Therefore another prologue must tell he is not a lion.
+  1578	
+  1579	BOTTOM
+  1580	Nay, you must name his name, and half his face must be seen
+  1581	through the lion's neck; and he himself must speak through,
+  1582	saying thus, or to the same defect,--'Ladies,' or, 'Fair ladies, I
+  1583	would wish you, or, I would request you, or, I would entreat you,
+  1584	not to fear, not to tremble: my life for yours. If you think I
+  1585	come hither as a lion, it were pity of my life. No, I am no such
+  1586	thing; I am a man as other men are:'--and there, indeed, let him
+  1587	name his name, and tell them plainly he is Snug the joiner.
+  1588	
+  1589	QUINCE
+  1590	Well, it shall be so. But there is two hard things; that
+  1591	is, to bring the moonlight into a chamber: for, you know,
+  1592	Pyramus and Thisbe meet by moonlight.
+  1593	
+  1594	SNOUT
+  1595	Doth the moon shine that night we play our play?
+  1596	
+  1597	BOTTOM
+  1598	A calendar, a calendar! look in the almanack; find out
+  1599	moonshine, find out moonshine.
+  1600	
+  1601	QUINCE
+  1602	Yes, it doth shine that night.
+  1603	
+  1604	BOTTOM
+  1605	Why, then may you leave a casement of the great chamber-window,
+  1606	where we play, open; and the moon may shine in at the casement.
+  1607	
+  1608	QUINCE
+  1609	Ay; or else one must come in with a bush of thorns and a
+  1610	lantern, and say he comes to disfigure or to present the person
+  1611	of moonshine. Then there is another thing: we must have a
+  1612	wall in the great chamber; for Pyramus and Thisby, says the
+  1613	story, did talk through the chink of a wall.
+  1614	
+  1615	SNOUT
+  1616	You can never bring in a wall.--What say you, Bottom?
+  1617	
+  1618	BOTTOM
+  1619	Some man or other must present wall: and let him have
+  1620	some plaster, or some loam, or some rough-cast about him, to
+  1621	signify wall; and let him hold his fingers thus, and through that
+  1622	cranny shall Pyramus and Thisby whisper.
+  1623	
+  1624	QUINCE
+  1625	If that may be, then all is well. Come, sit down, every
+  1626	mother's son, and rehearse your parts. Pyramus, you begin:
+  1627	when you have spoken your speech, enter into that brake; and so
+  1628	every one according to his cue.
+  1629	
+  1630	[Enter PUCK behind.]
+  1631	
+  1632	PUCK
+  1633	What hempen homespuns have we swaggering here,
+  1634	So near the cradle of the fairy queen?
+  1635	What, a play toward! I'll be an auditor;
+  1636	An actor too perhaps, if I see cause.
+  1637	
+  1638	QUINCE
+  1639	Speak, Pyramus.--Thisby, stand forth.
+  1640	
+  1641	PYRAMUS
+  1642	  'Thisby, the flowers of odious savours sweet,'
+  1643	
+  1644	QUINCE
+  1645	Odours, odours.
+  1646	
+  1647	PYRAMUS
+  1648	  '--odours savours sweet:
+  1649	  So hath thy breath, my dearest Thisby dear.--
+  1650	But hark, a voice! stay thou but here awhile,
+  1651	  And by and by I will to thee appear.'
+  1652	
+  1653	[Exit.]
+  1654	
+  1655	PUCK
+  1656	A stranger Pyramus than e'er played here!
+  1657	
+  1658	[Aside.--Exit.]
+  1659	
+  1660	THISBE
+  1661	Must I speak now?
+  1662	
+  1663	QUINCE
+  1664	Ay, marry, must you: for you must understand he goes
+  1665	but to see a noise that he heard, and is to come again.
+  1666	
+  1667	THISBE
+  1668	  'Most radiant Pyramus, most lily white of hue,
+  1669	  Of colour like the red rose on triumphant brier,
+  1670	Most brisky juvenal, and eke most lovely Jew,
+  1671	  As true as truest horse, that would never tire,
+  1672	I'll meet thee, Pyramus, at Ninny's tomb.'
+  1673	
+  1674	QUINCE
+  1675	Ninus' tomb, man: why, you must not speak that yet:
+  1676	that you answer to Pyramus. You speak all your part at once,
+  1677	cues, and all.--Pyramus enter: your cue is past; it is 'never
+  1678	tire.'
+  1679	
+  1680	[Re-enter PUCK, and BOTTOM with an ass's head.]
+  1681	
+  1682	THISBE
+  1683	O,'--As true as truest horse, that yet would never tire.'
+  1684	
+  1685	PYRAMUS
+  1686	'If I were fair, Thisby, I were only thine:--'
+  1687	
+  1688	QUINCE
+  1689	O monstrous! O strange! we are haunted. Pray, masters!
+  1690	fly, masters! Help!
+  1691	
+  1692	[Exeunt Clowns.]
+  1693	
+  1694	PUCK
+  1695	I'll follow you; I'll lead you about a round,
+  1696	  Through bog, through bush, through brake, through brier;
+  1697	Sometime a horse I'll be, sometime a hound,
+  1698	  A hog, a headless bear, sometime a fire;
+  1699	And neigh, and bark, and grunt, and roar, and burn,
+  1700	Like horse, hound, hog, bear, fire, at every turn.
+  1701	
+  1702	[Exit.]
+  1703	
+  1704	BOTTOM
+  1705	Why do they run away? This is a knavery of them to make
+  1706	me afeard.
+  1707	
+  1708	[Re-enter SNOUT.]
+  1709	
+  1710	SNOUT
+  1711	O Bottom, thou art changed! What do I see on thee?
+  1712	
+  1713	BOTTOM
+  1714	What do you see? you see an ass-head of your own, do you?
+  1715	
+  1716	[Re-enter QUINCE.]
+  1717	
+  1718	QUINCE
+  1719	Bless thee, Bottom! bless thee! thou art translated.
+  1720	
+  1721	[Exit.]
+  1722	
+  1723	BOTTOM
+  1724	I see their knavery: this is to make an ass of me; to
+  1725	fright me, if they could. But I will not stir from this
+  1726	place, do what they can: I will walk up and down here,
+  1727	and I will sing, that they shall hear I am not afraid.
+  1728	
+  1729	[Sings.]
+  1730	
+  1731	   The ousel cock, so black of hue,
+  1732	     With orange-tawny bill,
+  1733	   The throstle with his note so true,
+  1734	     The wren with little quill.
+  1735	
+  1736	TITANIA
+  1737	[Waking.]
+  1738	What angel wakes me from my flowery bed?
+  1739	
+  1740	BOTTOM
+  1741	[Sings.]
+  1742	   The finch, the sparrow, and the lark,
+  1743	     The plain-song cuckoo gray,
+  1744	   Whose note full many a man doth mark,
+  1745	     And dares not answer nay;--
+  1746	for, indeed, who would set his wit to so foolish a bird?
+  1747	Who would give a bird the lie, though he cry 'cuckoo' never so?
+  1748	
+  1749	TITANIA
+  1750	I pray thee, gentle mortal, sing again;
+  1751	Mine ear is much enamour'd of thy note.
+  1752	So is mine eye enthralled to thy shape;
+  1753	And thy fair virtue's force perforce doth move me,
+  1754	On the first view, to say, to swear, I love thee.
+  1755	
+  1756	BOTTOM
+  1757	Methinks, mistress, you should have little reason for
+  1758	that: and yet, to say the truth, reason and love keep little
+  1759	company together now-a-days: the more the pity that some honest
+  1760	neighbours will not make them friends. Nay, I can gleek upon
+  1761	occasion.
+  1762	
+  1763	TITANIA
+  1764	Thou art as wise as thou art beautiful.
+  1765	
+  1766	BOTTOM
+  1767	Not so, neither: but if I had wit enough to get out of
+  1768	this wood, I have enough to serve mine own turn.
+  1769	
+  1770	TITANIA
+  1771	Out of this wood do not desire to go;
+  1772	Thou shalt remain here whether thou wilt or no.
+  1773	I am a spirit of no common rate,--
+  1774	The summer still doth tend upon my state;
+  1775	And I do love thee: therefore, go with me,
+  1776	I'll give thee fairies to attend on thee;
+  1777	And they shall fetch thee jewels from the deep,
+  1778	And sing, while thou on pressed flowers dost sleep:
+  1779	And I will purge thy mortal grossness so
+  1780	That thou shalt like an airy spirit go.--
+  1781	Peasblossom! Cobweb! Moth! and Mustardseed!
+  1782	
+  1783	[Enter Four Fairies.]
+  1784	
+  1785	FIRST FAIRY
+  1786	Ready.
+  1787	
+  1788	SECOND FAIRY
+  1789	     And I.
+  1790	
+  1791	THIRD FAIRY
+  1792	          And I.
+  1793	
+  1794	FOURTH FAIRY
+  1795	               Where shall we go?
+  1796	
+  1797	TITANIA
+  1798	Be kind and courteous to this gentleman;
+  1799	Hop in his walks and gambol in his eyes;
+  1800	Feed him with apricocks and dewberries,
+  1801	With purple grapes, green figs, and mulberries;
+  1802	The honey bags steal from the humble-bees,
+  1803	And, for night-tapers, crop their waxen thighs,
+  1804	And light them at the fiery glow-worm's eyes,
+  1805	To have my love to bed and to arise;
+  1806	And pluck the wings from painted butterflies,
+  1807	To fan the moonbeams from his sleeping eyes:
+  1808	Nod to him, elves, and do him courtesies.
+  1809	
+  1810	FIRST FAIRY
+  1811	Hail, mortal!
+  1812	
+  1813	SECOND FAIRY
+  1814	Hail!
+  1815	
+  1816	THIRD FAIRY
+  1817	Hail!
+  1818	
+  1819	FOURTH FAIRY
+  1820	Hail!
+  1821	
+  1822	BOTTOM
+  1823	I cry your worships mercy, heartily.--I beseech your
+  1824	worship's name.
+  1825	
+  1826	COBWEB
+  1827	Cobweb.
+  1828	
+  1829	BOTTOM
+  1830	I shall desire you of more acquaintance, good Master Cobweb. If I
+  1831	cut my finger, I shall make bold with you.--Your name, honest
+  1832	gentleman?
+  1833	
+  1834	PEASBLOSSOM
+  1835	Peasblossom.
+  1836	
+  1837	BOTTOM
+  1838	I pray you, commend me to Mistress Squash, your mother, and
+  1839	to Master Peascod, your father. Good Master Peasblossom, I
+  1840	shall desire you of more acquaintance too.--Your name, I beseech
+  1841	you, sir?
+  1842	
+  1843	MUSTARDSEED
+  1844	Mustardseed.
+  1845	
+  1846	BOTTOM
+  1847	Good Master Mustardseed, I know your patience well:
+  1848	That same cowardly giant-like ox-beef hath devoured many a
+  1849	gentleman of your house: I promise you your kindred hath made my
+  1850	eyes water ere now. I desire you of more acquaintance, good
+  1851	Master Mustardseed.
+  1852	
+  1853	TITANIA
+  1854	  Come, wait upon him; lead him to my bower.
+  1855	  The moon, methinks, looks with a watery eye;
+  1856	And when she weeps, weeps every little flower;
+  1857	  Lamenting some enforc&egrave;d chastity.
+  1858	  Tie up my love's tongue, bring him silently.
+  1859	
+  1860	[Exeunt.]
+  1861	
+  1862	
+  1863	
+  1864	SCENE II. Another part of the wood.
+  1865	
+  1866	[Enter OBERON.]
+  1867	
+  1868	OBERON
+  1869	I wonder if Titania be awak'd;
+  1870	Then, what it was that next came in her eye,
+  1871	Which she must dote on in extremity.
+  1872	
+  1873	[Enter PUCK.]
+  1874	
+  1875	Here comes my messenger.--How now, mad spirit?
+  1876	What night-rule now about this haunted grove?
+  1877	
+  1878	PUCK
+  1879	My mistress with a monster is in love.
+  1880	Near to her close and consecrated bower,
+  1881	While she was in her dull and sleeping hour,
+  1882	A crew of patches, rude mechanicals,
+  1883	That work for bread upon Athenian stalls,
+  1884	Were met together to rehearse a play
+  1885	Intended for great Theseus' nuptial day.
+  1886	The shallowest thickskin of that barren sort
+  1887	Who Pyramus presented in their sport,
+  1888	Forsook his scene and enter'd in a brake;
+  1889	When I did him at this advantage take,
+  1890	An ass's nowl I fix&egrave;d on his head;
+  1891	Anon, his Thisbe must be answered,
+  1892	And forth my mimic comes. When they him spy,
+  1893	As wild geese that the creeping fowler eye,
+  1894	Or russet-pated choughs, many in sort,
+  1895	Rising and cawing at the gun's report,
+  1896	Sever themselves and madly sweep the sky,
+  1897	So at his sight away his fellows fly:
+  1898	And at our stamp here, o'er and o'er one falls;
+  1899	He murder cries, and help from Athens calls.
+  1900	Their sense thus weak, lost with their fears, thus strong,
+  1901	Made senseless things begin to do them wrong;
+  1902	For briers and thorns at their apparel snatch;
+  1903	Some sleeves, some hats: from yielders all things catch.
+  1904	I led them on in this distracted fear,
+  1905	And left sweet Pyramus translated there:
+  1906	When in that moment,--so it came to pass,--
+  1907	Titania wak'd, and straightway lov'd an ass.
+  1908	
+  1909	OBERON
+  1910	This falls out better than I could devise.
+  1911	But hast thou yet latch'd the Athenian's eyes
+  1912	With the love-juice, as I did bid thee do?
+  1913	
+  1914	PUCK
+  1915	I took him sleeping,--that is finish'd too,--
+  1916	And the Athenian woman by his side;
+  1917	That, when he wak'd, of force she must be ey'd.
+  1918	
+  1919	[Enter DEMETRIUS and HERMIA.]
+  1920	
+  1921	OBERON
+  1922	Stand close; this is the same Athenian.
+  1923	
+  1924	PUCK
+  1925	This is the woman, but not this the man.
+  1926	
+  1927	DEMETRIUS
+  1928	O, why rebuke you him that loves you so?
+  1929	Lay breath so bitter on your bitter foe.
+  1930	
+  1931	HERMIA
+  1932	Now I but chide, but I should use thee worse;
+  1933	For thou, I fear, hast given me cause to curse.
+  1934	If thou hast slain Lysander in his sleep,
+  1935	Being o'er shoes in blood, plunge in the deep,
+  1936	And kill me too.
+  1937	The sun was not so true unto the day
+  1938	As he to me: would he have stol'n away
+  1939	From sleeping Hermia? I'll believe as soon
+  1940	This whole earth may be bor'd; and that the moon
+  1941	May through the centre creep and so displease
+  1942	Her brother's noontide with the antipodes.
+  1943	It cannot be but thou hast murder'd him;
+  1944	So should a murderer look; so dead, so grim.
+  1945	
+  1946	DEMETRIUS
+  1947	So should the murder'd look; and so should I,
+  1948	Pierc'd through the heart with your stern cruelty:
+  1949	Yet you, the murderer, look as bright, as clear,
+  1950	As yonder Venus in her glimmering sphere.
+  1951	
+  1952	HERMIA
+  1953	What's this to my Lysander? where is he?
+  1954	Ah, good Demetrius, wilt thou give him me?
+  1955	
+  1956	DEMETRIUS
+  1957	I had rather give his carcass to my hounds.
+  1958	
+  1959	HERMIA
+  1960	Out, dog! out, cur! thou driv'st me past the bounds
+  1961	Of maiden's patience. Hast thou slain him, then?
+  1962	Henceforth be never number'd among men!
+  1963	Oh! once tell true; tell true, even for my sake;
+  1964	Durst thou have look'd upon him, being awake,
+  1965	And hast thou kill'd him sleeping? O brave touch!
+  1966	Could not a worm, an adder, do so much?
+  1967	An adder did it; for with doubler tongue
+  1968	Than thine, thou serpent, never adder stung.
+  1969	
+  1970	DEMETRIUS
+  1971	You spend your passion on a mispris'd mood:
+  1972	I am not guilty of Lysander's blood;
+  1973	Nor is he dead, for aught that I can tell.
+  1974	
+  1975	HERMIA
+  1976	I pray thee, tell me, then, that he is well.
+  1977	
+  1978	DEMETRIUS
+  1979	An if I could, what should I get therefore?
+  1980	
+  1981	HERMIA
+  1982	A privilege never to see me more.--
+  1983	And from thy hated presence part I so:
+  1984	See me no more whether he be dead or no.
+  1985	
+  1986	[Exit.]
+  1987	
+  1988	DEMETRIUS
+  1989	There is no following her in this fierce vein:
+  1990	Here, therefore, for a while I will remain.
+  1991	So sorrow's heaviness doth heavier grow
+  1992	For debt that bankrupt sleep doth sorrow owe;
+  1993	Which now in some slight measure it will pay,
+  1994	If for his tender here I make some stay.
+  1995	
+  1996	[Lies down.]
+  1997	
+  1998	OBERON
+  1999	What hast thou done? thou hast mistaken quite,
+  2000	And laid the love-juice on some true-love's sight:
+  2001	Of thy misprision must perforce ensue
+  2002	Some true love turn'd, and not a false turn'd true.
+  2003	
+  2004	PUCK
+  2005	Then fate o'er-rules, that, one man holding troth,
+  2006	A million fail, confounding oath on oath.
+  2007	
+  2008	OBERON
+  2009	About the wood go, swifter than the wind,
+  2010	And Helena of Athens look thou find:
+  2011	All fancy-sick she is, and pale of cheer,
+  2012	With sighs of love, that costs the fresh blood dear.
+  2013	By some illusion see thou bring her here;
+  2014	I'll charm his eyes against she do appear.
+  2015	
+  2016	PUCK
+  2017	I go, I go; look how I go,--
+  2018	Swifter than arrow from the Tartar's bow.
+  2019	
+  2020	[Exit.]
+  2021	
+  2022	OBERON
+  2023	  Flower of this purple dye,
+  2024	  Hit with Cupid's archery,
+  2025	  Sink in apple of his eye!
+  2026	  When his love he doth espy,
+  2027	  Let her shine as gloriously
+  2028	  As the Venus of the sky.--
+  2029	  When thou wak'st, if she be by,
+  2030	  Beg of her for remedy.
+  2031	
+  2032	[Re-enter PUCK.]
+  2033	
+  2034	PUCK
+  2035	  Captain of our fairy band,
+  2036	  Helena is here at hand,
+  2037	  And the youth mistook by me
+  2038	  Pleading for a lover's fee;
+  2039	  Shall we their fond pageant see?
+  2040	  Lord, what fools these mortals be!
+  2041	
+  2042	OBERON
+  2043	  Stand aside: the noise they make
+  2044	  Will cause Demetrius to awake.
+  2045	
+  2046	PUCK
+  2047	  Then will two at once woo one,--
+  2048	  That must needs be sport alone;
+  2049	  And those things do best please me
+  2050	  That befall preposterously.
+  2051	
+  2052	[Enter LYSANDER and HELENA.]
+  2053	
+  2054	LYSANDER
+  2055	Why should you think that I should woo in scorn?
+  2056	  Scorn and derision never come in tears.
+  2057	Look when I vow, I weep; and vows so born,
+  2058	  In their nativity all truth appears.
+  2059	How can these things in me seem scorn to you,
+  2060	Bearing the badge of faith, to prove them true?
+  2061	
+  2062	HELENA
+  2063	You do advance your cunning more and more.
+  2064	  When truth kills truth, O devilish-holy fray!
+  2065	These vows are Hermia's: will you give her o'er?
+  2066	  Weigh oath with oath, and you will nothing weigh:
+  2067	Your vows to her and me, put in two scales,
+  2068	Will even weigh; and both as light as tales.
+  2069	
+  2070	LYSANDER
+  2071	I had no judgment when to her I swore.
+  2072	
+  2073	HELENA
+  2074	Nor none, in my mind, now you give her o'er.
+  2075	
+  2076	LYSANDER
+  2077	Demetrius loves her, and he loves not you.
+  2078	
+  2079	DEMETRIUS
+  2080	[Awaking.]
+  2081	O Helen, goddess, nymph, perfect, divine!
+  2082	To what, my love, shall I compare thine eyne?
+  2083	Crystal is muddy. O, how ripe in show
+  2084	Thy lips, those kissing cherries, tempting grow!
+  2085	That pure congealed white, high Taurus' snow,
+  2086	Fann'd with the eastern wind, turns to a crow
+  2087	When thou hold'st up thy hand: O, let me kiss
+  2088	This princess of pure white, this seal of bliss!
+  2089	
+  2090	HELENA
+  2091	O spite! O hell! I see you all are bent
+  2092	To set against me for your merriment.
+  2093	If you were civil, and knew courtesy,
+  2094	You would not do me thus much injury.
+  2095	Can you not hate me, as I know you do,
+  2096	But you must join in souls to mock me too?
+  2097	If you were men, as men you are in show,
+  2098	You would not use a gentle lady so;
+  2099	To vow, and swear, and superpraise my parts,
+  2100	When I am sure you hate me with your hearts.
+  2101	You both are rivals, and love Hermia;
+  2102	And now both rivals, to mock Helena:
+  2103	A trim exploit, a manly enterprise,
+  2104	To conjure tears up in a poor maid's eyes
+  2105	With your derision! None of noble sort
+  2106	Would so offend a virgin, and extort
+  2107	A poor soul's patience, all to make you sport.
+  2108	
+  2109	LYSANDER
+  2110	You are unkind, Demetrius; be not so;
+  2111	For you love Hermia: this you know I know:
+  2112	And here, with all good will, with all my heart,
+  2113	In Hermia's love I yield you up my part;
+  2114	And yours of Helena to me bequeath,
+  2115	Whom I do love and will do till my death.
+  2116	
+  2117	HELENA
+  2118	Never did mockers waste more idle breath.
+  2119	
+  2120	DEMETRIUS
+  2121	Lysander, keep thy Hermia; I will none:
+  2122	If e'er I lov'd her, all that love is gone.
+  2123	My heart to her but as guest-wise sojourn'd;
+  2124	And now to Helen is it home return'd,
+  2125	There to remain.
+  2126	
+  2127	LYSANDER
+  2128	                 Helen, it is not so.
+  2129	
+  2130	DEMETRIUS
+  2131	Disparage not the faith thou dost not know,
+  2132	Lest, to thy peril, thou aby it dear.--
+  2133	Look where thy love comes; yonder is thy dear.
+  2134	
+  2135	[Enter HERMIA.]
+  2136	
+  2137	HERMIA
+  2138	Dark night, that from the eye his function takes,
+  2139	The ear more quick of apprehension makes;
+  2140	Wherein it doth impair the seeing sense,
+  2141	It pays the hearing double recompense:--
+  2142	Thou art not by mine eye, Lysander, found;
+  2143	Mine ear, I thank it, brought me to thy sound.
+  2144	But why unkindly didst thou leave me so?
+  2145	
+  2146	LYSANDER
+  2147	Why should he stay whom love doth press to go?
+  2148	
+  2149	HERMIA
+  2150	What love could press Lysander from my side?
+  2151	
+  2152	LYSANDER
+  2153	Lysander's love, that would not let him bide,--
+  2154	Fair Helena,--who more engilds the night
+  2155	Than all yon fiery oes and eyes of light.
+  2156	Why seek'st thou me? could not this make thee know
+  2157	The hate I bare thee made me leave thee so?
+  2158	
+  2159	HERMIA
+  2160	You speak not as you think; it cannot be.
+  2161	
+  2162	HELENA
+  2163	Lo, she is one of this confederacy!
+  2164	Now I perceive they have conjoin'd all three
+  2165	To fashion this false sport in spite of me.
+  2166	Injurious Hermia! most ungrateful maid!
+  2167	Have you conspir'd, have you with these contriv'd,
+  2168	To bait me with this foul derision?
+  2169	Is all the counsel that we two have shar'd,
+  2170	The sisters' vows, the hours that we have spent,
+  2171	When we have chid the hasty-footed time
+  2172	For parting us,--O, is all forgot?
+  2173	All school-days' friendship, childhood innocence?
+  2174	We, Hermia, like two artificial gods,
+  2175	Have with our needles created both one flower,
+  2176	Both on one sampler, sitting on one cushion,
+  2177	Both warbling of one song, both in one key;
+  2178	As if our hands, our sides, voices, and minds,
+  2179	Had been incorporate. So we grew together,
+  2180	Like to a double cherry, seeming parted;
+  2181	But yet a union in partition,
+  2182	Two lovely berries moulded on one stem:
+  2183	So, with two seeming bodies, but one heart;
+  2184	Two of the first, like coats in heraldry,
+  2185	Due but to one, and crowned with one crest.
+  2186	And will you rent our ancient love asunder,
+  2187	To join with men in scorning your poor friend?
+  2188	It is not friendly, 'tis not maidenly:
+  2189	Our sex, as well as I, may chide you for it,
+  2190	Though I alone do feel the injury.
+  2191	
+  2192	HERMIA
+  2193	I am amazed at your passionate words:
+  2194	I scorn you not; it seems that you scorn me.
+  2195	
+  2196	HELENA
+  2197	Have you not set Lysander, as in scorn,
+  2198	To follow me, and praise my eyes and face?
+  2199	And made your other love, Demetrius,--
+  2200	Who even but now did spurn me with his foot,--
+  2201	To call me goddess, nymph, divine, and rare,
+  2202	Precious, celestial? Wherefore speaks he this
+  2203	To her he hates? and wherefore doth Lysander
+  2204	Deny your love, so rich within his soul,
+  2205	And tender me, forsooth, affection,
+  2206	But by your setting on, by your consent?
+  2207	What though I be not so in grace as you,
+  2208	So hung upon with love, so fortunate;
+  2209	But miserable most, to love unlov'd?
+  2210	This you should pity rather than despise.
+  2211	
+  2212	HERMIA
+  2213	I understand not what you mean by this.
+  2214	
+  2215	HELENA
+  2216	Ay, do persever, counterfeit sad looks,
+  2217	Make mows upon me when I turn my back;
+  2218	Wink each at other; hold the sweet jest up:
+  2219	This sport, well carried, shall be chronicled.
+  2220	If you have any pity, grace, or manners,
+  2221	You would not make me such an argument.
+  2222	But fare ye well: 'tis partly my own fault;
+  2223	Which death, or absence, soon shall remedy.
+  2224	
+  2225	LYSANDER
+  2226	Stay, gentle Helena; hear my excuse;
+  2227	My love, my life, my soul, fair Helena!
+  2228	
+  2229	HELENA
+  2230	O excellent!
+  2231	
+  2232	HERMIA
+  2233	             Sweet, do not scorn her so.
+  2234	
+  2235	DEMETRIUS
+  2236	If she cannot entreat, I can compel.
+  2237	
+  2238	LYSANDER
+  2239	Thou canst compel no more than she entreat;
+  2240	Thy threats have no more strength than her weak prayers.--
+  2241	Helen, I love thee; by my life I do;
+  2242	I swear by that which I will lose for thee
+  2243	To prove him false that says I love thee not.
+  2244	
+  2245	DEMETRIUS
+  2246	I say I love thee more than he can do.
+  2247	
+  2248	LYSANDER
+  2249	If thou say so, withdraw, and prove it too.
+  2250	
+  2251	DEMETRIUS
+  2252	Quick, come,--
+  2253	
+  2254	HERMIA
+  2255	               Lysander, whereto tends all this?
+  2256	
+  2257	LYSANDER
+  2258	Away, you Ethiope!
+  2259	
+  2260	DEMETRIUS
+  2261	                   No, no, sir:--he will
+  2262	Seem to break loose; take on as you would follow:
+  2263	But yet come not. You are a tame man; go!
+  2264	
+  2265	LYSANDER
+  2266	Hang off, thou cat, thou burr: vile thing, let loose,
+  2267	Or I will shake thee from me like a serpent.
+  2268	
+  2269	HERMIA
+  2270	Why are you grown so rude? what change is this,
+  2271	Sweet love?
+  2272	
+  2273	LYSANDER
+  2274	            Thy love! out, tawny Tartar, out!
+  2275	Out, loathed medicine! hated potion, hence!
+  2276	
+  2277	HERMIA
+  2278	Do you not jest?
+  2279	
+  2280	HELENA
+  2281	                 Yes, sooth; and so do you.
+  2282	
+  2283	LYSANDER
+  2284	Demetrius, I will keep my word with thee.
+  2285	
+  2286	DEMETRIUS
+  2287	I would I had your bond; for I perceive
+  2288	A weak bond holds you; I'll not trust your word.
+  2289	
+  2290	LYSANDER
+  2291	What! should I hurt her, strike her, kill her dead?
+  2292	Although I hate her, I'll not harm her so.
+  2293	
+  2294	HERMIA
+  2295	What! can you do me greater harm than hate?
+  2296	Hate me! wherefore? O me! what news, my love?
+  2297	Am not I Hermia? Are not you Lysander?
+  2298	I am as fair now as I was erewhile.
+  2299	Since night you lov'd me; yet since night you left me:
+  2300	Why then, you left me,--O, the gods forbid!--
+  2301	In earnest, shall I say?
+  2302	
+  2303	LYSANDER
+  2304	                         Ay, by my life;
+  2305	And never did desire to see thee more.
+  2306	Therefore be out of hope, of question, doubt,
+  2307	Be certain, nothing truer; 'tis no jest
+  2308	That I do hate thee and love Helena.
+  2309	
+  2310	HERMIA
+  2311	O me! you juggler! you cankerblossom!
+  2312	You thief of love! What! have you come by night,
+  2313	And stol'n my love's heart from him?
+  2314	
+  2315	HELENA
+  2316	                                     Fine, i' faith!
+  2317	Have you no modesty, no maiden shame,
+  2318	No touch of bashfulness? What! will you tear
+  2319	Impatient answers from my gentle tongue?
+  2320	Fie, fie! you counterfeit, you puppet, you!
+  2321	
+  2322	HERMIA
+  2323	Puppet! why so? Ay, that way goes the game.
+  2324	Now I perceive that she hath made compare
+  2325	Between our statures; she hath urg'd her height;
+  2326	And with her personage, her tall personage,
+  2327	Her height, forsooth, she hath prevail'd with him.--
+  2328	And are you grown so high in his esteem
+  2329	Because I am so dwarfish and so low?
+  2330	How low am I, thou painted maypole? speak;
+  2331	How low am I? I am not yet so low
+  2332	But that my nails can reach unto thine eyes.
+  2333	
+  2334	HELENA
+  2335	I pray you, though you mock me, gentlemen,
+  2336	Let her not hurt me. I was never curst;
+  2337	I have no gift at all in shrewishness;
+  2338	I am a right maid for my cowardice;
+  2339	Let her not strike me. You perhaps may think,
+  2340	Because she is something lower than myself,
+  2341	That I can match her.
+  2342	
+  2343	HERMIA
+  2344	                      Lower! hark, again.
+  2345	
+  2346	HELENA
+  2347	Good Hermia, do not be so bitter with me.
+  2348	I evermore did love you, Hermia;
+  2349	Did ever keep your counsels; never wrong'd you;
+  2350	Save that, in love unto Demetrius,
+  2351	I told him of your stealth unto this wood:
+  2352	He follow'd you; for love I follow'd him;
+  2353	But he hath chid me hence, and threaten'd me
+  2354	To strike me, spurn me, nay, to kill me too:
+  2355	And now, so you will let me quiet go,
+  2356	To Athens will I bear my folly back,
+  2357	And follow you no farther. Let me go:
+  2358	You see how simple and how fond I am.
+  2359	
+  2360	HERMIA
+  2361	Why, get you gone: who is't that hinders you?
+  2362	
+  2363	HELENA
+  2364	A foolish heart that I leave here behind.
+  2365	
+  2366	HERMIA
+  2367	What! with Lysander?
+  2368	
+  2369	HELENA
+  2370	                     With Demetrius.
+  2371	
+  2372	LYSANDER
+  2373	Be not afraid; she shall not harm thee, Helena.
+  2374	
+  2375	DEMETRIUS
+  2376	No, sir, she shall not, though you take her part.
+  2377	
+  2378	HELENA
+  2379	O, when she's angry, she is keen and shrewd:
+  2380	She was a vixen when she went to school;
+  2381	And, though she be but little, she is fierce.
+  2382	
+  2383	HERMIA
+  2384	Little again! nothing but low and little!--
+  2385	Why will you suffer her to flout me thus?
+  2386	Let me come to her.
+  2387	
+  2388	LYSANDER
+  2389	                    Get you gone, you dwarf;
+  2390	You minimus, of hind'ring knot-grass made;
+  2391	You bead, you acorn.
+  2392	
+  2393	DEMETRIUS
+  2394	                     You are too officious
+  2395	In her behalf that scorns your services.
+  2396	Let her alone: speak not of Helena;
+  2397	Take not her part; for if thou dost intend
+  2398	Never so little show of love to her,
+  2399	Thou shalt aby it.
+  2400	
+  2401	LYSANDER
+  2402	                   Now she holds me not;
+  2403	Now follow, if thou dar'st, to try whose right,
+  2404	Of thine or mine, is most in Helena.
+  2405	
+  2406	DEMETRIUS
+  2407	Follow! nay, I'll go with thee, cheek by jole.
+  2408	
+  2409	[Exeunt LYSANDER and DEMETRIUS.]
+  2410	
+  2411	HERMIA
+  2412	You, mistress, all this coil is 'long of you:
+  2413	Nay, go not back.
+  2414	
+  2415	HELENA
+  2416	                  I will not trust you, I;
+  2417	Nor longer stay in your curst company.
+  2418	Your hands than mine are quicker for a fray;
+  2419	My legs are longer though, to run away.
+  2420	
+  2421	[Exit.]
+  2422	
+  2423	HERMIA
+  2424	I am amaz'd, and know not what to say.
+  2425	
+  2426	[Exit, pursuing HELENA.]
+  2427	
+  2428	OBERON
+  2429	This is thy negligence: still thou mistak'st,
+  2430	Or else commit'st thy knaveries willfully.
+  2431	
+  2432	PUCK
+  2433	Believe me, king of shadows, I mistook.
+  2434	Did not you tell me I should know the man
+  2435	By the Athenian garments he had on?
+  2436	And so far blameless proves my enterprise
+  2437	That I have 'nointed an Athenian's eyes:
+  2438	And so far am I glad it so did sort,
+  2439	As this their jangling I esteem a sport.
+  2440	
+  2441	OBERON
+  2442	Thou seest these lovers seek a place to fight;
+  2443	Hie therefore, Robin, overcast the night;
+  2444	The starry welkin cover thou anon
+  2445	With drooping fog, as black as Acheron,
+  2446	And lead these testy rivals so astray
+  2447	As one come not within another's way.
+  2448	Like to Lysander sometime frame thy tongue,
+  2449	Then stir Demetrius up with bitter wrong;
+  2450	And sometime rail thou like Demetrius;
+  2451	And from each other look thou lead them thus,
+  2452	Till o'er their brows death-counterfeiting sleep
+  2453	With leaden legs and batty wings doth creep:
+  2454	Then crush this herb into Lysander's eye;
+  2455	Whose liquor hath this virtuous property,
+  2456	To take from thence all error with his might
+  2457	And make his eyeballs roll with wonted sight.
+  2458	When they next wake, all this derision
+  2459	Shall seem a dream and fruitless vision;
+  2460	And back to Athens shall the lovers wend
+  2461	With league whose date till death shall never end.
+  2462	Whiles I in this affair do thee employ,
+  2463	I'll to my queen, and beg her Indian boy;
+  2464	And then I will her charmed eye release
+  2465	From monster's view, and all things shall be peace.
+  2466	
+  2467	PUCK
+  2468	My fairy lord, this must be done with haste,
+  2469	For night's swift dragons cut the clouds full fast;
+  2470	And yonder shines Aurora's harbinger,
+  2471	At whose approach ghosts, wandering here and there,
+  2472	Troop home to churchyards: damned spirits all,
+  2473	That in cross-ways and floods have burial,
+  2474	Already to their wormy beds are gone;
+  2475	For fear lest day should look their shames upon
+  2476	They wilfully exile themselves from light,
+  2477	And must for aye consort with black-brow'd night.
+  2478	
+  2479	OBERON
+  2480	But we are spirits of another sort:
+  2481	I with the morning's love have oft made sport;
+  2482	And, like a forester, the groves may tread
+  2483	Even till the eastern gate, all fiery-red,
+  2484	Opening on Neptune with fair blessed beams,
+  2485	Turns into yellow gold his salt-green streams.
+  2486	But, notwithstanding, haste; make no delay:
+  2487	We may effect this business yet ere day.
+  2488	
+  2489	[Exit OBERON.]
+  2490	
+  2491	PUCK
+  2492	  Up and down, up and down;
+  2493	  I will lead them up and down:
+  2494	  I am fear'd in field and town.
+  2495	  Goblin, lead them up and down.
+  2496	Here comes one.
+  2497	
+  2498	[Enter LYSANDER.]
+  2499	
+  2500	LYSANDER
+  2501	Where art thou, proud Demetrius? speak thou now.
+  2502	
+  2503	PUCK
+  2504	Here, villain; drawn and ready. Where art thou?
+  2505	
+  2506	LYSANDER
+  2507	I will be with thee straight.
+  2508	
+  2509	PUCK
+  2510	                              Follow me, then,
+  2511	To plainer ground.
+  2512	
+  2513	[Exit LYSANDER as following the voice.]
+  2514	
+  2515	[Enter DEMETRIUS.]
+  2516	
+  2517	DEMETRIUS
+  2518	                   Lysander! speak again.
+  2519	Thou runaway, thou coward, art thou fled?
+  2520	Speak. In some bush? where dost thou hide thy head?
+  2521	
+  2522	PUCK
+  2523	Thou coward, art thou bragging to the stars,
+  2524	Telling the bushes that thou look'st for wars,
+  2525	And wilt not come? Come, recreant; come, thou child;
+  2526	I'll whip thee with a rod: he is defiled
+  2527	That draws a sword on thee.
+  2528	
+  2529	DEMETRIUS
+  2530	                            Yea, art thou there?
+  2531	
+  2532	PUCK
+  2533	Follow my voice; we'll try no manhood here.
+  2534	
+  2535	[Exeunt.]
+  2536	
+  2537	[Re-enter LYSANDER.]
+  2538	
+  2539	LYSANDER
+  2540	He goes before me, and still dares me on;
+  2541	When I come where he calls, then he is gone.
+  2542	The villain is much lighter heeled than I:
+  2543	I follow'd fast, but faster he did fly;
+  2544	That fallen am I in dark uneven way,
+  2545	And here will rest me.  Come, thou gentle day!
+  2546	[Lies down.]
+  2547	For if but once thou show me thy grey light,
+  2548	I'll find Demetrius, and revenge this spite.
+  2549	
+  2550	[Sleeps.]
+  2551	
+  2552	[Re-enter PUCK and DEMETRIUS.]
+  2553	
+  2554	PUCK
+  2555	Ho, ho, ho, ho! Coward, why com'st thou not?
+  2556	
+  2557	DEMETRIUS
+  2558	Abide me, if thou dar'st; for well I wot
+  2559	Thou runn'st before me, shifting every place;
+  2560	And dar'st not stand, nor look me in the face.
+  2561	Where art thou?
+  2562	
+  2563	PUCK
+  2564	                Come hither; I am here.
+  2565	
+  2566	DEMETRIUS
+  2567	Nay, then, thou mock'st me.
+  2568	Thou shalt buy this dear,
+  2569	If ever I thy face by daylight see:
+  2570	Now, go thy way. Faintness constraineth me
+  2571	To measure out my length on this cold bed.--
+  2572	By day's approach look to be visited.
+  2573	
+  2574	[Lies down and sleeps.]
+  2575	
+  2576	[Enter HELENA.]
+  2577	
+  2578	HELENA
+  2579	O weary night, O long and tedious night,
+  2580	Abate thy hours! Shine comforts from the east,
+  2581	That I may back to Athens by daylight,
+  2582	From these that my poor company detest:--
+  2583	And sleep, that sometimes shuts up sorrow's eye,
+  2584	Steal me awhile from mine own company.
+  2585	
+  2586	[Sleeps.]
+  2587	
+  2588	PUCK
+  2589	  Yet but three? Come one more;
+  2590	  Two of both kinds makes up four.
+  2591	  Here she comes, curst and sad:--
+  2592	  Cupid is a knavish lad,
+  2593	  Thus to make poor females mad.
+  2594	
+  2595	[Enter HERMIA.]
+  2596	
+  2597	HERMIA
+  2598	Never so weary, never so in woe,
+  2599	  Bedabbled with the dew, and torn with briers;
+  2600	I can no further crawl, no further go;
+  2601	  My legs can keep no pace with my desires.
+  2602	Here will I rest me till the break of day.
+  2603	Heavens shield Lysander, if they mean a fray!
+  2604	
+  2605	[Lies down.]
+  2606	
+  2607	PUCK
+  2608	  On the ground
+  2609	  Sleep sound:
+  2610	  I'll apply
+  2611	  To your eye,
+  2612	  Gentle lover, remedy.
+  2613	
+  2614	[Squeezing the juice on LYSANDER'S eye.]
+  2615	
+  2616	  When thou wak'st,
+  2617	  Thou tak'st
+  2618	  True delight
+  2619	  In the sight
+  2620	Of thy former lady's eye:
+  2621	And the country proverb known,
+  2622	That every man should take his own,
+  2623	In your waking shall be shown:
+  2624	  Jack shall have Jill;
+  2625	  Nought shall go ill;
+  2626	The man shall have his mare again, and all shall be well.
+  2627	
+  2628	[Exit PUCK.--DEMETRIUS, HELENA &c, sleep.]
+  2629	
+  2630	
+  2631	
+  2632	ACT IV
+  2633	
+  2634	SCENE I. The Wood.
+  2635	
+  2636	[Enter TITANIA and BOTTOM; PEASBLOSSOM, COBWEB, MOTH,
+  2637	MUSTARDSEED, and other FAIRIES attending; OBERON behind, unseen.]
+  2638	
+  2639	TITANIA
+  2640	Come, sit thee down upon this flowery bed,
+  2641	  While I thy amiable cheeks do coy,
+  2642	And stick musk-roses in thy sleek smooth head,
+  2643	  And kiss thy fair large ears, my gentle joy.
+  2644	
+  2645	BOTTOM
+  2646	Where's Peasblossom?
+  2647	
+  2648	PEASBLOSSOM
+  2649	Ready.
+  2650	
+  2651	BOTTOM
+  2652	Scratch my head, Peasblossom.--
+  2653	Where's Monsieur Cobweb?
+  2654	
+  2655	COBWEB
+  2656	Ready.
+  2657	
+  2658	BOTTOM
+  2659	Monsieur Cobweb; good monsieur, get you your weapons in
+  2660	your hand and kill me a red-hipped humble-bee on the top of a
+  2661	thistle; and, good monsieur, bring me the honey-bag. Do not
+  2662	fret yourself too much in the action, monsieur; and, good
+  2663	monsieur, have a care the honey-bag break not; I would be
+  2664	loath to have you overflown with a honey-bag, signior.--
+  2665	Where's Monsieur Mustardseed?
+  2666	
+  2667	MUSTARDSEED
+  2668	Ready.
+  2669	
+  2670	BOTTOM
+  2671	Give me your neif, Monsieur Mustardseed.
+  2672	Pray you, leave your curtsy, good monsieur.
+  2673	
+  2674	MUSTARDSEED
+  2675	What's your will?
+  2676	
+  2677	BOTTOM
+  2678	Nothing, good monsieur, but to help Cavalero Cobweb to
+  2679	scratch. I must to the barber's, monsieur; for methinks I am
+  2680	marvellous hairy about the face; and I am such a tender ass,
+  2681	if my hair do but tickle me I must scratch.
+  2682	
+  2683	TITANIA
+  2684	What, wilt thou hear some music, my sweet love?
+  2685	
+  2686	BOTTOM
+  2687	I have a reasonable good ear in music; let us have the
+  2688	tongs and the bones.
+  2689	
+  2690	TITANIA
+  2691	Or say, sweet love, what thou desirest to eat.
+  2692	
+  2693	BOTTOM
+  2694	Truly, a peck of provender; I could munch your good dry
+  2695	oats. Methinks I have a great desire to a bottle of hay: good
+  2696	hay, sweet hay, hath no fellow.
+  2697	
+  2698	TITANIA
+  2699	I have a venturous fairy that shall seek
+  2700	The squirrel's hoard, and fetch thee new nuts.
+  2701	
+  2702	BOTTOM
+  2703	I had rather have a handful or two of dried peas. But,
+  2704	I pray you, let none of your people stir me; I have an
+  2705	exposition of sleep come upon me.
+  2706	
+  2707	TITANIA
+  2708	Sleep thou, and I will wind thee in my arms.
+  2709	Fairies, be gone, and be all ways away.
+  2710	So doth the woodbine the sweet honeysuckle
+  2711	Gently entwist,--the female ivy so
+  2712	Enrings the barky fingers of the elm.
+  2713	O, how I love thee! how I dote on thee!
+  2714	
+  2715	[They sleep.]
+  2716	
+  2717	[OBERON advances. Enter PUCK.]
+  2718	
+  2719	OBERON
+  2720	Welcome, good Robin. Seest thou this sweet sight?
+  2721	Her dotage now I do begin to pity.
+  2722	For, meeting her of late behind the wood,
+  2723	Seeking sweet favours for this hateful fool,
+  2724	I did upbraid her and fall out with her:
+  2725	For she his hairy temples then had rounded
+  2726	With coronet of fresh and fragrant flowers;
+  2727	And that same dew, which sometime on the buds
+  2728	Was wont to swell like round and orient pearls,
+  2729	Stood now within the pretty flow'rets' eyes,
+  2730	Like tears that did their own disgrace bewail.
+  2731	When I had, at my pleasure, taunted her,
+  2732	And she, in mild terms, begg'd my patience,
+  2733	I then did ask of her her changeling child;
+  2734	Which straight she gave me, and her fairy sent
+  2735	To bear him to my bower in fairy-land.
+  2736	And now I have the boy, I will undo
+  2737	This hateful imperfection of her eyes.
+  2738	And, gentle Puck, take this transformed scalp
+  2739	From off the head of this Athenian swain,
+  2740	That he awaking when the other do,
+  2741	May all to Athens back again repair,
+  2742	And think no more of this night's accidents
+  2743	But as the fierce vexation of a dream.
+  2744	But first I will release the fairy queen.
+  2745	  Be as thou wast wont to be;
+  2746	[Touching her eyes with an herb.]
+  2747	  See as thou was wont to see.
+  2748	  Dian's bud o'er Cupid's flower
+  2749	  Hath such force and blessed power.
+  2750	Now, my Titania; wake you, my sweet queen.
+  2751	
+  2752	TITANIA
+  2753	My Oberon! what visions have I seen!
+  2754	Methought I was enamour'd of an ass.
+  2755	
+  2756	OBERON
+  2757	There lies your love.
+  2758	
+  2759	TITANIA
+  2760	                      How came these things to pass?
+  2761	O, how mine eyes do loathe his visage now!
+  2762	
+  2763	OBERON
+  2764	Silence awhile.--Robin, take off this head.
+  2765	Titania, music call; and strike more dead
+  2766	Than common sleep, of all these five, the sense.
+  2767	
+  2768	TITANIA
+  2769	Music, ho! music; such as charmeth sleep.
+  2770	
+  2771	PUCK
+  2772	Now when thou wak'st, with thine own fool's eyes peep.
+  2773	
+  2774	OBERON
+  2775	Sound, music. [Still music.] Come, my queen, take hands with me,
+  2776	And rock the ground whereon these sleepers be.
+  2777	Now thou and I are new in amity,
+  2778	And will to-morrow midnight solemnly
+  2779	Dance in Duke Theseus' house triumphantly,
+  2780	And bless it to all fair prosperity:
+  2781	There shall the pairs of faithful lovers be
+  2782	Wedded, with Theseus, all in jollity.
+  2783	
+  2784	PUCK
+  2785	Fairy king, attend and mark;
+  2786	I do hear the morning lark.
+  2787	
+  2788	OBERON
+  2789	  Then, my queen, in silence sad,
+  2790	  Trip we after night's shade.
+  2791	  We the globe can compass soon,
+  2792	  Swifter than the wand'ring moon.
+  2793	
+  2794	TITANIA
+  2795	  Come, my lord; and in our flight,
+  2796	  Tell me how it came this night
+  2797	  That I sleeping here was found
+  2798	  With these mortals on the ground.
+  2799	
+  2800	[Exeunt. Horns sound within.]
+  2801	
+  2802	[Enter THESEUS, HIPPOLYTA, EGEUS, and Train.]
+  2803	
+  2804	THESEUS
+  2805	Go, one of you, find out the forester;--
+  2806	For now our observation is perform'd;
+  2807	And since we have the vaward of the day,
+  2808	My love shall hear the music of my hounds,--
+  2809	Uncouple in the western valley; go:--
+  2810	Despatch, I say, and find the forester.--
+  2811	
+  2812	[Exit an ATTENDANT.]
+  2813	
+  2814	We will, fair queen, up to the mountain's top,
+  2815	And mark the musical confusion
+  2816	Of hounds and echo in conjunction.
+  2817	
+  2818	HIPPOLYTA
+  2819	I was with Hercules and Cadmus once
+  2820	When in a wood of Crete they bay'd the bear
+  2821	With hounds of Sparta: never did I hear
+  2822	Such gallant chiding; for, besides the groves,
+  2823	The skies, the fountains, every region near
+  2824	Seem'd all one mutual cry: I never heard
+  2825	So musical a discord, such sweet thunder.
+  2826	
+  2827	THESEUS
+  2828	My hounds are bred out of the Spartan kind,
+  2829	So flew'd, so sanded; and their heads are hung
+  2830	With ears that sweep away the morning dew;
+  2831	Crook-knee'd and dew-lap'd like Thessalian bulls;
+  2832	Slow in pursuit, but match'd in mouth like bells,
+  2833	Each under each. A cry more tuneable
+  2834	Was never holla'd to, nor cheer'd with horn,
+  2835	In Crete, in Sparta, nor in Thessaly.
+  2836	Judge when you hear.--But, soft, what nymphs are these?
+  2837	
+  2838	EGEUS
+  2839	My lord, this is my daughter here asleep;
+  2840	And this Lysander; this Demetrius is;
+  2841	This Helena, old Nedar's Helena:
+  2842	I wonder of their being here together.
+  2843	
+  2844	THESEUS
+  2845	No doubt they rose up early to observe
+  2846	The rite of May; and, hearing our intent,
+  2847	Came here in grace of our solemnity.--
+  2848	But speak, Egeus; is not this the day
+  2849	That Hermia should give answer of her choice?
+  2850	
+  2851	EGEUS
+  2852	It is, my lord.
+  2853	
+  2854	THESEUS
+  2855	Go, bid the huntsmen wake them with their horns.
+  2856	
+  2857	[Horns, and shout within. DEMETRIUS, LYSANDER,HERMIA, and HELENA
+  2858	awake and start up.]
+  2859	
+  2860	Good-morrow, friends. Saint Valentine is past;
+  2861	Begin these wood-birds but to couple now?
+  2862	
+  2863	LYSANDER
+  2864	Pardon, my lord.
+  2865	
+  2866	[He and the rest kneel to THESEUS.]
+  2867	
+  2868	THESEUS
+  2869	                 I pray you all, stand up.
+  2870	I know you two are rival enemies;
+  2871	How comes this gentle concord in the world,
+  2872	That hatred is so far from jealousy
+  2873	To sleep by hate, and fear no enmity?
+  2874	
+  2875	LYSANDER
+  2876	My lord, I shall reply amazedly,
+  2877	Half 'sleep, half waking; but as yet, I swear,
+  2878	I cannot truly say how I came here:
+  2879	But, as I think,--for truly would I speak--
+  2880	And now I do bethink me, so it is,--
+  2881	I came with Hermia hither: our intent
+  2882	Was to be gone from Athens, where we might be,
+  2883	Without the peril of the Athenian law.
+  2884	
+  2885	EGEUS
+  2886	Enough, enough, my lord; you have enough;
+  2887	I beg the law, the law upon his head.--
+  2888	They would have stol'n away, they would, Demetrius,
+  2889	Thereby to have defeated you and me:
+  2890	You of your wife, and me of my consent,--
+  2891	Of my consent that she should be your wife.
+  2892	
+  2893	DEMETRIUS
+  2894	My lord, fair Helen told me of their stealth,
+  2895	Of this their purpose hither to this wood;
+  2896	And I in fury hither follow'd them,
+  2897	Fair Helena in fancy following me.
+  2898	But, my good lord, I wot not by what power,--
+  2899	But by some power it is,--my love to Hermia,
+  2900	Melted as the snow--seems to me now
+  2901	As the remembrance of an idle gawd
+  2902	Which in my childhood I did dote upon:
+  2903	And all the faith, the virtue of my heart,
+  2904	The object and the pleasure of mine eye,
+  2905	Is only Helena. To her, my lord,
+  2906	Was I betroth'd ere I saw Hermia:
+  2907	But, like a sickness, did I loathe this food;
+  2908	But, as in health, come to my natural taste,
+  2909	Now I do wish it, love it, long for it,
+  2910	And will for evermore be true to it.
+  2911	
+  2912	THESEUS
+  2913	Fair lovers, you are fortunately met:
+  2914	Of this discourse we more will hear anon.--
+  2915	Egeus, I will overbear your will;
+  2916	For in the temple, by and by with us,
+  2917	These couples shall eternally be knit.
+  2918	And, for the morning now is something worn,
+  2919	Our purpos'd hunting shall be set aside.--
+  2920	Away with us to Athens, three and three,
+  2921	We'll hold a feast in great solemnity.--
+  2922	Come, Hippolyta.
+  2923	
+  2924	[Exeunt THESEUS, HIPPOLYTA, EGEUS, and Train.]
+  2925	
+  2926	DEMETRIUS
+  2927	These things seem small and undistinguishable,
+  2928	Like far-off mountains turned into clouds.
+  2929	
+  2930	HERMIA
+  2931	Methinks I see these things with parted eye,
+  2932	When every thing seems double.
+  2933	
+  2934	HELENA
+  2935	                               So methinks:
+  2936	And I have found Demetrius like a jewel.
+  2937	Mine own, and not mine own.
+  2938	
+  2939	DEMETRIUS
+  2940	                            It seems to me
+  2941	That yet we sleep, we dream.--Do not you think
+  2942	The duke was here, and bid us follow him?
+  2943	
+  2944	HERMIA
+  2945	Yea, and my father.
+  2946	
+  2947	HELENA
+  2948	                    And Hippolyta.
+  2949	
+  2950	LYSANDER
+  2951	And he did bid us follow to the temple.
+  2952	
+  2953	DEMETRIUS
+  2954	Why, then, we are awake: let's follow him;
+  2955	And by the way let us recount our dreams.
+  2956	
+  2957	[Exeunt.]
+  2958	
+  2959	[As they go out, BOTTOM awakes.]
+  2960	
+  2961	BOTTOM
+  2962	When my cue comes, call me, and I will answer. My next is 'Most
+  2963	fair Pyramus.'--Heigh-ho!--Peter Quince! Flute, the
+  2964	bellows-mender! Snout, the tinker! Starveling! God's my life,
+  2965	stol'n hence, and left me asleep! I have had a most rare
+  2966	vision. I have had a dream--past the wit of man to say
+  2967	what dream it was.--Man is but an ass if he go about
+  2968	to expound this dream. Methought I was--there is no man can tell
+  2969	what. Methought I was, and methought I had,--but man is but a
+  2970	patched fool, if he will offer to say what methought I had. The
+  2971	eye of man hath not heard, the ear of man hath not seen; man's
+  2972	hand is not able to taste, his tongue to conceive, nor his heart
+  2973	to report, what my dream was. I will get Peter Quince to write a
+  2974	ballad of this dream: it shall be called Bottom's Dream, because
+  2975	it hath no bottom; and I will sing it in the latter end of a
+  2976	play, before the duke: peradventure, to make it the more
+  2977	gracious, I shall sing it at her death.
+  2978	
+  2979	[Exit.]
+  2980	
+  2981	
+  2982	
+  2983	SCENE II. Athens. A Room in QUINCE'S House.
+  2984	
+  2985	[Enter QUINCE, FLUTE, SNOUT, and STARVELING.]
+  2986	
+  2987	QUINCE
+  2988	Have you sent to Bottom's house? is he come home yet?
+  2989	
+  2990	STARVELING
+  2991	He cannot be heard of. Out of doubt, he is transported.
+  2992	
+  2993	FLUTE
+  2994	If he come not, then the play is marred; it goes not
+  2995	forward, doth it?
+  2996	
+  2997	QUINCE
+  2998	It is not possible: you have not a man in all Athens
+  2999	able to discharge Pyramus but he.
+  3000	
+  3001	FLUTE
+  3002	No; he hath simply the best wit of any handicraft man in
+  3003	Athens.
+  3004	
+  3005	QUINCE
+  3006	Yea, and the best person too: and he is a very paramour
+  3007	for a sweet voice.
+  3008	
+  3009	FLUTE
+  3010	You must say paragon: a paramour is, God bless us, a thing of
+  3011	naught.
+  3012	
+  3013	[Enter SNUG.]
+  3014	
+  3015	SNUG
+  3016	Masters, the duke is coming from the temple; and there is
+  3017	two or three lords and ladies more married: if our sport had gone
+  3018	forward, we had all been made men.
+  3019	
+  3020	FLUTE
+  3021	O sweet bully Bottom! Thus hath he lost sixpence a day
+  3022	during his life; he could not have 'scaped sixpence a-day; an
+  3023	the duke had not given him sixpence a-day for playing Pyramus,
+  3024	I'll be hanged; he would have deserved it: sixpence a-day in
+  3025	Pyramus, or nothing.
+  3026	
+  3027	[Enter BOTTOM.]
+  3028	
+  3029	BOTTOM
+  3030	Where are these lads? where are these hearts?
+  3031	
+  3032	QUINCE
+  3033	Bottom!--O most courageous day! O most happy hour!
+  3034	
+  3035	BOTTOM
+  3036	Masters, I am to discourse wonders: but ask me not
+  3037	what; for if I tell you, I am not true Athenian. I will tell you
+  3038	everything, right as it fell out.
+  3039	
+  3040	QUINCE
+  3041	Let us hear, sweet Bottom.
+  3042	
+  3043	BOTTOM
+  3044	Not a word of me. All that I will tell you is, that the
+  3045	duke hath dined. Get your apparel together; good strings to
+  3046	your beards, new ribbons to your pumps; meet presently at the
+  3047	palace; every man look over his part; for the short and the long
+  3048	is, our play is preferred. In any case, let Thisby have clean
+  3049	linen; and let not him that plays the lion pare his nails, for
+  3050	they shall hang out for the lion's claws. And, most dear actors,
+  3051	eat no onions nor garlick, for we are to utter sweet breath; and
+  3052	I do not doubt but to hear them say it is a sweet comedy. No more
+  3053	words: away! go; away!
+  3054	
+  3055	[Exeunt.]
+  3056	
+  3057	
+  3058	
+  3059	ACT V
+  3060	
+  3061	SCENE I. Athens. An Apartment in the Palace of THESEUS.
+  3062	
+  3063	[Enter THESEUS, HIPPOLYTA, PHILOSTRATE, Lords, and Attendants.]
+  3064	
+  3065	HIPPOLYTA
+  3066	'Tis strange, my Theseus, that these lovers speak of.
+  3067	
+  3068	THESEUS
+  3069	More strange than true. I never may believe
+  3070	These antique fables, nor these fairy toys.
+  3071	Lovers and madmen have such seething brains,
+  3072	Such shaping fantasies, that apprehend
+  3073	More than cool reason ever comprehends.
+  3074	The lunatic, the lover, and the poet
+  3075	Are of imagination all compact:
+  3076	One sees more devils than vast hell can hold;
+  3077	That is the madman: the lover, all as frantic,
+  3078	Sees Helen's beauty in a brow of Egypt:
+  3079	The poet's eye, in a fine frenzy rolling,
+  3080	Doth glance from heaven to earth, from earth to heaven;
+  3081	And as imagination bodies forth
+  3082	The forms of things unknown, the poet's pen
+  3083	Turns them to shapes, and gives to airy nothing
+  3084	A local habitation and a name.
+  3085	Such tricks hath strong imagination,
+  3086	That, if it would but apprehend some joy,
+  3087	It comprehends some bringer of that joy;
+  3088	Or in the night, imagining some fear,
+  3089	How easy is a bush supposed a bear?
+  3090	
+  3091	HIPPOLYTA
+  3092	But all the story of the night told over,
+  3093	And all their minds transfigur'd so together,
+  3094	More witnesseth than fancy's images,
+  3095	And grows to something of great constancy;
+  3096	But, howsoever, strange and admirable.
+  3097	
+  3098	[Enter LYSANDER, DEMETRIUS, HERMIA, and HELENA.]
+  3099	
+  3100	THESEUS
+  3101	Here come the lovers, full of joy and mirth.--
+  3102	Joy, gentle friends! joy and fresh days of love
+  3103	Accompany your hearts!
+  3104	
+  3105	LYSANDER
+  3106	                       More than to us
+  3107	Wait in your royal walks, your board, your bed!
+  3108	
+  3109	THESEUS
+  3110	Come now; what masques, what dances shall we have,
+  3111	To wear away this long age of three hours
+  3112	Between our after-supper and bed-time?
+  3113	Where is our usual manager of mirth?
+  3114	What revels are in hand? Is there no play
+  3115	To ease the anguish of a torturing hour?
+  3116	Call Philostrate.
+  3117	
+  3118	PHILOSTRATE
+  3119	                  Here, mighty Theseus.
+  3120	
+  3121	THESEUS
+  3122	Say, what abridgment have you for this evening?
+  3123	What masque? what music? How shall we beguile
+  3124	The lazy time, if not with some delight?
+  3125	
+  3126	PHILOSTRATE
+  3127	There is a brief how many sports are ripe;
+  3128	Make choice of which your highness will see first.
+  3129	
+  3130	[Giving a paper.]
+  3131	
+  3132	THESEUS
+  3133	[Reads.]
+  3134	  'The battle with the Centaurs, to be sung
+  3135	  By an Athenian eunuch to the harp.'
+  3136	We'll none of that: that have I told my love,
+  3137	In glory of my kinsman Hercules.
+  3138	  'The riot of the tipsy Bacchanals,
+  3139	  Tearing the Thracian singer in their rage.'
+  3140	That is an old device, and it was play'd
+  3141	When I from Thebes came last a conqueror.
+  3142	  'The thrice three Muses mourning for the death
+  3143	  Of learning, late deceas'd in beggary.'
+  3144	That is some satire, keen and critical,
+  3145	Not sorting with a nuptial ceremony.
+  3146	  'A tedious brief scene of young Pyramus
+  3147	  And his love Thisbe; very tragical mirth.'
+  3148	Merry and tragical! tedious and brief!
+  3149	That is hot ice and wondrous strange snow.
+  3150	How shall we find the concord of this discord?
+  3151	
+  3152	PHILOSTRATE
+  3153	A play there is, my lord, some ten words long,
+  3154	Which is as brief as I have known a play;
+  3155	But by ten words, my lord, it is too long,
+  3156	Which makes it tedious: for in all the play
+  3157	There is not one word apt, one player fitted:
+  3158	And tragical, my noble lord, it is;
+  3159	For Pyramus therein doth kill himself:
+  3160	Which when I saw rehears'd, I must confess,
+  3161	Made mine eyes water; but more merry tears
+  3162	The passion of loud laughter never shed.
+  3163	
+  3164	THESEUS
+  3165	What are they that do play it?
+  3166	
+  3167	PHILOSTRATE
+  3168	Hard-handed men that work in Athens here,
+  3169	Which never labour'd in their minds till now;
+  3170	And now have toil'd their unbreath'd memories
+  3171	With this same play against your nuptial.
+  3172	
+  3173	THESEUS
+  3174	And we will hear it.
+  3175	
+  3176	PHILOSTRATE
+  3177	                     No, my noble lord,
+  3178	It is not for you: I have heard it over,
+  3179	And it is nothing, nothing in the world;
+  3180	Unless you can find sport in their intents,
+  3181	Extremely stretch'd and conn'd with cruel pain,
+  3182	To do you service.
+  3183	
+  3184	THESEUS
+  3185	                   I will hear that play;
+  3186	For never anything can be amiss
+  3187	When simpleness and duty tender it.
+  3188	Go, bring them in: and take your places, ladies.
+  3189	
+  3190	[Exit PHILOSTRATE.]
+  3191	
+  3192	HIPPOLYTA
+  3193	I love not to see wretchedness o'er-charged,
+  3194	And duty in his service perishing.
+  3195	
+  3196	THESEUS
+  3197	Why, gentle sweet, you shall see no such thing.
+  3198	
+  3199	HIPPOLYTA
+  3200	He says they can do nothing in this kind.
+  3201	
+  3202	THESEUS
+  3203	The kinder we, to give them thanks for nothing.
+  3204	Our sport shall be to take what they mistake:
+  3205	And what poor duty cannot do,
+  3206	Noble respect takes it in might, not merit.
+  3207	Where I have come, great clerks have purposed
+  3208	To greet me with premeditated welcomes;
+  3209	Where I have seen them shiver and look pale,
+  3210	Make periods in the midst of sentences,
+  3211	Throttle their practis'd accent in their fears,
+  3212	And, in conclusion, dumbly have broke off,
+  3213	Not paying me a welcome. Trust me, sweet,
+  3214	Out of this silence yet I pick'd a welcome;
+  3215	And in the modesty of fearful duty
+  3216	I read as much as from the rattling tongue
+  3217	Of saucy and audacious eloquence.
+  3218	Love, therefore, and tongue-tied simplicity
+  3219	In least speak most to my capacity.
+  3220	
+  3221	[Enter PHILOSTRATE.]
+  3222	
+  3223	PHILOSTRATE
+  3224	So please your grace, the prologue is address'd.
+  3225	
+  3226	THESEUS
+  3227	Let him approach.
+  3228	
+  3229	[Flourish of trumpets. Enter PROLOGUE.]
+  3230	
+  3231	PROLOGUE
+  3232	'If we offend, it is with our good will.
+  3233	  That you should think, we come not to offend,
+  3234	But with good will.  To show our simple skill,
+  3235	  That is the true beginning of our end.
+  3236	Consider then, we come but in despite.
+  3237	  We do not come, as minding to content you,
+  3238	Our true intent is.  All for your delight
+  3239	  We are not here.  That you should here repent you,
+  3240	The actors are at hand: and, by their show,
+  3241	You shall know all that you are like to know,'
+  3242	
+  3243	THESEUS
+  3244	This fellow doth not stand upon points.
+  3245	
+  3246	LYSANDER
+  3247	He hath rid his prologue like a rough colt; he knows
+  3248	not the stop. A good moral, my lord: it is not enough to speak,
+  3249	but to speak true.
+  3250	
+  3251	HIPPOLYTA
+  3252	Indeed he hath played on this prologue like a child
+  3253	on a recorder; a sound, but not in government.
+  3254	
+  3255	THESEUS
+  3256	His speech was like a tangled chain; nothing impaired, but all
+  3257	disordered. Who is next?
+  3258	
+  3259	[Enter PYRAMUS and THISBE, WALL, MOONSHINE, and LION, as in dumb
+  3260	show.]
+  3261	
+  3262	PROLOGUE
+  3263	Gentles, perchance you wonder at this show;
+  3264	  But wonder on, till truth make all things plain.
+  3265	This man is Pyramus, if you would know;
+  3266	  This beauteous lady Thisby is certain.
+  3267	This man, with lime and rough-cast, doth present
+  3268	  Wall, that vile Wall which did these lovers sunder;
+  3269	And through Wall's chink, poor souls, they are content
+  3270	  To whisper, at the which let no man wonder.
+  3271	This man, with lanthorn, dog, and bush of thorn,
+  3272	  Presenteth Moonshine: for, if you will know,
+  3273	By moonshine did these lovers think no scorn
+  3274	  To meet at Ninus' tomb, there, there to woo.
+  3275	This grisly beast, which by name Lion hight,
+  3276	The trusty Thisby, coming first by night,
+  3277	Did scare away, or rather did affright;
+  3278	And as she fled, her mantle she did fall;
+  3279	  Which Lion vile with bloody mouth did stain:
+  3280	Anon comes Pyramus, sweet youth, and tall,
+  3281	  And finds his trusty Thisby's mantle slain;
+  3282	Whereat with blade, with bloody blameful blade,
+  3283	  He bravely broach'd his boiling bloody breast;
+  3284	And Thisby, tarrying in mulberry shade,
+  3285	  His dagger drew, and died. For all the rest,
+  3286	Let Lion, Moonshine, Wall, and lovers twain,
+  3287	At large discourse while here they do remain.
+  3288	
+  3289	[Exeunt PROLOGUE, THISBE, LION, and MOONSHINE.]
+  3290	
+  3291	THESEUS
+  3292	I wonder if the lion be to speak.
+  3293	
+  3294	DEMETRIUS
+  3295	No wonder, my lord: one lion may, when many asses do.
+  3296	
+  3297	WALL
+  3298	In this same interlude it doth befall
+  3299	That I, one Snout by name, present a wall:
+  3300	And such a wall as I would have you think
+  3301	That had in it a crannied hole or chink,
+  3302	Through which the lovers, Pyramus and Thisby,
+  3303	Did whisper often very secretly.
+  3304	This loam, this rough-cast, and this stone, doth show
+  3305	That I am that same wall; the truth is so:
+  3306	And this the cranny is, right and sinister,
+  3307	Through which the fearful lovers are to whisper.
+  3308	
+  3309	THESEUS
+  3310	Would you desire lime and hair to speak better?
+  3311	
+  3312	DEMETRIUS
+  3313	It is the wittiest partition that ever I heard
+  3314	discourse, my lord.
+  3315	
+  3316	THESEUS
+  3317	Pyramus draws near the wall; silence.
+  3318	
+  3319	[Enter PYRAMUS.]
+  3320	
+  3321	PYRAMUS
+  3322	O grim-look'd night! O night with hue so black!
+  3323	  O night, which ever art when day is not!
+  3324	O night, O night, alack, alack, alack,
+  3325	 I fear my Thisby's promise is forgot!--
+  3326	And thou, O wall, O sweet, O lovely wall,
+  3327	 That stand'st between her father's ground and mine;
+  3328	Thou wall, O wall, O sweet and lovely wall,
+  3329	  Show me thy chink, to blink through with mine eyne.
+  3330	
+  3331	[WALL holds up his fingers.]
+  3332	
+  3333	Thanks, courteous wall: Jove shield thee well for this!
+  3334	  But what see what see I? No Thisby do I see.
+  3335	O wicked wall, through whom I see no bliss,
+  3336	  Curs'd be thy stones for thus deceiving me!
+  3337	
+  3338	THESEUS
+  3339	The wall, methinks, being sensible, should curse again.
+  3340	
+  3341	PYRAMUS
+  3342	No, in truth, sir, he should not. 'Deceiving me' is
+  3343	Thisby's cue: she is to enter now, and I am to spy her through
+  3344	the wall. You shall see it will fall pat as I told you.--Yonder
+  3345	she comes.
+  3346	
+  3347	[Enter THISBE.]
+  3348	
+  3349	THISBE
+  3350	O wall, full often hast thou heard my moans,
+  3351	  For parting my fair Pyramus and me:
+  3352	My cherry lips have often kiss'd thy stones:
+  3353	  Thy stones with lime and hair knit up in thee.
+  3354	
+  3355	PYRAMUS
+  3356	I see a voice; now will I to the chink,
+  3357	To spy an I can hear my Thisby's face.
+  3358	Thisby!
+  3359	
+  3360	THISBE
+  3361	        My love! thou art my love, I think.
+  3362	
+  3363	PYRAMUS
+  3364	Think what thou wilt, I am thy lover's grace;
+  3365	And like Limander am I trusty still.
+  3366	
+  3367	THISBE
+  3368	And I like Helen, till the fates me kill.
+  3369	
+  3370	PYRAMUS
+  3371	Not Shafalus to Procrus was so true.
+  3372	
+  3373	THISBE
+  3374	As Shafalus to Procrus, I to you.
+  3375	
+  3376	PYRAMUS
+  3377	O, kiss me through the hole of this vile wall.
+  3378	
+  3379	THISBE
+  3380	I kiss the wall's hole, not your lips at all.
+  3381	
+  3382	PYRAMUS
+  3383	Wilt thou at Ninny's tomb meet me straightway?
+  3384	
+  3385	THISBE
+  3386	'Tide life, 'tide death, I come without delay.
+  3387	
+  3388	WALL
+  3389	Thus have I, wall, my part discharged so;
+  3390	And, being done, thus Wall away doth go.
+  3391	
+  3392	[Exeunt WALL, PYRAMUS and THISBE.]
+  3393	
+  3394	THESEUS
+  3395	Now is the mural down between the two neighbours.
+  3396	
+  3397	DEMETRIUS
+  3398	No remedy, my lord, when walls are so wilful to hear
+  3399	without warning.
+  3400	
+  3401	HIPPOLYTA
+  3402	This is the silliest stuff that ever I heard.
+  3403	
+  3404	THESEUS
+  3405	The best in this kind are but shadows; and the worst
+  3406	are no worse, if imagination amend them.
+  3407	
+  3408	HIPPOLYTA
+  3409	It must be your imagination then, and not theirs.
+  3410	
+  3411	THESEUS
+  3412	If we imagine no worse of them than they of
+  3413	themselves, they may pass for excellent men.
+  3414	Here come two noble beasts in, a moon and a lion.
+  3415	
+  3416	[Enter LION and MOONSHINE.]
+  3417	
+  3418	LION
+  3419	You, ladies, you, whose gentle hearts do fear
+  3420	  The smallest monstrous mouse that creeps on floor,
+  3421	May now, perchance, both quake and tremble here,
+  3422	  When lion rough in wildest rage doth roar.
+  3423	Then know that I, one Snug the joiner, am
+  3424	A lion fell, nor else no lion's dam:
+  3425	For, if I should as lion come in strife
+  3426	Into this place, 'twere pity on my life.
+  3427	
+  3428	THESEUS
+  3429	A very gentle beast, and of a good conscience.
+  3430	
+  3431	DEMETRIUS
+  3432	The very best at a beast, my lord, that e'er I saw.
+  3433	
+  3434	LYSANDER
+  3435	This lion is a very fox for his valour.
+  3436	
+  3437	THESEUS
+  3438	True; and a goose for his discretion.
+  3439	
+  3440	DEMETRIUS
+  3441	Not so, my lord; for his valour cannot carry his
+  3442	discretion, and the fox carries the goose.
+  3443	
+  3444	THESEUS
+  3445	His discretion, I am sure, cannot carry his valour;
+  3446	for the goose carries not the fox. It is well; leave it to his
+  3447	discretion, and let us listen to the moon.
+  3448	
+  3449	MOONSHINE
+  3450	This lanthorn doth the horned moon present:
+  3451	
+  3452	DEMETRIUS
+  3453	He should have worn the horns on his head.
+  3454	
+  3455	THESEUS
+  3456	He is no crescent, and his horns are invisible within
+  3457	the circumference.
+  3458	
+  3459	MOONSHINE
+  3460	This lanthorn doth the horned moon present;
+  3461	Myself the man i' the moon do seem to be.
+  3462	
+  3463	THESEUS
+  3464	This is the greatest error of all the rest: the man should be
+  3465	put into the lantern. How is it else the man i' the moon?
+  3466	
+  3467	DEMETRIUS
+  3468	He dares not come there for the candle: for, you
+  3469	see, it is already in snuff.
+  3470	
+  3471	HIPPOLYTA
+  3472	I am aweary of this moon: would he would change!
+  3473	
+  3474	THESEUS
+  3475	It appears, by his small light of discretion, that he
+  3476	is in the wane: but yet, in courtesy, in all reason, we must
+  3477	stay the time.
+  3478	
+  3479	LYSANDER
+  3480	Proceed, moon.
+  3481	
+  3482	MOON
+  3483	All that I have to say, is to tell you that the lantern
+  3484	is the moon; I, the man i' the moon; this thorn-bush, my
+  3485	thorn-bush; and this dog, my dog.
+  3486	
+  3487	DEMETRIUS
+  3488	Why, all these should be in the lantern; for all
+  3489	these are in the moon. But silence; here comes Thisbe.
+  3490	
+  3491	[Enter THISBE.]
+  3492	
+  3493	THISBE
+  3494	This is old Ninny's tomb. Where is my love?
+  3495	
+  3496	LION
+  3497	Oh!
+  3498	
+  3499	[The LION roars.--THISBE runs off.]
+  3500	
+  3501	DEMETRIUS
+  3502	Well roared, lion.
+  3503	
+  3504	THESEUS
+  3505	Well run, Thisbe.
+  3506	
+  3507	HIPPOLYTA
+  3508	Well shone, moon.--Truly, the moon shines with a good grace.
+  3509	
+  3510	[The LION tears THISBE'S Mantle, and exit.]
+  3511	
+  3512	THESEUS
+  3513	Well moused, lion.
+  3514	
+  3515	DEMETRIUS
+  3516	And so comes Pyramus.
+  3517	
+  3518	LYSANDER
+  3519	And then the lion vanishes.
+  3520	
+  3521	[Enter PYRAMUS.]
+  3522	
+  3523	PYRAMUS
+  3524	Sweet moon, I thank thee for thy sunny beams;
+  3525	  I thank thee, moon, for shining now so bright:
+  3526	For, by thy gracious golden, glittering streams,
+  3527	  I trust to take of truest Thisby's sight.
+  3528	      But stay;--O spite!
+  3529	      But mark,--poor knight,
+  3530	    What dreadful dole is here!
+  3531	      Eyes, do you see?
+  3532	      How can it be?
+  3533	    O dainty duck! O dear!
+  3534	      Thy mantle good,
+  3535	      What! stained with blood?
+  3536	    Approach, ye furies fell!
+  3537	      O fates! come, come;
+  3538	      Cut thread and thrum;
+  3539	    Quail, rush, conclude, and quell!
+  3540	
+  3541	THESEUS
+  3542	This passion, and the death of a dear friend, would go
+  3543	near to make a man look sad.
+  3544	
+  3545	HIPPOLYTA
+  3546	Beshrew my heart, but I pity the man.
+  3547	
+  3548	PYRAMUS
+  3549	O wherefore, nature, didst thou lions frame?
+  3550	  Since lion vile hath here deflower'd my dear;
+  3551	Which is--no, no--which was the fairest dame
+  3552	  That liv'd, that lov'd, that lik'd, that look'd with cheer.
+  3553	      Come, tears, confound;
+  3554	      Out, sword, and wound
+  3555	    The pap of Pyramus:
+  3556	      Ay, that left pap,
+  3557	      Where heart doth hop:--
+  3558	    Thus die I, thus, thus, thus.
+  3559	      Now am I dead,
+  3560	      Now am I fled;
+  3561	    My soul is in the sky:
+  3562	      Tongue, lose thy light!
+  3563	      Moon, take thy flight!
+  3564	    Now die, die, die, die, die.
+  3565	
+  3566	[Dies. Exit MOONSHINE.]
+  3567	
+  3568	DEMETRIUS
+  3569	No die, but an ace, for him; for he is but one.
+  3570	
+  3571	LYSANDER
+  3572	Less than an ace, man; for he is dead; he is nothing.
+  3573	
+  3574	THESEUS
+  3575	With the help of a surgeon he might yet recover and prove an ass.
+  3576	
+  3577	HIPPOLYTA
+  3578	How chance moonshine is gone before Thisbe comes
+  3579	back and finds her lover?
+  3580	
+  3581	THESEUS
+  3582	She will find him by starlight.--Here she comes; and
+  3583	her passion ends the play.
+  3584	
+  3585	[Enter THISBE.]
+  3586	
+  3587	HIPPOLYTA
+  3588	Methinks she should not use a long one for such a
+  3589	Pyramus: I hope she will be brief.
+  3590	
+  3591	DEMETRIUS
+  3592	A mote will turn the balance, which Pyramus, which
+  3593	Thisbe, is the better.
+  3594	
+  3595	LYSANDER
+  3596	She hath spied him already with those sweet eyes.
+  3597	
+  3598	DEMETRIUS
+  3599	And thus she moans, videlicet.--
+  3600	
+  3601	THISBE
+  3602	     Asleep, my love?
+  3603	     What, dead, my dove?
+  3604	   O Pyramus, arise,
+  3605	     Speak, speak. Quite dumb?
+  3606	     Dead, dead? A tomb
+  3607	   Must cover thy sweet eyes.
+  3608	     These lily lips,
+  3609	     This cherry nose,
+  3610	   These yellow cowslip cheeks,
+  3611	     Are gone, are gone:
+  3612	     Lovers, make moan!
+  3613	   His eyes were green as leeks.
+  3614	     O Sisters Three,
+  3615	     Come, come to me,
+  3616	   With hands as pale as milk;
+  3617	     Lay them in gore,
+  3618	     Since you have shore
+  3619	   With shears his thread of silk.
+  3620	     Tongue, not a word:--
+  3621	     Come, trusty sword;
+  3622	   Come, blade, my breast imbrue;
+  3623	     And farewell, friends:--
+  3624	     Thus Thisbe ends;
+  3625	   Adieu, adieu, adieu.
+  3626	
+  3627	[Dies.]
+  3628	
+  3629	THESEUS
+  3630	Moonshine and lion are left to bury the dead.
+  3631	
+  3632	DEMETRIUS
+  3633	Ay, and wall too.
+  3634	
+  3635	BOTTOM
+  3636	No, I assure you; the wall is down that parted their fathers.
+  3637	Will it please you to see the epilogue, or to hear a Bergomask
+  3638	dance between two of our company?
+  3639	
+  3640	THESEUS
+  3641	No epilogue, I pray you; for your play needs no
+  3642	excuse. Never excuse; for when the players are all dead there
+  3643	need none to be blamed. Marry, if he that writ it had played
+  3644	Pyramus, and hang'd himself in Thisbe's garter, it would have
+  3645	been a fine tragedy: and so it is, truly; and very notably
+  3646	discharged. But come, your Bergomask; let your epilogue alone.
+  3647	
+  3648	[Here a dance of Clowns.]
+  3649	
+  3650	The iron tongue of midnight hath told twelve:--
+  3651	Lovers, to bed; 'tis almost fairy time.
+  3652	I fear we shall out-sleep the coming morn,
+  3653	As much as we this night have overwatch'd.
+  3654	This palpable-gross play hath well beguil'd
+  3655	The heavy gait of night.--Sweet friends, to bed.--
+  3656	A fortnight hold we this solemnity,
+  3657	In nightly revels and new jollity.
+  3658	
+  3659	[Exeunt.]
+  3660	
+  3661	
+  3662	
+  3663	SCENE II
+  3664	
+  3665	[Enter PUCK.]
+  3666	
+  3667	PUCK
+  3668	  Now the hungry lion roars,
+  3669	   And the wolf behowls the moon;
+  3670	  Whilst the heavy ploughman snores,
+  3671	   All with weary task fordone.
+  3672	  Now the wasted brands do glow,
+  3673	   Whilst the scritch-owl, scritching loud,
+  3674	  Puts the wretch that lies in woe
+  3675	   In remembrance of a shroud.
+  3676	  Now it is the time of night
+  3677	   That the graves, all gaping wide,
+  3678	  Every one lets forth its sprite,
+  3679	   In the church-way paths to glide:
+  3680	  And we fairies, that do run
+  3681	   By the triple Hecate's team
+  3682	  From the presence of the sun,
+  3683	   Following darkness like a dream,
+  3684	  Now are frolic; not a mouse
+  3685	   Shall disturb this hallow'd house:
+  3686	  I am sent with broom before,
+  3687	   To sweep the dust behind the door.
+  3688	
+  3689	[Enter OBERON and TITANIA, with their Train.]
+  3690	
+  3691	OBERON
+  3692	  Through the house give glimmering light,
+  3693	    By the dead and drowsy fire:
+  3694	  Every elf and fairy sprite
+  3695	    Hop as light as bird from brier:
+  3696	  And this ditty, after me,
+  3697	  Sing and dance it trippingly.
+  3698	
+  3699	TITANIA
+  3700	  First, rehearse your song by rote,
+  3701	    To each word a warbling note;
+  3702	  Hand in hand, with fairy grace,
+  3703	  Will we sing, and bless this place.
+  3704	
+  3705	[Song and Dance.]
+  3706	
+  3707	OBERON
+  3708	  Now, until the break of day,
+  3709	  Through this house each fairy stray,
+  3710	  To the best bride-bed will we,
+  3711	  Which by us shall blessed be;
+  3712	  And the issue there create
+  3713	  Ever shall be fortunate.
+  3714	  So shall all the couples three
+  3715	  Ever true in loving be;
+  3716	  And the blots of Nature's hand
+  3717	  Shall not in their issue stand:
+  3718	  Never mole, hare-lip, nor scar,
+  3719	  Nor mark prodigious, such as are
+  3720	  Despised in nativity,
+  3721	  Shall upon their children be.--
+  3722	  With this field-dew consecrate,
+  3723	  Every fairy take his gate;
+  3724	  And each several chamber bless,
+  3725	  Through this palace, with sweet peace;
+  3726	  E'er shall it in safety rest,
+  3727	  And the owner of it blest.
+  3728	    Trip away:
+  3729	    Make no stay:
+  3730	  Meet me all by break of day.
+  3731	
+  3732	[Exeunt OBERON, TITANIA, and Train.]
+  3733	
+  3734	PUCK
+  3735	  If we shadows have offended,
+  3736	  Think but this,--and all is mended,--
+  3737	  That you have but slumber'd here
+  3738	  While these visions did appear.
+  3739	  And this weak and idle theme,
+  3740	  No more yielding but a dream,
+  3741	  Gentles, do not reprehend;
+  3742	  If you pardon, we will mend.
+  3743	  And, as I am an honest Puck,
+  3744	  If we have unearned luck
+  3745	  Now to 'scape the serpent's tongue,
+  3746	  We will make amends ere long;
+  3747	  Else the Puck a liar call:
+  3748	  So, good night unto you all.
+  3749	  Give me your hands, if we be friends,
+  3750	  And Robin shall restore amends.
+  3751	
+  3752	[Exit.]
+  3753	
+  3754	
+  3755	
+  3756	
+  3757	
+  3758	End of Project Gutenberg Etext of A Midsummer Night's Dream by Shakespeare
+  3759	PG has multiple editions of William Shakespeare's Complete Works
+  3760	
