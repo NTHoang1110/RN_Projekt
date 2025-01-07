@@ -75,9 +75,9 @@ public class MIbayAgent {
                         }
                         break;
                     case "auctions":
-                        StringBuilder auctionsList = new StringBuilder("Auctions: ");
+                        StringBuilder auctionsList = new StringBuilder();
                         for (Auction auction : auctions.values()) {
-                            auctionsList.append("Minimum: " + auction.minPrice + " Expiry: " + auction.expiryTime
+                            auctionsList.append("Auctions: Minimum: " + auction.minPrice + " Expiry: " + auction.expiryTime
                                     + " Seller: " + auction.seller + " File: " + auction.fileName + "\n");
                         }
                         String response = auctionsList.toString();
@@ -172,9 +172,8 @@ public class MIbayAgent {
             while (true) {
                 try {
                     socket.receive(response);
-                    String responseMessage = new String(response.getData(), 0, response.getLength()).trim();
+                    String responseMessage = new String(response.getData(), 0, response.getLength());
                     System.out.println(responseMessage);
-
                 } catch (SocketTimeoutException e) {
                     break;
                 }
