@@ -65,18 +65,18 @@ public class MIbayAgent {
                         break;
                     case "CHECK_NAME":
                         if (requestParts[1].equals(System.getenv("USER"))) {
-                            InetAddress address = packet.getAddress();
                             String response = InetAddress.getLocalHost().getHostAddress();
                             DatagramPacket responsePacket = new DatagramPacket(response.getBytes(), response.length(),
-                            packet.getAddress(), packet.getPort());
+                                    packet.getAddress(), packet.getPort());
                             requestSocket.send(responsePacket);
                         }
                         break;
                     case "auctions":
                         StringBuilder auctionsList = new StringBuilder();
                         for (Auction auction : auctions.values()) {
-                            auctionsList.append("Auctions: Minimum: " + auction.minPrice + " Expiry: " + auction.expiryTime
-                                    + " Seller: " + auction.seller + " File: " + auction.fileName + "\n");
+                            auctionsList
+                                    .append("Auctions: Minimum: " + auction.minPrice + " Expiry: " + auction.expiryTime
+                                            + " Seller: " + auction.seller + " File: " + auction.fileName + "\n");
                         }
                         String response = auctionsList.toString();
                         DatagramPacket responsePacket = new DatagramPacket(response.getBytes(), response.length(),
@@ -91,7 +91,13 @@ public class MIbayAgent {
                             bids.remove(requestParts[1]);
                         }
                     case "bieten":
-                        System.out.println(requestParts[1]);
+                        String[] bidParts = requestParts[1].split(";");
+                        if (bids.containsKey(bidParts[2])) {
+                            if (bids.get(bidParts[2]).bid < Double.parseDouble(bidParts[1])) {
+                                bids.get(bidParts[2]).bid = Double.parseDouble(bidParts[1]);
+                                bids.get(bidParts[2]).seller = bidParts[0];
+                            }
+                        }
                         break;
                     case "liste":
                         break;
@@ -213,7 +219,7 @@ public class MIbayAgent {
                 socket.setBroadcast(true);
                 InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
 
-                String bid = "nachricht:" + System.getenv("USER") + " bietet " + price + " für " + filename;
+                String bid = "nachricht:" + System.getenv("USER") + ";" + price + ";" + filename;
                 DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), broadcastAddress,
                         BROADCAST_PORT);
                 socket.send(packet);
