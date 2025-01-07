@@ -65,7 +65,7 @@ public class MIbayAgent {
                         System.out.println(requestParts[1]);
                         break;
                     case "CHECK_NAME":
-                    System.out.println(requestParts[1]);
+                        System.out.println(requestParts[1]);
                         if (requestParts[1].equals(System.getenv("USER"))) {
                             InetAddress address = packet.getAddress();
                             String response = InetAddress.getLocalHost().getHostAddress();
@@ -165,20 +165,27 @@ public class MIbayAgent {
             DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), broadcastAddress,
                     BROADCAST_PORT);
             socket.send(packet);
+
+            byte[] buffer = new byte[512];
+            DatagramPacket response = new DatagramPacket(buffer, buffer.length);
+
+            while (true) {
+                try {
+                    socket.receive(response);
+                    String responseMessage = new String(response.getData(), 0, response.getLength()).trim();
+                    System.out.println(responseMessage);
+                    break;
+
+                } catch (SocketTimeoutException e) {
+                    break;
+                }
+            }
         } catch (SocketTimeoutException e) {
             System.out.println("Auction hat geendet");
         } catch (IOException e) {
             e.printStackTrace();
         }
-        try (DatagramSocket socket = new DatagramSocket(BROADCAST_PORT)) {
-            byte[] buffer = new byte[512];
-            DatagramPacket response = new DatagramPacket(buffer, buffer.length);
-            socket.receive(response);
-            String auctionsList = new String(response.getData(), 0, response.getLength());
-            System.out.println(auctionsList);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 
     public static void info() {
