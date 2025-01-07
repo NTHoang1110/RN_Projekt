@@ -174,7 +174,6 @@ public class MIbayAgent {
                     socket.receive(response);
                     String responseMessage = new String(response.getData(), 0, response.getLength()).trim();
                     System.out.println(responseMessage);
-                    break;
 
                 } catch (SocketTimeoutException e) {
                     break;
