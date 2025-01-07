@@ -76,7 +76,8 @@ public class MIbayAgent {
                         StringBuilder auctionsList = new StringBuilder();
                         for (Auction auction : auctions.values()) {
                             auctionsList
-                                    .append("Auctions: Minimum: " + auction.minPrice + " Expiry: " + auction.expiryTime
+                                    .append("Auctions: Highest: " + auction.highestBid + " Bidder: "
+                                            + auction.highestBidder + " Expiry: " + auction.expiryTime
                                             + " Seller: " + auction.seller + " File: " + auction.fileName + "\n");
                         }
                         String response = auctionsList.toString();
