@@ -180,7 +180,6 @@ public class MIbayAgent {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     public static void info() {
