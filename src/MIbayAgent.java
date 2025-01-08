@@ -64,7 +64,7 @@ public class MIbayAgent {
                         System.out.println(requestParts[1] + "!!!!");
                         break;
                     case "CHECK_NAME":
-                        if (requestParts[1].equals(System.getenv("USERNAME"))) {
+                        if (requestParts[1].equals(System.getenv("USER"))) {
                             String response = InetAddress.getLocalHost().getHostAddress();
                             DatagramPacket responsePacket = new DatagramPacket(response.getBytes(), response.length(),
                                     packet.getAddress(), packet.getPort());
@@ -131,7 +131,7 @@ public class MIbayAgent {
             socket.setBroadcast(true);
             InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
 
-            String anbieten = "nachricht:" + System.getenv("USERNAME") + " hat " + filename + " in " + time
+            String anbieten = "nachricht:" + System.getenv("USER") + " hat " + filename + " in " + time
                     + " Sekunden mit dem Startpreis " + startPrice + " angeboten.";
 
             DatagramPacket packet = new DatagramPacket(anbieten.getBytes(), anbieten.length(), broadcastAddress,
@@ -145,7 +145,7 @@ public class MIbayAgent {
         }
 
         Auction auction = new Auction(filename, startPrice, LocalTime.now().plusSeconds(time),
-                System.getenv("USERNAME"),
+                System.getenv("USER"),
                 pathToFile);
         auctions.put(filename, auction);
 
@@ -176,7 +176,7 @@ public class MIbayAgent {
             socket.setBroadcast(true);
             InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
 
-            String bid = "nachricht:" + System.getenv("USERNAME") + " hat " + filename + " abgebrochen.";
+            String bid = "nachricht:" + System.getenv("USER") + " hat " + filename + " abgebrochen.";
             DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), broadcastAddress, BROADCAST_PORT);
             socket.send(packet);
 
@@ -235,7 +235,7 @@ public class MIbayAgent {
                 socket.setBroadcast(true);
                 InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
 
-                String bid = "nachricht:" + System.getenv("USERNAME") + " bietet " + price + " für " + filename + ".";
+                String bid = "nachricht:" + System.getenv("USER") + " bietet " + price + " für " + filename + ".";
 
                 DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), broadcastAddress,
                         BROADCAST_PORT);
@@ -250,7 +250,7 @@ public class MIbayAgent {
                 socket.setSoTimeout(10000);
                 InetAddress userAddress = InetAddress.getByName(userIP);
 
-                String bid = "bieten:" + System.getenv("USERNAME") + ";" + price + ";" + filename;
+                String bid = "bieten:" + System.getenv("USER") + ";" + price + ";" + filename;
                 DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), userAddress, BROADCAST_PORT);
                 socket.send(packet);
             } catch (SocketTimeoutException e) {
