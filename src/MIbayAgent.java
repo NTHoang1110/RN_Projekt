@@ -59,10 +59,12 @@ public class MIbayAgent {
 
                 String request = new String(packet.getData(), 0, packet.getLength());
                 String[] requestParts = request.split(":");
+
                 switch (requestParts[0]) {
                     case "nachricht":
                         System.out.println(requestParts[1] + "!!!!");
                         break;
+
                     case "CHECK_NAME":
                         if (requestParts[1].equals(System.getenv("USER"))) {
                             String response = InetAddress.getLocalHost().getHostAddress();
@@ -71,6 +73,7 @@ public class MIbayAgent {
                             requestSocket.send(responsePacket);
                         }
                         break;
+
                     case "auctions":
                         StringBuilder auctionsList = new StringBuilder();
                         for (Auction auction : auctions.values()) {
@@ -85,6 +88,7 @@ public class MIbayAgent {
                                 packet.getAddress(), packet.getPort());
                         requestSocket.send(responsePacket);
                         break;
+
                     case "abbrechen":
                         if (auctions.containsKey(requestParts[1])) {
                             auctions.remove(requestParts[1]);
@@ -93,6 +97,7 @@ public class MIbayAgent {
                             bids.remove(requestParts[1]);
                         }
                         break;
+
                     case "bieten":
                         String responseMessage = "nachricht:Bid successful.";
                         String[] bidParts = requestParts[1].split(";");
@@ -113,9 +118,9 @@ public class MIbayAgent {
                                 BROADCAST_PORT);
                         requestSocket.send(repPacket);
                         break;
+
                     case "info":
                         break;
-
                 }
             }
         } catch (IOException e) {
@@ -149,7 +154,7 @@ public class MIbayAgent {
 
         new Thread(() -> {
             String message;
-            while (true) {
+            while (auction.ongoing) {
                 if (auction.expiryTime.isBefore(LocalTime.now())) {
                     auction.ongoing = false;
                     if (auction.highestBidder != null) {
@@ -162,17 +167,17 @@ public class MIbayAgent {
                         socket.setSoTimeout(time * 1000);
                         socket.setBroadcast(true);
                         InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
-                        
-                        DatagramPacket packet = new DatagramPacket(message.getBytes(), message.length(), broadcastAddress,
+
+                        DatagramPacket packet = new DatagramPacket(message.getBytes(), message.length(),
+                                broadcastAddress,
                                 BROADCAST_PORT);
                         socket.send(packet);
-            
+
                     } catch (SocketTimeoutException e) {
                         System.out.println("Message not sent: Timeout");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-
                     break;
                 }
             }
@@ -181,23 +186,26 @@ public class MIbayAgent {
 
     public static void abbrechen(String filename) {
         if (auctions.containsKey(filename)) {
+            auctions.get(filename).ongoing = false;
             auctions.remove(filename);
             try (DatagramSocket socket = new DatagramSocket()) {
                 socket.setBroadcast(true);
                 InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
-    
+
                 String bid = "nachricht:" + System.getenv("USER") + " hat " + filename + " abgebrochen.";
-                DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), broadcastAddress, BROADCAST_PORT);
+                DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), broadcastAddress,
+                        BROADCAST_PORT);
                 socket.send(packet);
-    
+
                 String cancelBid = "abbrechen:" + filename;
-                DatagramPacket cancelPacket = new DatagramPacket(cancelBid.getBytes(), cancelBid.length(), broadcastAddress,
+                DatagramPacket cancelPacket = new DatagramPacket(cancelBid.getBytes(), cancelBid.length(),
+                        broadcastAddress,
                         BROADCAST_PORT);
                 socket.send(cancelPacket);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else{
+        } else {
             System.out.println("You dont have any auction with the file: " + filename);
         }
         if (bids.containsKey(filename)) {
