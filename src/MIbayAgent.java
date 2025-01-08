@@ -81,9 +81,6 @@ public class MIbayAgent {
                                             + " | Seller: " + auction.seller + " | File: " + auction.fileName + "\n");
                         }
                         String response = auctionsList.toString();
-                        if (auctionsList.length() == 0) {
-                            response = "No auctions available";
-                        }
                         DatagramPacket responsePacket = new DatagramPacket(response.getBytes(), response.length(),
                                 packet.getAddress(), packet.getPort());
                         requestSocket.send(responsePacket);
@@ -95,6 +92,7 @@ public class MIbayAgent {
                         if (bids.containsKey(requestParts[1])) {
                             bids.remove(requestParts[1]);
                         }
+                        break;
                     case "bieten":
                         String responseMessage = "nachricht:Bid successful.";
                         String[] bidParts = requestParts[1].split(";");
@@ -184,24 +182,26 @@ public class MIbayAgent {
     public static void abbrechen(String filename) {
         if (auctions.containsKey(filename)) {
             auctions.remove(filename);
+            try (DatagramSocket socket = new DatagramSocket()) {
+                socket.setBroadcast(true);
+                InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
+    
+                String bid = "nachricht:" + System.getenv("USER") + " hat " + filename + " abgebrochen.";
+                DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), broadcastAddress, BROADCAST_PORT);
+                socket.send(packet);
+    
+                String cancelBid = "abbrechen:" + filename;
+                DatagramPacket cancelPacket = new DatagramPacket(cancelBid.getBytes(), cancelBid.length(), broadcastAddress,
+                        BROADCAST_PORT);
+                socket.send(cancelPacket);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else{
+            System.out.println("You dont have any auction with the file: " + filename);
         }
         if (bids.containsKey(filename)) {
             bids.remove(filename);
-        }
-        try (DatagramSocket socket = new DatagramSocket()) {
-            socket.setBroadcast(true);
-            InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
-
-            String bid = "nachricht:" + System.getenv("USER") + " hat " + filename + " abgebrochen.";
-            DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), broadcastAddress, BROADCAST_PORT);
-            socket.send(packet);
-
-            String cancelBid = "abbrechen:" + filename;
-            DatagramPacket cancelPacket = new DatagramPacket(cancelBid.getBytes(), cancelBid.length(), broadcastAddress,
-                    BROADCAST_PORT);
-            socket.send(cancelPacket);
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -324,7 +324,7 @@ public class MIbayAgent {
             this.expiryTime = expiryTime;
             this.seller = seller;
             this.filePath = pathToFile + fileName;
-            this.highestBid = 0.0;
+            this.highestBid = minPrice;
             this.highestBidder = null;
             this.ongoing = true;
         }
