@@ -150,15 +150,31 @@ public class MIbayAgent {
         auctions.put(filename, auction);
 
         new Thread(() -> {
+            String message;
             while (true) {
                 if (auction.expiryTime.isBefore(LocalTime.now())) {
                     auction.ongoing = false;
                     if (auction.highestBidder != null) {
-                        System.out.println("Auction for " + auction.fileName + " has ended. Winner is "
-                                + auction.highestBidder + " with " + auction.highestBid);
+                        message = "nachricht:Auction for " + auction.fileName + " has ended. Winner is "
+                                + auction.highestBidder + " with " + auction.highestBid;
                     } else {
-                        System.out.println("Auction for " + auction.fileName + " has ended. No winner.");
+                        message = "nachricht:Auction for " + auction.fileName + " has ended. No winner.";
                     }
+                    try (DatagramSocket socket = new DatagramSocket()) {
+                        socket.setSoTimeout(time * 1000);
+                        socket.setBroadcast(true);
+                        InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
+                        
+                        DatagramPacket packet = new DatagramPacket(message.getBytes(), message.length(), broadcastAddress,
+                                BROADCAST_PORT);
+                        socket.send(packet);
+            
+                    } catch (SocketTimeoutException e) {
+                        System.out.println("Message not sent: Timeout");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
                     break;
                 }
             }
