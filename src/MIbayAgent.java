@@ -76,7 +76,8 @@ public class MIbayAgent {
                         for (Auction auction : auctions.values()) {
                             auctionsList
                                     .append("Highest: " + auction.highestBid + " | Bidder: "
-                                            + auction.highestBidder + " | Expiry: " + auction.expiryTime
+                                            + auction.highestBidder + " | Status: "
+                                            + (auction.ongoing ? "ongoing" : "ended")
                                             + " | Seller: " + auction.seller + " | File: " + auction.fileName + "\n");
                         }
                         String response = auctionsList.toString();
