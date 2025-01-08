@@ -56,7 +56,6 @@ public class MIbayAgent {
                 byte[] buffer = new byte[1024];
                 DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
                 requestSocket.receive(packet);
-                System.out.println("I have received a thing!!");
 
                 String request = new String(packet.getData(), 0, packet.getLength());
                 String[] requestParts = request.split(":");
@@ -76,9 +75,9 @@ public class MIbayAgent {
                         StringBuilder auctionsList = new StringBuilder();
                         for (Auction auction : auctions.values()) {
                             auctionsList
-                                    .append("Auctions: Highest: " + auction.highestBid + " Bidder: "
-                                            + auction.highestBidder + " Expiry: " + auction.expiryTime
-                                            + " Seller: " + auction.seller + " File: " + auction.fileName + "\n");
+                                    .append("Highest: " + auction.highestBid + " | Bidder: "
+                                            + auction.highestBidder + " | Expiry: " + auction.expiryTime
+                                            + " | Seller: " + auction.seller + " | File: " + auction.fileName + "\n");
                         }
                         String response = auctionsList.toString();
                         if (auctionsList.length() == 0) {
@@ -96,7 +95,7 @@ public class MIbayAgent {
                             bids.remove(requestParts[1]);
                         }
                     case "bieten":
-                        String responseMessage = "nachricht:";
+                        String responseMessage = "nachricht:Bid successful.";
                         String[] bidParts = requestParts[1].split(";");
                         if (auctions.containsKey(bidParts[2])) {
                             if (auctions.get(bidParts[2]).ongoing
@@ -104,10 +103,10 @@ public class MIbayAgent {
                                 auctions.get(bidParts[2]).highestBid = Integer.parseInt(bidParts[1]);
                                 auctions.get(bidParts[2]).highestBidder = bidParts[0];
                             } else {
-                                responseMessage += "Bid is too low or the auction has ended.";
+                                responseMessage = "nachricht:Bid is too low or the auction has ended.";
                             }
                         } else {
-                            responseMessage += "Auction not found.";
+                            responseMessage = "nachricht:Auction not found.";
                         }
                         InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
                         DatagramPacket repPacket = new DatagramPacket(responseMessage.getBytes(),
@@ -203,6 +202,7 @@ public class MIbayAgent {
             byte[] buffer = new byte[512];
             DatagramPacket response = new DatagramPacket(buffer, buffer.length);
 
+            System.out.println("Auctions:\n");
             while (true) {
                 try {
                     socket.receive(response);
@@ -229,22 +229,6 @@ public class MIbayAgent {
             System.out.println("User not found");
             return;
         } else {
-            Bid newBid = new Bid(username, price, filename);
-            bids.put(filename, newBid);
-
-            try (DatagramSocket socket = new DatagramSocket()) {
-                socket.setSoTimeout(10000);
-                InetAddress userAddress = InetAddress.getByName(userIP);
-
-                String bid = "bieten:" + System.getenv("USERNAME") + ";" + price + ";" + filename;
-                DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), userAddress, BROADCAST_PORT);
-                socket.send(packet);
-            } catch (SocketTimeoutException e) {
-                System.out.println("Message not sent: Timeout");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
             try (DatagramSocket socket = new DatagramSocket()) {
                 socket.setSoTimeout(10000);
                 socket.setBroadcast(true);
@@ -260,6 +244,20 @@ public class MIbayAgent {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            try (DatagramSocket socket = new DatagramSocket()) {
+                socket.setSoTimeout(10000);
+                InetAddress userAddress = InetAddress.getByName(userIP);
+
+                String bid = "bieten:" + System.getenv("USERNAME") + ";" + price + ";" + filename;
+                DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), userAddress, BROADCAST_PORT);
+                socket.send(packet);
+            } catch (SocketTimeoutException e) {
+                System.out.println("Message not sent: Timeout");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -336,8 +334,10 @@ public class MIbayAgent {
         System.out.println("Warte auf Nachrichten...");
 
         balance = Integer.parseInt(args[0]);
+        CLIListener.setName("CLIListener");
         CLIListener.start();
         System.out.println("CLIListener hat gestartet!");
+        requestListener.setName("RequestListener");
         requestListener.start();
         System.out.println("RequestListener hat gestartet!");
     }
