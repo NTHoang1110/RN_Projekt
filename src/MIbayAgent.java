@@ -78,10 +78,11 @@ public class MIbayAgent {
                         StringBuilder auctionsList = new StringBuilder();
                         for (Auction auction : auctions.values()) {
                             auctionsList
-                                    .append("Highest: " + auction.highestBid + " | Bidder: "
+                                    .append("Höchstgebot: " + auction.highestBid + " | Bieter: "
                                             + auction.highestBidder + " | Status: "
-                                            + (auction.ongoing ? "ongoing" : "ended")
-                                            + " | Seller: " + auction.seller + " | File: " + auction.fileName + "\n");
+                                            + (auction.ongoing ? "laufend" : "beendet")
+                                            + " | Anbieter: " + auction.seller + " | Datei: " + auction.fileName
+                                            + "\n");
                         }
                         String response = auctionsList.toString();
                         DatagramPacket responsePacket = new DatagramPacket(response.getBytes(), response.length(),
@@ -99,7 +100,7 @@ public class MIbayAgent {
                         break;
 
                     case "bieten":
-                        String responseMessage = "nachricht:Bid successful.";
+                        String responseMessage = "nachricht:Gebot erfolgreich.";
                         String[] bidParts = requestParts[1].split(";");
                         if (auctions.containsKey(bidParts[2])) {
                             if (auctions.get(bidParts[2]).ongoing
@@ -107,10 +108,10 @@ public class MIbayAgent {
                                 auctions.get(bidParts[2]).highestBid = Integer.parseInt(bidParts[1]);
                                 auctions.get(bidParts[2]).highestBidder = bidParts[0];
                             } else {
-                                responseMessage = "nachricht:Bid is too low or the auction has ended.";
+                                responseMessage = "nachricht:Das Gebot ist zu niedrig oder die Auktion ist beendet.";
                             }
                         } else {
-                            responseMessage = "nachricht:Auction not found.";
+                            responseMessage = "nachricht:Auktion nicht gefunden.";
                         }
                         InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
                         DatagramPacket repPacket = new DatagramPacket(responseMessage.getBytes(),
@@ -142,7 +143,7 @@ public class MIbayAgent {
             socket.send(packet);
 
         } catch (SocketTimeoutException e) {
-            System.out.println("Message not sent: Timeout");
+            System.out.println("Nachricht nicht gesendet oder empfangen: Timeout");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -154,14 +155,14 @@ public class MIbayAgent {
 
         new Thread(() -> {
             String message;
-            while (auction.ongoing) {
+            while (!auction.canceled) {
                 if (auction.expiryTime.isBefore(LocalTime.now())) {
                     auction.ongoing = false;
                     if (auction.highestBidder != null) {
-                        message = "nachricht:Auction for " + auction.fileName + " has ended. Winner is "
-                                + auction.highestBidder + " with " + auction.highestBid;
+                        message = "nachricht:Auktion für " + auction.fileName + " ist beendet. Gewinner ist "
+                                + auction.highestBidder + " mit " + auction.highestBid;
                     } else {
-                        message = "nachricht:Auction for " + auction.fileName + " has ended. No winner.";
+                        message = "nachricht:Auktion für " + auction.fileName + " ist beendet. Kein Gewinner.";
                     }
                     try (DatagramSocket socket = new DatagramSocket()) {
                         socket.setSoTimeout(time * 1000);
@@ -174,7 +175,7 @@ public class MIbayAgent {
                         socket.send(packet);
 
                     } catch (SocketTimeoutException e) {
-                        System.out.println("Message not sent: Timeout");
+                        System.out.println("Nachricht nicht gesendet oder empfangen: Timeout");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -186,13 +187,14 @@ public class MIbayAgent {
 
     public static void abbrechen(String filename) {
         if (auctions.containsKey(filename)) {
+            auctions.get(filename).canceled = true;
             auctions.get(filename).ongoing = false;
             auctions.remove(filename);
             try (DatagramSocket socket = new DatagramSocket()) {
                 socket.setBroadcast(true);
                 InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
 
-                String bid = "nachricht:" + System.getenv("USER") + " hat " + filename + " abgebrochen.";
+                String bid = "nachricht:" + System.getenv("USER") + " hat " + filename + " abgebrochen. Kein Gewinner.";
                 DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), broadcastAddress,
                         BROADCAST_PORT);
                 socket.send(packet);
@@ -206,7 +208,7 @@ public class MIbayAgent {
                 e.printStackTrace();
             }
         } else {
-            System.out.println("You dont have any auction with the file: " + filename);
+            System.out.println("Sie haben keine Auktion mit der Datei: " + filename);
         }
         if (bids.containsKey(filename)) {
             bids.remove(filename);
@@ -238,7 +240,7 @@ public class MIbayAgent {
                 }
             }
         } catch (SocketTimeoutException e) {
-            System.out.println("Message not sent or receive: Timeout");
+            System.out.println("Nachricht nicht gesendet oder empfangen: Timeout");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -265,7 +267,7 @@ public class MIbayAgent {
                         BROADCAST_PORT);
                 socket.send(packet);
             } catch (SocketTimeoutException e) {
-                System.out.println("Message not sent: Timeout");
+                System.out.println("Nachricht nicht gesendet oder empfangen: Timeout");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -278,7 +280,7 @@ public class MIbayAgent {
                 DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), userAddress, BROADCAST_PORT);
                 socket.send(packet);
             } catch (SocketTimeoutException e) {
-                System.out.println("Message not sent: Timeout");
+                System.out.println("Nachricht nicht gesendet oder empfangen: Timeout");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -309,7 +311,7 @@ public class MIbayAgent {
                 }
             }
         } catch (SocketTimeoutException e) {
-            System.out.println("Message not sent: Timeout");
+            System.out.println("Nachricht nicht gesendet oder empfangen: Timeout");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -325,6 +327,7 @@ public class MIbayAgent {
         String highestBidder;
         double highestBid;
         boolean ongoing = false;
+        boolean canceled = false;
 
         public Auction(String fileName, double minPrice, LocalTime expiryTime, String seller, String filePath) {
             this.fileName = fileName;
