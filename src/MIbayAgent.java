@@ -1,8 +1,12 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketTimeoutException;
+import java.nio.file.Files;
 import java.time.LocalTime;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -161,6 +165,7 @@ public class MIbayAgent {
                     if (auction.highestBidder != null) {
                         message = "nachricht:Auktion für " + auction.fileName + " ist beendet. Gewinner ist "
                                 + auction.highestBidder + " mit " + auction.highestBid;
+                        sendFileToWinner(auction.fileName, auction.highestBidder);
                     } else {
                         message = "nachricht:Auktion für " + auction.fileName + " ist beendet. Kein Gewinner.";
                     }
@@ -173,7 +178,6 @@ public class MIbayAgent {
                                 broadcastAddress,
                                 BROADCAST_PORT);
                         socket.send(packet);
-
                     } catch (SocketTimeoutException e) {
                         System.out.println("Nachricht nicht gesendet oder empfangen: Timeout");
                     } catch (IOException e) {
@@ -316,6 +320,29 @@ public class MIbayAgent {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static void sendFileToWinner(String fileName, String winnerAddress) {
+        try {
+            String prefix = "FILE:";
+
+            File file = new File("../dateien/" + fileName);
+            byte[] fileData = Files.readAllBytes(file.toPath());
+            byte[] prefixBytes = prefix.getBytes();
+
+            byte[] sendData = new byte[prefixBytes.length + fileData.length];
+            System.arraycopy(prefixBytes, 0, sendData, 0, prefixBytes.length);
+            System.arraycopy(fileData, 0, sendData, prefixBytes.length, fileData.length);
+
+            try (DatagramSocket socket = new DatagramSocket()) {
+                InetAddress receiverAddress = InetAddress.getByName(findUser(winnerAddress));
+                DatagramPacket packet = new DatagramPacket(sendData, sendData.length, receiverAddress, BROADCAST_PORT);
+                socket.send(packet);
+                System.out.println("File sent with prefix: " + prefix);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     static class Auction {
