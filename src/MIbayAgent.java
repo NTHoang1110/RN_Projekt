@@ -334,7 +334,7 @@ public class MIbayAgent {
 
     public static void sendFileToWinner(String fileName, String winnerAddress) {
         try {
-            String prefix = "FILE:" + fileName;
+            String prefix = "FILE:";
 
             File file = new File("../dateien/" + fileName);
             byte[] fileData = Files.readAllBytes(file.toPath());
