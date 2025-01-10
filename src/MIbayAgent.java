@@ -89,12 +89,14 @@ public class MIbayAgent {
                         case "auctions":
                             StringBuilder auctionsList = new StringBuilder();
                             for (Auction auction : auctions.values()) {
-                                auctionsList
-                                        .append("Höchstgebot: " + auction.highestBid + " | Bieter: "
-                                                + auction.highestBidder + " | Status: "
-                                                + (auction.ongoing ? "laufend" : "beendet")
-                                                + " | Anbieter: " + auction.seller + " | Datei: " + auction.fileName
-                                                + "\n");
+                                if(auction.ongoing && !auction.canceled){
+                                    auctionsList
+                                    .append("Höchstgebot: " + auction.highestBid + " | Bieter: "
+                                            + auction.highestBidder + " | Status: "
+                                            + (auction.ongoing ? "laufend" : "beendet")
+                                            + " | Anbieter: " + auction.seller + " | Datei: " + auction.fileName
+                                            + "\n");
+                                }
                             }
                             String response = auctionsList.toString();
                             DatagramPacket responsePacket = new DatagramPacket(response.getBytes(), response.length(),
