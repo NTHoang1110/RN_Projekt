@@ -1,6 +1,4 @@
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -61,72 +59,84 @@ public class MIbayAgent {
                 DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
                 requestSocket.receive(packet);
 
-                String request = new String(packet.getData(), 0, packet.getLength());
-                String[] requestParts = request.split(":");
+                byte[] data = packet.getData();
+                String receivedPrefix = new String(data, 0, 5);
 
-                switch (requestParts[0]) {
-                    case "nachricht":
-                        System.out.println(requestParts[1] + "!!!!");
-                        break;
+                if ("FILE:".equals(receivedPrefix)) {
+                    byte[] fileData = new byte[packet.getLength() - 5];
+                    System.arraycopy(data, 5, fileData, 0, fileData.length);
+                    Files.write(new File("dateien/received.txt").toPath(), fileData);
+                    System.out.println("File received and saved to dateien/received.txt");
+                } else {
+                    String request = new String(packet.getData(), 0, packet.getLength());
+                    String[] requestParts = request.split(":");
 
-                    case "CHECK_NAME":
-                        if (requestParts[1].equals(System.getenv("USER"))) {
-                            String response = InetAddress.getLocalHost().getHostAddress();
+                    switch (requestParts[0]) {
+                        case "nachricht":
+                            System.out.println(requestParts[1] + "!!!!");
+                            break;
+
+                        case "CHECK_NAME":
+                            if (requestParts[1].equals(System.getenv("USER"))) {
+                                String response = InetAddress.getLocalHost().getHostAddress();
+                                DatagramPacket responsePacket = new DatagramPacket(response.getBytes(),
+                                        response.length(),
+                                        packet.getAddress(), packet.getPort());
+                                requestSocket.send(responsePacket);
+                            }
+                            break;
+
+                        case "auctions":
+                            StringBuilder auctionsList = new StringBuilder();
+                            for (Auction auction : auctions.values()) {
+                                auctionsList
+                                        .append("Höchstgebot: " + auction.highestBid + " | Bieter: "
+                                                + auction.highestBidder + " | Status: "
+                                                + (auction.ongoing ? "laufend" : "beendet")
+                                                + " | Anbieter: " + auction.seller + " | Datei: " + auction.fileName
+                                                + "\n");
+                            }
+                            String response = auctionsList.toString();
                             DatagramPacket responsePacket = new DatagramPacket(response.getBytes(), response.length(),
                                     packet.getAddress(), packet.getPort());
                             requestSocket.send(responsePacket);
-                        }
-                        break;
+                            break;
 
-                    case "auctions":
-                        StringBuilder auctionsList = new StringBuilder();
-                        for (Auction auction : auctions.values()) {
-                            auctionsList
-                                    .append("Höchstgebot: " + auction.highestBid + " | Bieter: "
-                                            + auction.highestBidder + " | Status: "
-                                            + (auction.ongoing ? "laufend" : "beendet")
-                                            + " | Anbieter: " + auction.seller + " | Datei: " + auction.fileName
-                                            + "\n");
-                        }
-                        String response = auctionsList.toString();
-                        DatagramPacket responsePacket = new DatagramPacket(response.getBytes(), response.length(),
-                                packet.getAddress(), packet.getPort());
-                        requestSocket.send(responsePacket);
-                        break;
-
-                    case "abbrechen":
-                        if (auctions.containsKey(requestParts[1])) {
-                            auctions.remove(requestParts[1]);
-                        }
-                        if (bids.containsKey(requestParts[1])) {
-                            bids.remove(requestParts[1]);
-                        }
-                        break;
-
-                    case "bieten":
-                        String responseMessage = "nachricht:Gebot erfolgreich.";
-                        String[] bidParts = requestParts[1].split(";");
-                        if (auctions.containsKey(bidParts[2])) {
-                            if (auctions.get(bidParts[2]).ongoing
-                                    && (Integer.parseInt(bidParts[1]) > auctions.get(bidParts[2]).highestBid)) {
-                                auctions.get(bidParts[2]).highestBid = Integer.parseInt(bidParts[1]);
-                                auctions.get(bidParts[2]).highestBidder = bidParts[0];
-                            } else {
-                                responseMessage = "nachricht:Das Gebot ist zu niedrig oder die Auktion ist beendet.";
+                        case "abbrechen":
+                            if (auctions.containsKey(requestParts[1])) {
+                                auctions.remove(requestParts[1]);
                             }
-                        } else {
-                            responseMessage = "nachricht:Auktion nicht gefunden.";
-                        }
-                        InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
-                        DatagramPacket repPacket = new DatagramPacket(responseMessage.getBytes(),
-                                responseMessage.length(), broadcastAddress,
-                                BROADCAST_PORT);
-                        requestSocket.send(repPacket);
-                        break;
+                            if (bids.containsKey(requestParts[1])) {
+                                bids.remove(requestParts[1]);
+                            }
+                            break;
 
-                    case "info":
-                        break;
+                        case "bieten":
+                            String responseMessage = "nachricht:Gebot erfolgreich.";
+                            String[] bidParts = requestParts[1].split(";");
+                            if (auctions.containsKey(bidParts[2])) {
+                                if (auctions.get(bidParts[2]).ongoing
+                                        && (Integer.parseInt(bidParts[1]) > auctions.get(bidParts[2]).highestBid)) {
+                                    auctions.get(bidParts[2]).highestBid = Integer.parseInt(bidParts[1]);
+                                    auctions.get(bidParts[2]).highestBidder = bidParts[0];
+                                } else {
+                                    responseMessage = "nachricht:Das Gebot ist zu niedrig oder die Auktion ist beendet.";
+                                }
+                            } else {
+                                responseMessage = "nachricht:Auktion nicht gefunden.";
+                            }
+                            InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
+                            DatagramPacket repPacket = new DatagramPacket(responseMessage.getBytes(),
+                                    responseMessage.length(), broadcastAddress,
+                                    BROADCAST_PORT);
+                            requestSocket.send(repPacket);
+                            break;
+
+                        case "info":
+                            break;
+                    }
                 }
+
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -324,7 +334,7 @@ public class MIbayAgent {
 
     public static void sendFileToWinner(String fileName, String winnerAddress) {
         try {
-            String prefix = "FILE:";
+            String prefix = "FILE:" + fileName;
 
             File file = new File("../dateien/" + fileName);
             byte[] fileData = Files.readAllBytes(file.toPath());
