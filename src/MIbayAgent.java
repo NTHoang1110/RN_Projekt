@@ -261,7 +261,11 @@ public class MIbayAgent {
     }
 
     public static void info() {
-
+        double sum =0;
+        for (Bid aBid : bids.values()){
+            sum+= aBid.bid;
+        }
+        System.out.println("Balance: "+ balance + "Bidding: " + sum+ "Rest: "+ (balance-sum));
     }
 
     public static void bieten(int price, String username, String filename) {
@@ -274,7 +278,6 @@ public class MIbayAgent {
                 socket.setSoTimeout(10000);
                 socket.setBroadcast(true);
                 InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
-
                 String bid = "nachricht:" + System.getenv("USER") + " bietet " + price + " für " + filename + ".";
 
                 DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), broadcastAddress,
@@ -298,7 +301,8 @@ public class MIbayAgent {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+            Bid bidInfo = new Bid(System.getenv("USER"), price, filename);
+            bids.put(filename, bidInfo);
         }
     }
 
