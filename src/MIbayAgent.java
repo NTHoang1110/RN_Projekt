@@ -70,8 +70,6 @@ public class MIbayAgent {
                     Files.write(new File("../dateien/" + fileNameWon).toPath(), fileData);
                     System.out.println("File received and saved to dateien/" + fileNameWon);
 
-                    bids.remove(fileNameWon);
-
                     String money = "Geld:" + priceWon;
                     InetAddress sellerAddress = InetAddress.getByName(findUser(bids.get(fileNameWon).seller));
                     DatagramPacket moneyPacket = new DatagramPacket(money.getBytes(), money.length(),
@@ -80,6 +78,7 @@ public class MIbayAgent {
                     requestSocket.send(moneyPacket);
                     System.out.println("Geld gesendet: " + priceWon);
                     balance -= priceWon;
+                    bids.remove(fileNameWon);
                 } else {
                     String request = new String(packet.getData(), 0, packet.getLength());
                     String[] requestParts = request.split(":");
