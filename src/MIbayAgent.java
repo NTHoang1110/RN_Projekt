@@ -324,7 +324,7 @@ public class MIbayAgent {
         for (Bid aBid : bids.values()) {
             sum += aBid.bid;
         }
-        System.out.println("Balance: " + balance + "Bidding: " + sum + "Rest: " + (balance - sum));
+        System.out.println("Balance: " + balance + " | Bidding: " + sum + " | Rest: " + (balance - sum));
     }
 
     public static void bieten(int price, String username, String filename) {
