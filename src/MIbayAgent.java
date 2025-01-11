@@ -164,9 +164,9 @@ public class MIbayAgent {
                             balance += Integer.parseInt(requestParts[1]);
                             System.out.println("Geld erhalten: " + requestParts[1]);
                             break;
-                        
+
                         case "ended":
-                            if(bids.containsKey(requestParts[1])) {
+                            if (bids.containsKey(requestParts[1])) {
                                 bids.remove(requestParts[1]);
                             }
                     }
@@ -328,6 +328,14 @@ public class MIbayAgent {
     }
 
     public static void bieten(int price, String username, String filename) {
+        for (Bid bid : bids.values()) {
+            if (bid.fileName.equals(filename)) {
+                if (price <= bid.bid) {
+                    System.out.println("Das Gebot darf nicht niedriger als dein letztes Gebot sein.");
+                    return;
+                }
+            }
+        }
         String userIP = findUser(username);
         if (userIP == null) {
             System.out.println("User not found");
