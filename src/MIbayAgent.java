@@ -71,9 +71,10 @@ public class MIbayAgent {
                     System.out.println("File received and saved to dateien/" + fileNameWon);
 
                     String money = "Geld:" + priceWon;
+                    InetAddress sellerAddress = InetAddress.getByName(findUser(bids.get(fileNameWon).seller));
                     DatagramPacket moneyPacket = new DatagramPacket(money.getBytes(), money.length(),
-                            packet.getAddress(),
-                            packet.getPort());
+                            sellerAddress,
+                            BROADCAST_PORT);
                     requestSocket.send(moneyPacket);
                     System.out.println("Geld gesendet: " + priceWon);
                     balance -= priceWon;
