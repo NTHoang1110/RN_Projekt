@@ -156,6 +156,7 @@ public class MIbayAgent {
                         case "gewonnen":
                             fileNameWon = requestParts[1];
                             if (bids.containsKey(fileNameWon)) {
+                                bids.get(fileNameWon).won = true;
                                 priceWon = bids.get(fileNameWon).bid;
                             }
                             break;
@@ -166,7 +167,7 @@ public class MIbayAgent {
                             break;
 
                         case "ended":
-                            if (bids.containsKey(requestParts[1])) {
+                            if (bids.containsKey(requestParts[1]) && !bids.get(requestParts[1]).won) {
                                 bids.remove(requestParts[1]);
                             }
                     }
@@ -457,6 +458,7 @@ public class MIbayAgent {
         String seller;
         int bid;
         String fileName;
+        boolean won = false;
 
         public Bid(String seller, int bid, String fileName) {
             this.seller = seller;
