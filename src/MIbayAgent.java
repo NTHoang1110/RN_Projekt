@@ -54,8 +54,8 @@ public class MIbayAgent {
 
     static Thread requestListener = new Thread(() -> {
         try (DatagramSocket requestSocket = new DatagramSocket(BROADCAST_PORT)) {
-                String fileNameWon = null;
-                int priceWon = 0;
+            String fileNameWon = null;
+            int priceWon = 0;
             while (true) {
                 byte[] buffer = new byte[1024];
                 DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
@@ -71,7 +71,8 @@ public class MIbayAgent {
                     System.out.println("File received and saved to dateien/" + fileNameWon);
 
                     String money = "Geld:" + priceWon;
-                    DatagramPacket moneyPacket = new DatagramPacket(money.getBytes(), money.length(), packet.getAddress(),
+                    DatagramPacket moneyPacket = new DatagramPacket(money.getBytes(), money.length(),
+                            packet.getAddress(),
                             packet.getPort());
                     requestSocket.send(moneyPacket);
                     System.out.println("Geld gesendet: " + priceWon);
@@ -108,9 +109,10 @@ public class MIbayAgent {
                                 }
                             }
                             String response = auctionsList.toString();
-                            if(response.length != 0){
-                                DatagramPacket responsePacket = new DatagramPacket(response.getBytes(), response.length(),
-                                packet.getAddress(), packet.getPort());
+                            if (response.length() != 0) {
+                                DatagramPacket responsePacket = new DatagramPacket(response.getBytes(),
+                                        response.length(),
+                                        packet.getAddress(), packet.getPort());
                                 requestSocket.send(responsePacket);
                             }
                             break;
@@ -155,7 +157,7 @@ public class MIbayAgent {
                                 priceWon = bids.get(fileNameWon).bid;
                             }
                             break;
-                        
+
                         case "Geld":
                             balance += Integer.parseInt(requestParts[1]);
                             System.out.println("Geld erhalten: " + requestParts[1]);
