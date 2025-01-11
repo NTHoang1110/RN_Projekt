@@ -54,9 +54,9 @@ public class MIbayAgent {
 
     static Thread requestListener = new Thread(() -> {
         try (DatagramSocket requestSocket = new DatagramSocket(BROADCAST_PORT)) {
-            while (true) {
                 String fileNameWon = null;
                 int priceWon = 0;
+            while (true) {
                 byte[] buffer = new byte[1024];
                 DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
                 requestSocket.receive(packet);
