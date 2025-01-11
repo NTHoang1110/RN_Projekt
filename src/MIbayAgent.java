@@ -17,7 +17,7 @@ public class MIbayAgent {
     static final Map<String, Auction> auctions = new ConcurrentHashMap<>();
     static final Map<String, Bid> bids = new ConcurrentHashMap<>();
     static String command;
-    static String pathToFile = "/dateien/";
+    static String pathToFile = "../dateien/";
 
     static Thread CLIListener = new Thread(() -> {
         try (DatagramSocket CLISocket = new DatagramSocket(CLIPORT)) {
@@ -67,7 +67,7 @@ public class MIbayAgent {
                 if ("FILE:".equals(receivedPrefix)) {
                     byte[] fileData = new byte[packet.getLength() - 5];
                     System.arraycopy(data, 5, fileData, 0, fileData.length);
-                    Files.write(new File("dateien/" + fileNameWon).toPath(), fileData);
+                    Files.write(new File("../dateien/" + fileNameWon).toPath(), fileData);
                     System.out.println("File received and saved to dateien/" + fileNameWon);
 
                     String money = "Geld:" + priceWon;
