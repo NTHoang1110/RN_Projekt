@@ -347,7 +347,7 @@ public class MIbayAgent {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Bid bidInfo = new Bid(System.getenv("USER"), price, filename);
+            Bid bidInfo = new Bid(username, price, filename);
             bids.put(filename, bidInfo);
         }
     }
