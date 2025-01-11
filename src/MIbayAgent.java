@@ -72,7 +72,7 @@ public class MIbayAgent {
 
                     String money = "Geld:" + priceWon;
                     String winningSeller = bids.get(fileNameWon).seller;
-                    InetAddress sellerAddress = InetAddress.getByName(winningSeller);
+                    InetAddress sellerAddress = InetAddress.getByName(findUser(winningSeller));
                     DatagramPacket moneyPacket = new DatagramPacket(money.getBytes(), money.length(),
                             sellerAddress,
                             BROADCAST_PORT);
