@@ -55,6 +55,8 @@ public class MIbayAgent {
     static Thread requestListener = new Thread(() -> {
         try (DatagramSocket requestSocket = new DatagramSocket(BROADCAST_PORT)) {
             while (true) {
+                String fileNameWon = null;
+                int priceWon = 0;
                 byte[] buffer = new byte[1024];
                 DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
                 requestSocket.receive(packet);
@@ -65,8 +67,15 @@ public class MIbayAgent {
                 if ("FILE:".equals(receivedPrefix)) {
                     byte[] fileData = new byte[packet.getLength() - 5];
                     System.arraycopy(data, 5, fileData, 0, fileData.length);
-                    Files.write(new File("dateien/received.txt").toPath(), fileData);
-                    System.out.println("File received and saved to dateien/received.txt");
+                    Files.write(new File("dateien/" + fileNameWon).toPath(), fileData);
+                    System.out.println("File received and saved to dateien/" + fileNameWon);
+
+                    String money = "Geld:" + priceWon;
+                    DatagramPacket moneyPacket = new DatagramPacket(money.getBytes(), money.length(), packet.getAddress(),
+                            packet.getPort());
+                    requestSocket.send(moneyPacket);
+                    System.out.println("Geld gesendet: " + priceWon);
+                    balance -= priceWon;
                 } else {
                     String request = new String(packet.getData(), 0, packet.getLength());
                     String[] requestParts = request.split(":");
@@ -89,13 +98,13 @@ public class MIbayAgent {
                         case "auctions":
                             StringBuilder auctionsList = new StringBuilder();
                             for (Auction auction : auctions.values()) {
-                                if(auction.ongoing && !auction.canceled){
+                                if (auction.ongoing && !auction.canceled) {
                                     auctionsList
-                                    .append("Höchstgebot: " + auction.highestBid + " | Bieter: "
-                                            + auction.highestBidder + " | Status: "
-                                            + (auction.ongoing ? "laufend" : "beendet")
-                                            + " | Anbieter: " + auction.seller + " | Datei: " + auction.fileName
-                                            + "\n");
+                                            .append("Höchstgebot: " + auction.highestBid + " | Bieter: "
+                                                    + auction.highestBidder + " | Status: "
+                                                    + (auction.ongoing ? "laufend" : "beendet")
+                                                    + " | Anbieter: " + auction.seller + " | Datei: " + auction.fileName
+                                                    + "\n");
                                 }
                             }
                             String response = auctionsList.toString();
@@ -136,6 +145,19 @@ public class MIbayAgent {
 
                         case "info":
                             break;
+
+                        case "gewonnen":
+                            fileNameWon = requestParts[1];
+                            if (bids.containsKey(fileNameWon)) {
+                                bids.get(fileNameWon).won = true;
+                                priceWon = bids.get(fileNameWon).bid;
+                            }
+                            break;
+                        
+                        case "Geld":
+                            balance += Integer.parseInt(requestParts[1]);
+                            System.out.println("Geld erhalten: " + requestParts[1]);
+                            break;
                     }
                 }
 
@@ -171,13 +193,15 @@ public class MIbayAgent {
 
         new Thread(() -> {
             String message;
+            String winner = null;
             while (!auction.canceled) {
                 if (auction.expiryTime.isBefore(LocalTime.now())) {
                     auction.ongoing = false;
                     if (auction.highestBidder != null) {
                         message = "nachricht:Auktion für " + auction.fileName + " ist beendet. Gewinner ist "
                                 + auction.highestBidder + " mit " + auction.highestBid;
-                        sendFileToWinner(auction.fileName, auction.highestBidder);
+                        winner = auction.highestBidder;
+                        // sendFileToWinner(auction.fileName, auction.highestBidder);
                     } else {
                         message = "nachricht:Auktion für " + auction.fileName + " ist beendet. Kein Gewinner.";
                     }
@@ -194,6 +218,21 @@ public class MIbayAgent {
                         System.out.println("Nachricht nicht gesendet oder empfangen: Timeout");
                     } catch (IOException e) {
                         e.printStackTrace();
+                    }
+                    try (DatagramSocket socket = new DatagramSocket()) {
+                        socket.setSoTimeout(10000);
+                        InetAddress userAddress = InetAddress.getByName(findUser(winner));
+                        String bid = "gewonnen:" + auction.fileName;
+                        DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), userAddress,
+                                BROADCAST_PORT);
+                        socket.send(packet);
+                    } catch (SocketTimeoutException e) {
+                        System.out.println("Nachricht nicht gesendet oder empfangen: Timeout");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    if (winner != null) {
+                        sendFileToWinner(auction.fileName, winner);
                     }
                     break;
                 }
@@ -263,11 +302,11 @@ public class MIbayAgent {
     }
 
     public static void info() {
-        double sum =0;
-        for (Bid aBid : bids.values()){
-            sum+= aBid.bid;
+        int sum = 0;
+        for (Bid aBid : bids.values()) {
+            sum += aBid.bid;
         }
-        System.out.println("Balance: "+ balance + "Bidding: " + sum+ "Rest: "+ (balance-sum));
+        System.out.println("Balance: " + balance + "Bidding: " + sum + "Rest: " + (balance - sum));
     }
 
     public static void bieten(int price, String username, String filename) {
@@ -361,18 +400,22 @@ public class MIbayAgent {
         }
     }
 
+    public static void receiveFile(String fileName) {
+
+    }
+
     static class Auction {
         String fileName;
-        double minPrice;
+        int minPrice;
         LocalTime expiryTime;
         String seller;
         String filePath;
         String highestBidder;
-        double highestBid;
+        int highestBid;
         boolean ongoing = false;
         boolean canceled = false;
 
-        public Auction(String fileName, double minPrice, LocalTime expiryTime, String seller, String filePath) {
+        public Auction(String fileName, int minPrice, LocalTime expiryTime, String seller, String filePath) {
             this.fileName = fileName;
             this.minPrice = minPrice;
             this.expiryTime = expiryTime;
@@ -386,13 +429,14 @@ public class MIbayAgent {
 
     static class Bid {
         String seller;
-        double bid;
-        String filename;
+        int bid;
+        String fileName;
+        boolean won = false;
 
-        public Bid(String seller, double bid, String filename) {
+        public Bid(String seller, int bid, String fileName) {
             this.seller = seller;
             this.bid = bid;
-            this.filename = filename;
+            this.fileName = fileName;
         }
     }
 
