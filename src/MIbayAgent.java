@@ -108,9 +108,11 @@ public class MIbayAgent {
                                 }
                             }
                             String response = auctionsList.toString();
-                            DatagramPacket responsePacket = new DatagramPacket(response.getBytes(), response.length(),
-                                    packet.getAddress(), packet.getPort());
-                            requestSocket.send(responsePacket);
+                            if(response.length != 0){
+                                DatagramPacket responsePacket = new DatagramPacket(response.getBytes(), response.length(),
+                                packet.getAddress(), packet.getPort());
+                                requestSocket.send(responsePacket);
+                            }
                             break;
 
                         case "abbrechen":
@@ -199,7 +201,7 @@ public class MIbayAgent {
                     auction.ongoing = false;
                     if (auction.highestBidder != null) {
                         message = "nachricht:Auktion für " + auction.fileName + " ist beendet. Gewinner ist "
-                                + auction.highestBidder + " mit " + auction.highestBid;
+                                + auction.highestBidder + " mit " + auction.highestBid + " ";
                         winner = auction.highestBidder;
                         // sendFileToWinner(auction.fileName, auction.highestBidder);
                     } else {
