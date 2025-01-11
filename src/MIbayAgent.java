@@ -164,6 +164,11 @@ public class MIbayAgent {
                             balance += Integer.parseInt(requestParts[1]);
                             System.out.println("Geld erhalten: " + requestParts[1]);
                             break;
+                        
+                        case "ended":
+                            if(bids.containsKey(requestParts[1])) {
+                                bids.remove(requestParts[1]);
+                            }
                     }
                 }
 
@@ -232,6 +237,13 @@ public class MIbayAgent {
                         DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), userAddress,
                                 BROADCAST_PORT);
                         socket.send(packet);
+
+                        InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
+                        String ended = "ended:" + auction.fileName;
+                        DatagramPacket endedPacket = new DatagramPacket(ended.getBytes(), ended.length(),
+                                broadcastAddress,
+                                BROADCAST_PORT);
+                        socket.send(endedPacket);
                     } catch (SocketTimeoutException e) {
                         System.out.println("Nachricht nicht gesendet oder empfangen: Timeout");
                     } catch (IOException e) {
