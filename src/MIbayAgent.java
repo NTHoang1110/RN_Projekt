@@ -70,6 +70,8 @@ public class MIbayAgent {
                     Files.write(new File("../dateien/" + fileNameWon).toPath(), fileData);
                     System.out.println("File received and saved to dateien/" + fileNameWon);
 
+                    bids.remove(fileNameWon);
+
                     String money = "Geld:" + priceWon;
                     InetAddress sellerAddress = InetAddress.getByName(findUser(bids.get(fileNameWon).seller));
                     DatagramPacket moneyPacket = new DatagramPacket(money.getBytes(), money.length(),
@@ -154,7 +156,6 @@ public class MIbayAgent {
                         case "gewonnen":
                             fileNameWon = requestParts[1];
                             if (bids.containsKey(fileNameWon)) {
-                                bids.get(fileNameWon).won = true;
                                 priceWon = bids.get(fileNameWon).bid;
                             }
                             break;
@@ -436,7 +437,6 @@ public class MIbayAgent {
         String seller;
         int bid;
         String fileName;
-        boolean won = false;
 
         public Bid(String seller, int bid, String fileName) {
             this.seller = seller;
