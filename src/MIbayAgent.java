@@ -227,7 +227,7 @@ public class MIbayAgent {
                         message = "nachricht:Auktion für " + auction.fileName + " ist beendet. Kein Gewinner.";
                     }
                     try (DatagramSocket socket = new DatagramSocket()) {
-                        socket.setSoTimeout(time * 1000);
+                        socket.setSoTimeout(10000);
                         socket.setBroadcast(true);
                         InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
 
@@ -266,10 +266,10 @@ public class MIbayAgent {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-                        if(dataToSend.length > 65000) {
+                        if (dataToSend.length > 65000) {
                             sendLongFileToWinner(auction.fileName, winner);
                         } else
-                        sendFileToWinner(auction.fileName, winner);
+                            sendFileToWinner(auction.fileName, winner);
                     }
                     break;
                 }
@@ -351,7 +351,7 @@ public class MIbayAgent {
         for (Bid aBid : bids.values()) {
             rest -= aBid.bid;
         }
-        if(price > rest) {
+        if (price > rest) {
             System.out.println("Sie haben nicht genug Geld.");
             return;
         }
