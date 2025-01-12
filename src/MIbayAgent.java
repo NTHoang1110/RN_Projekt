@@ -154,9 +154,6 @@ public class MIbayAgent {
                             requestSocket.send(repPacket);
                             break;
 
-                        case "info":
-                            break;
-
                         case "gewonnen":
                             fileNameWon = requestParts[1];
                             if (bids.containsKey(fileNameWon)) {
@@ -350,6 +347,14 @@ public class MIbayAgent {
     }
 
     public static void bieten(int price, String username, String filename) {
+        int rest = balance;
+        for (Bid aBid : bids.values()) {
+            rest -= aBid.bid;
+        }
+        if(price > rest) {
+            System.out.println("Sie haben nicht genug Geld.");
+            return;
+        }
         for (Bid bid : bids.values()) {
             if (bid.fileName.equals(filename)) {
                 if (price <= bid.bid) {
@@ -458,9 +463,6 @@ public class MIbayAgent {
                             InetAddress.getByName(findUser(winnerAddress)), BROADCAST_PORT);
                     socket.send(packet);
                 }
-                DatagramPacket packet = new DatagramPacket("END".getBytes(), "END".length(),
-                        InetAddress.getByName(findUser(winnerAddress)), BROADCAST_PORT);
-                socket.send(packet);
             }
         } catch (IOException e) {
             e.printStackTrace();
