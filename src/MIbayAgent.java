@@ -1,4 +1,8 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -170,6 +174,14 @@ public class MIbayAgent {
                             if (bids.containsKey(requestParts[1]) && !bids.get(requestParts[1]).won) {
                                 bids.remove(requestParts[1]);
                             }
+                            break;
+                        case "LongFile":
+                            try (BufferedWriter bw = new BufferedWriter(
+                                    new FileWriter("../dateien/" + fileNameWon, true))) {
+                                bw.write(requestParts[1]);
+                                bw.newLine();
+                            }
+                            break;
                     }
                 }
 
@@ -251,6 +263,15 @@ public class MIbayAgent {
                         e.printStackTrace();
                     }
                     if (winner != null) {
+                        byte[] dataToSend = null;
+                        try {
+                            dataToSend = Files.readAllBytes(new File("../dateien/" + auction.fileName).toPath());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        if(dataToSend.length > 65000) {
+                            sendLongFileToWinner(auction.fileName, winner);
+                        } else
                         sendFileToWinner(auction.fileName, winner);
                     }
                     break;
@@ -421,6 +442,25 @@ public class MIbayAgent {
                 DatagramPacket packet = new DatagramPacket(sendData, sendData.length, receiverAddress, BROADCAST_PORT);
                 socket.send(packet);
                 System.out.println("File sent with prefix: " + prefix);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void sendLongFileToWinner(String fileName, String winnerAddress) {
+        try (DatagramSocket socket = new DatagramSocket()) {
+            try (BufferedReader br = new BufferedReader(new FileReader("../dateien/" + fileName))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    byte[] data = ("LongFile:" + line).getBytes();
+                    DatagramPacket packet = new DatagramPacket(data, data.length,
+                            InetAddress.getByName(findUser(winnerAddress)), BROADCAST_PORT);
+                    socket.send(packet);
+                }
+                DatagramPacket packet = new DatagramPacket("END".getBytes(), "END".length(),
+                        InetAddress.getByName(findUser(winnerAddress)), BROADCAST_PORT);
+                socket.send(packet);
             }
         } catch (IOException e) {
             e.printStackTrace();
