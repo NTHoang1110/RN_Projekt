@@ -467,10 +467,6 @@ public class MIbayAgent {
         }
     }
 
-    public static void receiveFile(String fileName) {
-
-    }
-
     static class Auction {
         String fileName;
         int minPrice;
