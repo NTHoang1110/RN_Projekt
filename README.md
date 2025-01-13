@@ -97,7 +97,6 @@ MIbayProject/
 ├── MIbayCLI.java      # Command-line interface program
 ├── MIbayAgent.java    # Agent program
 ├── dateien/           # Folder to store auctioned files
-└── sister/            # Folder for shared input files
 ```
 
 ---
