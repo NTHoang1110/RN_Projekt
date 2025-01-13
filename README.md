@@ -1,110 +1,136 @@
-# MIbayAgent
+# MIbay Project
 
-MIbayAgent is a Java-based auctioning system that facilitates file-based auctions within a network. It uses UDP sockets for communication and supports features such as listing auctions, placing bids, and sending files.
+The **MIbay Project** is a Java-based auctioning system for selling and buying virtual goods (text files) within a local network. It consists of two components:
+
+1. **MIbayCLI**: A Command Line Interface for users to interact with their agent.
+2. **MIbayAgent**: An agent program that communicates with other agents in the network to facilitate auctions and file transfers.
+
+---
 
 ## Features
-- **Create Auctions:** Users can offer files for auction by specifying a starting price, auction duration, and file name.
-- **Place Bids:** Users can place bids on active auctions.
-- **Cancel Auctions:** Sellers can cancel their auctions.
-- **List Auctions:** Displays all active auctions with relevant details.
-- **File Transfer:** Sends and receives files between users during the auction process.
 
-## Project Structure
-The project consists of several key components:
-
-### Classes and Threads
-1. **Main Class:**
-   - Initializes the program and starts the required listener threads.
-2. **Threads:**
-   - `CLIListener`: Handles user commands from the command line interface.
-   - `RequestListener`: Listens for incoming messages and file transfer requests.
-3. **Auction Class:**
-   - Represents an auction with properties such as file name, starting price, expiry time, seller, and highest bid.
-4. **Bid Class:**
-   - Represents a bid with properties such as bidder name, bid amount, and file name.
-
-### Networking
-- **UDP Communication:**
-  - Used for broadcasting messages, such as auction announcements and bids.
-  - Facilitates file transfers using the `FileSender` and `FileReceiver` programs.
-
-### File Management
-- Files are stored in specific directories (`../dateien`) during the auction process.
-- Supports appending and creating files dynamically.
-
-## Installation
-1. Clone the repository or copy the source files to your local system.
-2. Ensure you have the Java Development Kit (JDK) installed (version 8 or above).
-3. Place the required files for auctions in the `sister` directory (relative to the program).
-4. Compile the program using:
+### MIbayCLI
+The MIbayCLI program allows users to send commands to their agent. It is started with:
+```bash
+java MIbayCLI <command> [parameters]
+```
+#### Supported Commands:
+1. **anbieten**: Offer a file for auction.
    ```bash
-   javac MIbayAgent.java
+   java MIbayCLI anbieten <minimum_bid> <duration_seconds> <file_name>
+   ```
+   Example:
+   ```bash
+   java MIbayCLI anbieten 20 300 sample.txt
+   ```
+   Offers `sample.txt` for auction at a minimum bid of 20 for 300 seconds.
+
+2. **bieten**: Place a bid on an auctioned file.
+   ```bash
+   java MIbayCLI bieten <bid_amount> <seller_username> <file_name>
+   ```
+   Example:
+   ```bash
+   java MIbayCLI bieten 25 jbiff007 sample.txt
+   ```
+   Places a bid of 25 on `sample.txt` offered by user `jbiff007`.
+
+3. **abbrechen**: Cancel your own ongoing auction.
+   ```bash
+   java MIbayCLI abbrechen <file_name>
+   ```
+   Example:
+   ```bash
+   java MIbayCLI abbrechen sample.txt
    ```
 
-## Usage
-1. Run the program:
+4. **liste**: List all ongoing auctions in the network.
    ```bash
-   java MIbayAgent <starting_balance>
+   java MIbayCLI liste
    ```
-2. Use the following commands:
-   - **Create Auction:**
-     ```bash
-     anbieten <start_price> <time_in_seconds> <file_name>
-     ```
-   - **Place Bid:**
-     ```bash
-     bieten <bid_amount> <seller_name> <file_name>
-     ```
-   - **Cancel Auction:**
-     ```bash
-     abbrechen <file_name>
-     ```
-   - **List Auctions:**
-     ```bash
-     liste
-     ```
-   - **Get Auction Info:**
-     ```bash
-     info
-     ```
 
-## Example
-1. Start the agent:
+5. **info**: Display account and auction information.
+   ```bash
+   java MIbayCLI info
+   ```
+   Output includes:
+   - Current balance.
+   - Active bids.
+   - Total funds locked in bids.
+
+---
+
+### MIbayAgent
+The MIbayAgent handles communication, auction management, and file transfers. It runs persistently and interacts with other agents in the network.
+
+#### How to Start
+Run the agent with a starting balance:
+```bash
+java MIbayAgent <starting_balance>
+```
+Example:
+```bash
+java MIbayAgent 1000
+```
+This starts the agent with a balance of 1000 units.
+
+#### Key Responsibilities:
+1. **Auction Management**:
+   - Tracks active auctions.
+   - Handles incoming bids and ensures only valid bids are accepted.
+
+2. **File Transfer**:
+   - Transfers auctioned files to the highest bidder after the auction ends.
+   - Saves files in the `dateien` folder of the respective agent.
+
+3. **Balance Management**:
+   - Adjusts balances of buyers and sellers after successful auctions.
+
+4. **Communication**:
+   - Uses Java UDP sockets for communication between agents.
+
+---
+
+## Folder Structure
+```
+MIbayProject/
+├── MIbayCLI.java      # Command-line interface program
+├── MIbayAgent.java    # Agent program
+├── dateien/           # Folder to store auctioned files
+└── sister/            # Folder for shared input files
+```
+
+---
+
+## Example Workflow
+1. Start the agent for two users:
    ```bash
    java MIbayAgent 1000
-   ```
-2. Offer a file for auction:
-   ```bash
-   anbieten 50 120 file.txt
-   ```
-3. Place a bid:
-   ```bash
-   bieten 75 seller123 file.txt
-   ```
-4. Cancel an auction:
-   ```bash
-   abbrechen file.txt
-   ```
-5. List all active auctions:
-   ```bash
-   liste
+   java MIbayAgent 800
    ```
 
-## Contributing
-1. Fork the repository.
-2. Create a new branch:
+2. User 1 offers a file for auction:
    ```bash
-   git checkout -b feature-name
+   java MIbayCLI anbieten 50 300 document.txt
    ```
-3. Make your changes and commit them:
+
+3. User 2 places a bid:
    ```bash
-   git commit -m "Description of changes"
+   java MIbayCLI bieten 60 user1 document.txt
    ```
-4. Push to the branch:
-   ```bash
-   git push origin feature-name
-   ```
-5. Open a pull request.
+
+4. After 300 seconds, the auction ends, and the file is transferred to the highest bidder.
+
+5. User 1’s balance increases, and User 2’s balance decreases by the bid amount.
+
+---
+
+## Notes
+- **File Size Limit**: Files up to 1 MB can be auctioned.
+- **Local Network**: Agents must be in the same LAN for communication.
+- **Java Sockets**: Communication is implemented using Java UDP sockets.
+
+---
 
 ## License
 This project is licensed under the MIT License.
