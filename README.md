@@ -12,46 +12,46 @@ The **MIbay Project** is a Java-based auctioning system for selling and buying v
 ### MIbayCLI
 The MIbayCLI program allows users to send commands to their agent. It is started with:
 ```bash
-java MIbayCLI <command> [parameters]
+java MIbayCLI.java <command> [parameters]
 ```
 #### Supported Commands:
 1. **anbieten**: Offer a file for auction.
    ```bash
-   java MIbayCLI anbieten <minimum_bid> <duration_seconds> <file_name>
+   java MIbayCLI.java anbieten <minimum_bid> <duration_seconds> <file_name>
    ```
    Example:
    ```bash
-   java MIbayCLI anbieten 20 300 sample.txt
+   java MIbayCLI.java anbieten 20 300 sample.txt
    ```
    Offers `sample.txt` for auction at a minimum bid of 20 for 300 seconds.
 
 2. **bieten**: Place a bid on an auctioned file.
    ```bash
-   java MIbayCLI bieten <bid_amount> <seller_username> <file_name>
+   java MIbayCLI.java bieten <bid_amount> <seller_username> <file_name>
    ```
    Example:
    ```bash
-   java MIbayCLI bieten 25 jbiff007 sample.txt
+   java MIbayCLI.java bieten 25 jbiff007 sample.txt
    ```
    Places a bid of 25 on `sample.txt` offered by user `jbiff007`.
 
 3. **abbrechen**: Cancel your own ongoing auction.
    ```bash
-   java MIbayCLI abbrechen <file_name>
+   java MIbayCLI.java abbrechen <file_name>
    ```
    Example:
    ```bash
-   java MIbayCLI abbrechen sample.txt
+   java MIbayCLI.java abbrechen sample.txt
    ```
 
 4. **liste**: List all ongoing auctions in the network.
    ```bash
-   java MIbayCLI liste
+   java MIbayCLI.java liste
    ```
 
 5. **info**: Display account and auction information.
    ```bash
-   java MIbayCLI info
+   java MIbayCLI.java info
    ```
    Output includes:
    - Current balance.
@@ -66,11 +66,11 @@ The MIbayAgent handles communication, auction management, and file transfers. It
 #### How to Start
 Run the agent with a starting balance:
 ```bash
-java MIbayAgent <starting_balance>
+java MIbayAgent.java <starting_balance>
 ```
 Example:
 ```bash
-java MIbayAgent 1000
+java MIbayAgent.java 1000
 ```
 This starts the agent with a balance of 1000 units.
 
@@ -104,8 +104,8 @@ MIbayProject/
 ## Example Workflow
 1. Start the agent for two users:
    ```bash
-   java MIbayAgent 1000
-   java MIbayAgent 800
+   java MIbayAgent.java 1000
+   java MIbayAgent.java 800
    ```
 
 2. User 1 offers a file for auction:
@@ -115,7 +115,7 @@ MIbayProject/
 
 3. User 2 places a bid:
    ```bash
-   java MIbayCLI bieten 60 user1 document.txt
+   java MIbayCLI.java bieten 60 user1 document.txt
    ```
 
 4. After 300 seconds, the auction ends, and the file is transferred to the highest bidder.
