@@ -261,11 +261,6 @@ public class MIbayAgent {
     }
 
     public static void abbrechen(String filename) {
-        File file = new File("dateien/" + filename);
-        if(!file.exists()){
-            System.out.println("Datei nicht existiert! Versuch noch mal");
-            return;
-        }
         if (auctions.containsKey(filename)) {
             auctions.get(filename).canceled = true;
             auctions.get(filename).ongoing = false;
@@ -335,11 +330,6 @@ public class MIbayAgent {
     }
 
     public static void bieten(int price, String username, String filename) {
-        File file = new File("dateien/" + filename);
-        if(!file.exists()){
-            System.out.println("Datei nicht existiert! Versuch noch mal");
-            return;
-        }
         for (Bid bid : bids.values()) {
             if (bid.fileName.equals(filename)) {
                 if (price <= bid.bid) {
