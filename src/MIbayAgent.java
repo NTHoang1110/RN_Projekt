@@ -170,6 +170,9 @@ public class MIbayAgent {
                             }
                         }
                         break;
+                    case "neuGebot":
+                        bids.remove(requestParts[1]);
+                        break;
                 }
             }
         } catch (IOException e) {
@@ -333,7 +336,9 @@ public class MIbayAgent {
     public static void bieten(int price, String username, String filename) {
         int sum = 0;
         for (Bid aBid : bids.values()) {
-            sum += aBid.bid;
+            if(!aBid.fileName.equals(filename)){
+                sum += aBid.bid;
+            }
         }
         if(price > balance || price > balance - sum){
             System.out.println("Sie haben nicht genug Geld!!");
@@ -379,6 +384,20 @@ public class MIbayAgent {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            try (DatagramSocket socket = new DatagramSocket()) {
+                socket.setSoTimeout(10000);
+                InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
+
+                String bid = "neuGebot:" + filename;
+                DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), broadcastAddress, BROADCAST_PORT);
+                socket.send(packet);
+            } catch (SocketTimeoutException e) {
+                System.out.println("Nachricht nicht gesendet oder empfangen: Timeout");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            
             Bid bidInfo = new Bid(username, price, filename);
             bids.put(filename, bidInfo);
         }
