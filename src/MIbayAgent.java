@@ -216,7 +216,6 @@ public class MIbayAgent {
                         message = "nachricht:Auktion für " + auction.fileName + " ist beendet. Gewinner ist "
                                 + auction.highestBidder + " mit " + auction.highestBid + " ";
                         winner = auction.highestBidder;
-                        // sendFileToWinner(auction.fileName, auction.highestBidder);
                     } else {
                         message = "nachricht:Auktion für " + auction.fileName + " ist beendet. Kein Gewinner.";
                     }
@@ -234,26 +233,26 @@ public class MIbayAgent {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    try (DatagramSocket socket = new DatagramSocket()) {
-                        socket.setSoTimeout(10000);
-                        InetAddress userAddress = InetAddress.getByName(findUser(winner));
-                        String bid = "gewonnen:" + auction.fileName;
-                        DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), userAddress,
-                                BROADCAST_PORT);
-                        socket.send(packet);
-
-                        InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
-                        String ended = "ended:" + auction.fileName;
-                        DatagramPacket endedPacket = new DatagramPacket(ended.getBytes(), ended.length(),
-                                broadcastAddress,
-                                BROADCAST_PORT);
-                        socket.send(endedPacket);
-                    } catch (SocketTimeoutException e) {
-                        System.out.println("Nachricht nicht gesendet oder empfangen: Timeout");
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
                     if (winner != null) {
+                        try (DatagramSocket socket = new DatagramSocket()) {
+                            socket.setSoTimeout(10000);
+                            InetAddress userAddress = InetAddress.getByName(findUser(winner));
+                            String bid = "gewonnen:" + auction.fileName;
+                            DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), userAddress,
+                                    BROADCAST_PORT);
+                            socket.send(packet);
+    
+                            InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
+                            String ended = "ended:" + auction.fileName;
+                            DatagramPacket endedPacket = new DatagramPacket(ended.getBytes(), ended.length(),
+                                    broadcastAddress,
+                                    BROADCAST_PORT);
+                            socket.send(endedPacket);
+                        } catch (SocketTimeoutException e) {
+                            System.out.println("Nachricht nicht gesendet oder empfangen: Timeout");
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         sendFileToWinner(auction.fileName, winner);
                     }
                     break;
@@ -482,12 +481,12 @@ public class MIbayAgent {
             System.out.println("Bitte geben Sie Ihr Startguthaben ein.");
             return;
         }
-        File folder = new File("dateien"); // Replace with your folder path
+        File folder = new File("dateien");
 
         if (folder.exists() && folder.isDirectory()) {
             System.out.println("Verzeichnis 'dateien' schon existiert.");
         } else {
-            boolean created = folder.mkdirs(); // Creates the directory and any parent directories if needed
+            boolean created = folder.mkdirs();
             if (created) {
                 System.out.println("Verzeichnis 'dateien' erfolgreich angelegt.");
             } else {
