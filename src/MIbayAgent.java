@@ -331,6 +331,14 @@ public class MIbayAgent {
     }
 
     public static void bieten(int price, String username, String filename) {
+        int sum = 0;
+        for (Bid aBid : bids.values()) {
+            sum += aBid.bid;
+        }
+        if(price > balance || price > balance - sum){
+            System.out.println("Sie haben nicht genug Geld!!");
+            return;
+        }
         for (Bid bid : bids.values()) {
             if (bid.fileName.equals(filename)) {
                 if (price <= bid.bid) {
