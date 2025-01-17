@@ -161,8 +161,12 @@ public class MIbayAgent {
                                 bids.remove(fileNameWon);
                                 break;
                             } else {
-                                bw.write(requestParts[1]);
-                                bw.newLine();
+                                if(requestParts.length == 1){
+                                    bw.write("\n");
+                                }else{
+                                    bw.write(requestParts[1]);
+                                    bw.newLine();
+                                }
                             }
                         }
                         break;
