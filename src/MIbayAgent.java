@@ -475,7 +475,7 @@ public class MIbayAgent {
             System.out.println("Bitte geben Sie Ihr Startguthaben ein.");
             return;
         }
-        File folder = new File("/dateien"); // Replace with your folder path
+        File folder = new File("dateien"); // Replace with your folder path
 
         if (folder.exists() && folder.isDirectory()) {
             System.out.println("Verzeichnis 'dateien' schon existiert.");
