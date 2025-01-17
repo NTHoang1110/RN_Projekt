@@ -134,13 +134,13 @@ public class MIbayAgent {
                         requestSocket.send(repPacket);
                         break;
 
-                        case "gewonnen":
-                            fileNameWon = requestParts[1];
-                            if (bids.containsKey(fileNameWon)) {
-                                bids.get(fileNameWon).won = true;
-                                priceWon = bids.get(fileNameWon).bid;
-                            }
-                            break;
+                    case "gewonnen":
+                        fileNameWon = requestParts[1];
+                        if (bids.containsKey(fileNameWon)) {
+                            bids.get(fileNameWon).won = true;
+                            priceWon = bids.get(fileNameWon).bid;
+                        }
+                        break;
 
                     case "Geld":
                         balance += Integer.parseInt(requestParts[1]);
@@ -248,16 +248,7 @@ public class MIbayAgent {
                         e.printStackTrace();
                     }
                     if (winner != null) {
-                        byte[] dataToSend = null;
-                        try {
-                            dataToSend = Files.readAllBytes(new File("../dateien/" + auction.fileName).toPath());
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                        if (dataToSend.length > 65000) {
-                            sendLongFileToWinner(auction.fileName, winner);
-                        } else
-                            sendFileToWinner(auction.fileName, winner);
+                        sendFileToWinner(auction.fileName, winner);
                     }
                     break;
                 }
@@ -420,10 +411,28 @@ public class MIbayAgent {
                             InetAddress.getByName(findUser(winnerAddress)), BROADCAST_PORT);
                     socket.send(packet);
                 }
+                byte[] data = ("File:EOF").getBytes();
+                DatagramPacket packet = new DatagramPacket(data, data.length,
+                        InetAddress.getByName(findUser(winnerAddress)), BROADCAST_PORT);
+                socket.send(packet);
+                System.out.println("Datei gesendet.");
+
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void sendMoney(DatagramSocket requestSocket, String fileNameWon, int priceWon) throws IOException {
+        String money = "Geld:" + priceWon;
+        String winningSeller = bids.get(fileNameWon).seller;
+        InetAddress sellerAddress = InetAddress.getByName(findUser(winningSeller));
+        DatagramPacket moneyPacket = new DatagramPacket(money.getBytes(), money.length(),
+                sellerAddress,
+                BROADCAST_PORT);
+        requestSocket.send(moneyPacket);
+        System.out.println("Geld gesendet: " + priceWon);
+        balance -= priceWon;
     }
 
     static class Auction {
