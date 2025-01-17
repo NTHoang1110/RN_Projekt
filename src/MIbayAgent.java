@@ -420,12 +420,14 @@ public class MIbayAgent {
                 DatagramPacket packet = new DatagramPacket(data, data.length,
                         InetAddress.getByName(findUser(winnerAddress)), BROADCAST_PORT);
                 socket.send(packet);
-                System.out.println("Datei gesendet.");
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        File file e,jfn,s
+        File file = new File("dateien/" + fileName);
+        if(file.delete()){
+            System.out.println("Datei erfolgreich gesendet!");
+        }
     }
 
     public static void sendMoney(DatagramSocket requestSocket, String fileNameWon, int priceWon) throws IOException {
