@@ -171,7 +171,10 @@ public class MIbayAgent {
                         }
                         break;
                     case "neuGebot":
-                        bids.remove(requestParts[1]);
+                        String[] otherBid = requestParts[1].split(";");
+                        if(!System.getenv("USER").equals(otherBid[0])){
+                            bids.remove(otherBid[1]);
+                        }
                         break;
                 }
             }
@@ -389,7 +392,7 @@ public class MIbayAgent {
                 socket.setSoTimeout(10000);
                 InetAddress broadcastAddress = InetAddress.getByName(BROADCAST_ADDRESS);
 
-                String bid = "neuGebot:" + filename;
+                String bid = "neuGebot:" + System.getenv("USER") + ";" + filename;
                 DatagramPacket packet = new DatagramPacket(bid.getBytes(), bid.length(), broadcastAddress, BROADCAST_PORT);
                 socket.send(packet);
             } catch (SocketTimeoutException e) {
