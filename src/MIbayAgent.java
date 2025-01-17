@@ -20,7 +20,7 @@ public class MIbayAgent {
     static final Map<String, Auction> auctions = new ConcurrentHashMap<>();
     static final Map<String, Bid> bids = new ConcurrentHashMap<>();
     static String command;
-    static String pathToFile = "/dateien/";
+    static String pathToFile = "dateien/";
 
     static Thread CLIListener = new Thread(() -> {
         try (DatagramSocket CLISocket = new DatagramSocket(CLIPORT)) {
@@ -153,7 +153,7 @@ public class MIbayAgent {
                         break;
                     case "File":
                         try (BufferedWriter bw = new BufferedWriter(
-                                new FileWriter("/dateien/" + fileNameWon, true))) {
+                                new FileWriter("dateien/" + fileNameWon, true))) {
                             if (requestParts[1].equals("EOF")) {
                                 System.out.println("Datei empfangen und gespeichert in dateien/" + fileNameWon);
                                 bw.close();
@@ -176,6 +176,8 @@ public class MIbayAgent {
     });
 
     public static void anbieten(int startPrice, int time, String filename) {
+        File file = new File(/filename);
+        if(file.exists())
         try (DatagramSocket socket = new DatagramSocket()) {
             socket.setSoTimeout(time * 1000);
             socket.setBroadcast(true);
@@ -402,7 +404,7 @@ public class MIbayAgent {
 
     public static void sendFileToWinner(String fileName, String winnerAddress) {
         try (DatagramSocket socket = new DatagramSocket()) {
-            try (BufferedReader br = new BufferedReader(new FileReader("/dateien/" + fileName))) {
+            try (BufferedReader br = new BufferedReader(new FileReader("dateien/" + fileName))) {
                 String line;
                 while ((line = br.readLine()) != null) {
                     byte[] data = ("File:" + line).getBytes();
