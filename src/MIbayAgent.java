@@ -421,11 +421,11 @@ public class MIbayAgent {
                         InetAddress.getByName(findUser(winnerAddress)), BROADCAST_PORT);
                 socket.send(packet);
                 System.out.println("Datei gesendet.");
-
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        File file e,jfn,s
     }
 
     public static void sendMoney(DatagramSocket requestSocket, String fileNameWon, int priceWon) throws IOException {
