@@ -8,7 +8,6 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketTimeoutException;
-import java.nio.file.Files;
 import java.time.LocalTime;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -476,15 +475,25 @@ public class MIbayAgent {
             System.out.println("Bitte geben Sie Ihr Startguthaben ein.");
             return;
         }
+        File folder = new File("/dateien"); // Replace with your folder path
 
-        System.out.println("Warte auf Nachrichten...");
+        if (folder.exists() && folder.isDirectory()) {
+            System.out.println("Verzeichnis 'dateien' schon existiert.");
+        } else {
+            boolean created = folder.mkdirs(); // Creates the directory and any parent directories if needed
+            if (created) {
+                System.out.println("Verzeichnis 'dateien' erfolgreich angelegt.");
+            } else {
+                System.out.println("Verzeichnis nicht erfolgreich angelegt.");
+            }
+        }
+
+        System.out.println("\nWarte auf Nachrichten...");
 
         balance = Integer.parseInt(args[0]);
         CLIListener.setName("CLIListener");
         CLIListener.start();
-        System.out.println("CLIListener hat gestartet!");
         requestListener.setName("RequestListener");
         requestListener.start();
-        System.out.println("RequestListener hat gestartet!");
     }
 }
