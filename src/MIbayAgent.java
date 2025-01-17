@@ -176,8 +176,11 @@ public class MIbayAgent {
     });
 
     public static void anbieten(int startPrice, int time, String filename) {
-        File file = new File(/filename);
-        if(file.exists())
+        File file = new File("dateien/" + filename);
+        if(!file.exists()){
+            System.out.println("Datei nicht existiert! Versuch noch mal");
+            return;
+        }
         try (DatagramSocket socket = new DatagramSocket()) {
             socket.setSoTimeout(time * 1000);
             socket.setBroadcast(true);
@@ -258,6 +261,11 @@ public class MIbayAgent {
     }
 
     public static void abbrechen(String filename) {
+        File file = new File("dateien/" + filename);
+        if(!file.exists()){
+            System.out.println("Datei nicht existiert! Versuch noch mal");
+            return;
+        }
         if (auctions.containsKey(filename)) {
             auctions.get(filename).canceled = true;
             auctions.get(filename).ongoing = false;
@@ -327,6 +335,11 @@ public class MIbayAgent {
     }
 
     public static void bieten(int price, String username, String filename) {
+        File file = new File("dateien/" + filename);
+        if(!file.exists()){
+            System.out.println("Datei nicht existiert! Versuch noch mal");
+            return;
+        }
         for (Bid bid : bids.values()) {
             if (bid.fileName.equals(filename)) {
                 if (price <= bid.bid) {
