@@ -154,25 +154,23 @@ public class MIbayAgent {
                     case "File":
                         try (BufferedWriter bw = new BufferedWriter(
                                 new FileWriter("dateien/" + fileNameWon, true))) {
-                            if (requestParts[1].equals("EOF")) {
-                                System.out.println("Datei empfangen und gespeichert in dateien/" + fileNameWon);
-                                bw.close();
-                                sendMoney(requestSocket, fileNameWon, priceWon);
-                                bids.remove(fileNameWon);
-                                break;
-                            } else {
-                                if(requestParts.length == 1){
-                                    bw.write("\n");
-                                }else{
+                            if(requestParts.length == 1){
+                                bw.write("\n");
+                            }else{
+                                if (requestParts[1].equals("EOF")) {
+                                    System.out.println("Datei empfangen und gespeichert in dateien/" + fileNameWon);
+                                    bw.close();
+                                    sendMoney(requestSocket, fileNameWon, priceWon);
+                                    bids.remove(fileNameWon);
+                                    break;
+                                } else{
                                     bw.write(requestParts[1]);
                                     bw.newLine();
                                 }
                             }
                         }
                         break;
-
                 }
-
             }
         } catch (IOException e) {
             e.printStackTrace();
